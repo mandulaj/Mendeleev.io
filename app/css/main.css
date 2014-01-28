@@ -1,5 +1,5 @@
 .navbar {
- background-color: rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
 }
 
 .navbar .navbar-brand {
@@ -24,6 +24,11 @@
   /* No weird 1px movement */
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }
 
 .features li.right {
@@ -39,9 +44,13 @@
 .features li a {
   display: block;
   height: 99px; /* - border */
+  color: rgb(234, 234, 234);
   font-size: 16px;
-  color: rgb(234,234,234);
   text-decoration: none;
+}
+
+.features li a:hover {
+  color: rgb(248, 248, 248);
 }
 
 .features li a i {
@@ -56,5 +65,12 @@
 }
 
 .main {
-  margin-top: 160px;
+  margin-top: 170px;
+}
+
+.main .mendeleev {
+  min-height: 600px;
+  border: 1px solid rgb(134, 134, 134);
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0 0 4px rgb(167, 167, 167) inset;
 }
