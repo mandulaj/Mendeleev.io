@@ -23,6 +23,7 @@
 
   "dependencies" : {
     "jquery" : "2.1.x",
-    "bootstrap" : "3.x"
+    "bootstrap" : "3.x",
+    "font-awesome" : "4.x"
   }
 }
