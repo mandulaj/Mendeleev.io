@@ -1,0 +1,34 @@
+{
+  "name": "Mendeleev.io",
+  "version": "0.0.1",
+  "description": "A chemistry engine in the browser",
+  "main": "index.js",
+  "contributors" : [
+    {
+      "name" : "Alexander Selzer",
+      "email" : "aselzer3@gmail.com"
+    },
+    {
+      "name" : "Jakub Mandula",
+      "email" : "jakub.aludnam@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpiman/Mendeleev.io.git"
+  },
+  "keywords": [
+    "chemistry",
+    "mendeleev",
+    "elements"
+  ],
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/zpiman/Mendeleev.io/issues"
+  },
+  "homepage": "http://mendeleev.io"
+}
