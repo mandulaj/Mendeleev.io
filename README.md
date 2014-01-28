@@ -1,4 +1,5 @@
 Mendeleev.io
 ============
+http://mendeleev.io
 
-A online periodic table engine
+A online chemistry engine.
