@@ -30,5 +30,10 @@
   "bugs": {
     "url": "https://github.com/zpiman/Mendeleev.io/issues"
   },
-  "homepage": "http://mendeleev.io"
+  "homepage": "http://mendeleev.io",
+
+  "dependencies" : {
+    "express" : "3.x"
+  }
+
 }
