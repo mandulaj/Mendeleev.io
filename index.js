@@ -9,3 +9,4 @@ app.use(express.compress());
 app.use(express.static(__dirname + "/app"));
 
 app.listen(config.port);
+console.log("Listening on port", config.port);
