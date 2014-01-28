@@ -1,0 +1,28 @@
+{
+  "name": "Mendeleev.io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zpiman/Mendeleev.io",
+  "authors": [
+    "Alexander Selzer <aselzer3@gmail.com>"
+  ],
+  "description": "A chemistry engine in the browser.",
+  "keywords": [
+    "chemistry",
+    "app",
+    "mendeleev",
+    "web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies" : {
+    "jquery" : "2.1.x",
+    "bootstrap" : "3.x"
+  }
+}
