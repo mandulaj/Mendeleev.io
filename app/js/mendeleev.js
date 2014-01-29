@@ -5,8 +5,9 @@ Mendeleev.getElements = function(cb) {
     request.open("GET", "/elements.json");
     request.send();
     request.onreadystatechange = function() {
-      if (request.readyState === 4 && request.status === 200)
-        cb(request.response);
+      if ((request.readyState === 4) && (request.status === 200)) {
+        cb(JSON.parse(request.response));
+      }
     }
 } 
 
@@ -14,7 +15,21 @@ Mendeleev.showTable = function() {
   var root = $(".mendeleev");
   root.html("");
   Mendeleev.getElements(function(elements) {
-    root.html("<h2> Hey, I can load JSON data!</h2><pre>" + elements + "</pre>");
+    elements.forEach(function(element) {
+      var elementDiv = $("<div>");
+      elementDiv.addClass("table-element");
+      elementDiv.append(
+        $("<span>")
+        .addClass("element-symbol")
+        .text(element.symbol)
+      );
+      elementDiv.append(
+        $("<span>")
+        .addClass("element-name")
+        .text(element.name)
+      );
+      root.append(elementDiv)
+    });
   });
 }
 

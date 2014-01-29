@@ -1,0 +1,66 @@
+.element {
+  width: 40px;
+  height: 40px;
+}
+
+.element-name {
+  display: block;
+  font-size: 1em;
+}
+
+.element-symbol {
+  display: block;
+  font-size: 4em;
+}
+
+.element.transition-metals {
+
+}
+
+.element.alkali-metals {
+
+}
+
+.element.alkaline-earth-metals {
+
+}
+
+.element.lanthanoids {
+
+}
+
+.element.actinoids {
+
+}
+
+.element.transition-metals {
+
+}
+
+.element.poor-metals {
+
+}
+
+/* Start non-metals */
+
+.element.metalloid {
+
+}
+
+.element.polyatomic-nonmetals {
+
+}
+
+.element.diatomic-nonmetals {
+
+}
+
+/* End non-metals */
+
+.element.noble-gases {
+
+}
+
+.element.unknown {
+
+}
