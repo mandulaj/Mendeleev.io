@@ -17,7 +17,7 @@ Mendeleev.showTable = function() {
   Mendeleev.getElements(function(elements) {
     elements.forEach(function(element) {
       var elementDiv = $("<div>");
-      elementDiv.addClass("table-element");
+      elementDiv.addClass("element");
       elementDiv.append(
         $("<span>")
         .addClass("element-symbol")

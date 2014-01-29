@@ -1,1660 +1,2147 @@
 [
-    {
-        "name": "Hydrogen", 
-        "symbol": "H",
-        "atomic_number": 1,
-        "atomic_weight": 1.008,
-        "boiling_point": 20.271,
-        "melting_point": 13.99,
-        "oxidation_states": [1,-1],
-		"electronegativity": 2.2,
-	    "period" : 1,
-		"block" : "s",
-		"group": "diatomic-nonmetals"
-		
-    }
-	{
-        "name": "Helium", 
-        "symbol": "He",
-        "atomic_number": 2,
-        "atomic_weight": 4.002,
-        "boiling_point": 4.222,
-        "melting_point": 0.95,
-        "oxidation_states": [0],
-		"electronegativity": null,
-	    "period" : 1,
-		"block" : "s",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Lithium", 
-        "symbol": "Li",
-        "atomic_number": 3,
-        "atomic_weight": 6.94,
-        "boiling_point": 1615,
-        "melting_point": 453.65,
-        "oxidation_states": [1],
-		"electronegativity": 0.98,
-	    "period" : 2,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Beryllium", 
-        "symbol": "Be",
-        "atomic_number": 4,
-        "atomic_weight": 9.012,
-        "boiling_point": 2741,
-        "melting_point": 1560,
-        "oxidation_states": [2,1],
-		"electronegativity": 1.57,
-		"period" : 2,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Boron", 
-        "symbol": "B",
-        "atomic_number": 5,
-        "atomic_weight": 10.81,
-        "boiling_point": 4200,
-        "melting_point": 2349,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 2.04,
-		"period" : 2,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Carbon", 
-        "symbol": "C",
-        "atomic_number": 6,
-        "atomic_weight": 12.011,
-        "boiling_point": 5100,
-        "melting_point": 4600,
-        "oxidation_states": [4,3,2,1,0,-1,-2,-3,-4],
-		"electronegativity": 2.55,
-	    "period" : 2,
-		"block" : "p",
-		"group": "polyatomic-nonmetals"
-    }
-	
-	{
-        "name": "Nitrogen", 
-        "symbol": "N",
-        "atomic_number": 7,
-        "atomic_weight": 14.007,
-        "boiling_point": 77.355,
-        "melting_point": 63.15,
-        "oxidation_states": [5,4,3,2,1,-1,-2,-3],
-		"electronegativity": 3.04,
-	    "period" : 2,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	{
-        "name": "Oxygen", 
-        "symbol": "O",
-        "atomic_number": 8,
-        "atomic_weight": 15.999,
-        "boiling_point": 90.188,
-        "melting_point": 54.36,
-        "oxidation_states": [2,1,-1,-2],
-		"electronegativity": 3.44,
-	    "period" : 2,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	{
-        "name": "Fluorine", 
-        "symbol": "F",
-        "atomic_number": 9,
-        "atomic_weight": 18.998,
-        "boiling_point": 85.03,
-        "melting_point": 53.48,
-        "oxidation_states": [-1],
-		"electronegativity": 3.98,
-	    "period" : 2,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	{
-        "name": "Neon", 
-        "symbol": "Ne",
-        "atomic_number": 10,
-        "atomic_weight": 20.179,
-        "boiling_point": 27.104,
-        "melting_point": 24.56,
-        "oxidation_states": [1,0],
-		"electronegativity": null,
-	    "period" : 2,
-		"block" : "p",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Sodium", 
-        "symbol": "Na",
-        "atomic_number": 11,
-        "atomic_weight": 22.989,
-        "boiling_point": 1156.090,
-        "melting_point": 370.944,
-        "oxidation_states": [1,-1],
-		"electronegativity": 0.93,
-	    "period" : 3,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Magnesium", 
-        "symbol": "Mg",
-        "atomic_number": 12,
-        "atomic_weight": 24.305,
-        "boiling_point": 1363,
-        "melting_point": 923,
-        "oxidation_states": [2,1],
-		"electronegativity": 1.31,
-	    "period" : 3,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Aluminium", 
-        "symbol": "Al",
-        "atomic_number": 13,
-        "atomic_weight": 26.981,
-        "boiling_point": 2792,
-        "melting_point": 933.47,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.61,
-	    "period" : 3,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Silicon", 
-        "symbol": "H",
-        "atomic_number": 14,
-        "atomic_weight": 28.085,
-        "boiling_point": 3538,
-        "melting_point": 1687,
-        "oxidation_states": [4,3,2,1,-1,-2,-3,-4],
-		"electronegativity": 1,90,
-	    "period" : 3,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Phosphorus", 
-        "symbol": "P",
-        "atomic_number": 15,
-        "atomic_weight": 30.973,
-        "boiling_point": 553,
-        "melting_point": 317,
-        "oxidation_states": [5,4,3,2,1,-1,-2,-3],
-		"electronegativity": 2.19,
-	    "period" : 3,
-		"block" : "p",
-		"group": "polyatomic-nonmetals"
-    }
-	
-	{
-        "name": "Sulfur", 
-        "symbol": "S",
-        "atomic_number": 16,
-        "atomic_weight": 32.066,
-        "boiling_point": 717.8,
-        "melting_point": 388.36,
-        "oxidation_states": [6,5,4,3,2,1,-1,-2],
-		"electronegativity": 2.58,
-	    "period" : 3,
-		"block" : "p",
-		"group": "polyatomic-nonmetals"
-    }
-	
-	{
-        "name": "Chlorine", 
-        "symbol": "Cl",
-        "atomic_number": 17,
-        "atomic_weight": 35.45,
-        "boiling_point": 239.11,
-        "melting_point": 171.6,
-        "oxidation_states": [7,6,5,4,3,2,1,-1],
-		"electronegativity": 3.16,
-	    "period" : 3,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	
-	{
-        "name": "Argon", 
-        "symbol": "Ar",
-        "atomic_number": 18,
-        "atomic_weight": 39.948,
-        "boiling_point": 87.302,
-        "melting_point": 83.81,
-        "oxidation_states": [0],
-		"electronegativity": null,
-	    "period" : 3,
-		"block" : "p",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Potassium", 
-        "symbol": "K",
-        "atomic_number": 19,
-        "atomic_weight": 39.098,
-        "boiling_point": 1032,
-        "melting_point": 336.7,
-        "oxidation_states": [1,-1],
-		"electronegativity": 0.82,
-	    "period" : 4,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Calcium", 
-        "symbol": "Ca",
-        "atomic_number": 20,
-        "atomic_weight": 40.078,
-        "boiling_point": 1757,
-        "melting_point": 1115,
-        "oxidation_states": [2,1],
-		"electronegativity": 1,
-	    "period" : 4,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Scandium", 
-        "symbol": "Sc",
-        "atomic_number": 21,
-        "atomic_weight": 44.955,
-        "boiling_point": 3109,
-        "melting_point": 1814,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.36,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Titanium", 
-        "symbol": "Ti",
-        "atomic_number": 22,
-        "atomic_weight": 47.867,
-        "boiling_point": 3560,
-        "melting_point": 1941,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.54,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Vanadium", 
-        "symbol": "V",
-        "atomic_number": 23,
-        "atomic_weight": 50.9415,
-        "boiling_point": 3680,
-        "melting_point": 2183,
-        "oxidation_states": [5,4,3,2,1,-1],
-		"electronegativity": 1.63,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Chromium", 
-        "symbol": "Cr",
-        "atomic_number": 24,
-        "atomic_weight": 51.9961,
-        "boiling_point": 2944,
-        "melting_point": 2180,
-        "oxidation_states": [6,5,4,3,2,1,-1,-2],
-		"electronegativity": 1.66,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Manganese", 
-        "symbol": "Mn",
-        "atomic_number": 25,
-        "atomic_weight": 54.938,
-        "boiling_point": 2334,
-        "melting_point": 1519,
-        "oxidation_states": [7,6,5,4,3,2,1,-1,-2,-3],
-		"electronegativity": 1.55,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Iron", 
-        "symbol": "Fe",
-        "atomic_number": 26,
-        "atomic_weight": 55.845,
-        "boiling_point": 3134,
-        "melting_point": 1811,
-        "oxidation_states": [6,5,4,3,2,1,-1,-2],
-		"electronegativity": 1.83,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Cobalt", 
-        "symbol": "Co",
-        "atomic_number": 27,
-        "atomic_weight": 58.933194,
-        "boiling_point": 3200,
-        "melting_point": 1768,
-        "oxidation_states": [5,4,3,2,1,-1],
-		"electronegativity": 1,88,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Nickel", 
-        "symbol": "Ni",
-        "atomic_number": 28,
-        "atomic_weight": 58.6934,
-        "boiling_point": 3186,
-        "melting_point": 1728,
-        "oxidation_states": [4,3,2,1,-1],
-		"electronegativity": 1,91,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Copper", 
-        "symbol": "Cu",
-        "atomic_number": 29,
-        "atomic_weight": 63.546,
-        "boiling_point": 2835,
-        "melting_point": 1357.77,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.90,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	
-	{
-        "name": "Zinc", 
-        "symbol": "Zn",
-        "atomic_number": 30,
-        "atomic_weight": 65.38,
-        "boiling_point": 1180,
-        "melting_point": 692.68,
-        "oxidation_states": [2,1,0],
-		"electronegativity": 1.65,
-	    "period" : 4,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Gallium", 
-        "symbol": "Ga",
-        "atomic_number": 31,
-        "atomic_weight": 69.723,
-        "boiling_point": 2477,
-        "melting_point": 302.9146,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.81,
-	    "period" : 4,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Germanium", 
-        "symbol": "Ge",
-        "atomic_number": 32,
-        "atomic_weight": 72.630,
-        "boiling_point": 3106,
-        "melting_point": 1211.40,
-        "oxidation_states": [4,3,2,1,0,-1,-2,-3,-4],
-		"electronegativity": 2.01,
-	    "period" : 4,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Arsenic", 
-        "symbol": "As",
-        "atomic_number": 33,
-        "atomic_weight": 74.921595,
-        "boiling_point": 887,
-        "melting_point": 1089.95,
-        "oxidation_states": [],
-		"electronegativity": ,
-	    "period" : 4,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Selenium", 
-        "symbol": "Se",
-        "atomic_number": 34,
-        "atomic_weight": 78.971,
-        "boiling_point": 958,
-        "melting_point": 494,
-        "oxidation_states": [6,4,2,1,-2],
-		"electronegativity": 2.55,
-	    "period" : 4,
-		"block" : "p",
-		"group": "polyatomic-nonmetals",
-    }
-	
-	{
-        "name": "Bromine", 
-        "symbol": "Br",
-        "atomic_number": 35,
-        "atomic_weight": 79.904,
-        "boiling_point": 332.0,
-        "melting_point": 265.8,
-        "oxidation_states": [7,5,3,2,1,-1],
-		"electronegativity": 3.96,
-	    "period" : 4,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	{
-        "name": "Krypton", 
-        "symbol": "Kr",
-        "atomic_number": 36,
-        "atomic_weight": 83.798,
-        "boiling_point": 119.93,
-        "melting_point": 115.78,
-        "oxidation_states": [2,1,0],
-		"electronegativity": 3,
-	    "period" : 4,
-		"block" : "p",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Rubidium", 
-        "symbol": "Rb",
-        "atomic_number": 37,
-        "atomic_weight": 85.4678,
-        "boiling_point": 961,
-        "melting_point": 312.45,
-        "oxidation_states": 1,-1],
-		"electronegativity": 0.82,
-	    "period" : 5,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Strontium", 
-        "symbol": "Sr",
-        "atomic_number": 38,
-        "atomic_weight": 87.62,
-        "boiling_point": 1650,
-        "melting_point": 1050,
-        "oxidation_states": [2,1],
-		"electronegativity": 0.85,
-	    "period" : 5,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Yttrium", 
-        "symbol": "Y",
-        "atomic_number": 39,
-        "atomic_weight": 88.90584,
-        "boiling_point": 3609,
-        "melting_point": 1799,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.22,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Zirconium", 
-        "symbol": "Zr",
-        "atomic_number": 40,
-        "atomic_weight": 91.224,
-        "boiling_point": 4682,
-        "melting_point": 2128,
-        "oxidation_states": [4, 3, 2, 1],
-		"electronegativity": 1.33,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Niobium", 
-        "symbol": "Nb",
-        "atomic_number": 41,
-        "atomic_weight": 92.90637,
-        "boiling_point": 5017,
-        "melting_point": 2750,
-        "oxidation_states": [5,4,3,2,-1],
-		"electronegativity": 1.6,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Molybdenum", 
-        "symbol": "Mo",
-        "atomic_number": 42,
-        "atomic_weight": 95.95,
-        "boiling_point": 4912,
-        "melting_point": 2896,
-        "oxidation_states": [6,5,4,3,2,1,-1,-2],
-		"electronegativity": 2.16,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Technetium", 
-        "symbol": "Tc",
-        "atomic_number": 43,
-        "atomic_weight": 98,
-        "boiling_point": 4538,
-        "melting_point": 2430,
-        "oxidation_states": [7,6,5,4,3,2,1,-1,-3],
-		"electronegativity": 1.9,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Ruthenium", 
-        "symbol": "Ru",
-        "atomic_number": 44,
-        "atomic_weight": 101.07,
-        "boiling_point": 4423,
-        "melting_point": 2607,
-        "oxidation_states": [8,7,6,4,3,2,1,-2],
-		"electronegativity": 2.2,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Rhodium", 
-        "symbol": "Rh",
-        "atomic_number": 45,
-        "atomic_weight": 102.90550,
-        "boiling_point": 3968,
-        "melting_point": 2237,
-        "oxidation_states": [6,5,4,3,2,1,-1],
-		"electronegativity": 2.28,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Palladium", 
-        "symbol": "Pd",
-        "atomic_number": 46,
-        "atomic_weight": 106.42,
-        "boiling_point": 3236,
-        "melting_point": 1828.05,
-        "oxidation_states": [0,1,2,4],
-		"electronegativity": 2.20,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }    
-	
-	{
-        "name": "Silver", 
-        "symbol": "Ag",
-        "atomic_number": 47,
-        "atomic_weight": 107.8682,
-        "boiling_point": 2435,
-        "melting_point": 1234.93,
-        "oxidation_states": [1,2,3],
-		"electronegativity": 1.93,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Cadmium", 
-        "symbol": "Cd",
-        "atomic_number": 48,
-        "atomic_weight": 112.414,
-        "boiling_point": 1040,
-        "melting_point": 594.22,
-        "oxidation_states": [2,1],
-		"electronegativity": 1.69,
-	    "period" : 5,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Indium", 
-        "symbol": "In",
-        "atomic_number": 49,
-        "atomic_weight": 114.818,
-        "boiling_point": 2345,
-        "melting_point": 429.7485,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.78,
-	    "period" : 5,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Tin", 
-        "symbol": "Sn",
-        "atomic_number": 50,
-        "atomic_weight": 118.710,
-        "boiling_point": 2875,
-        "melting_point": 505.08,
-        "oxidation_states": [4,3,2,1,-4],
-		"electronegativity": 1.96,
-	    "period" : 5,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Antimony",
-        "symbol": "Sb",
-        "atomic_number": 51,
-        "atomic_weight": 121.760,
-        "boiling_point": 1860,
-        "melting_point": 903.78,
-        "oxidation_states": [5,3,-3],
-		"electronegativity": 2.05,
-	    "period" : 5,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Tellurium", 
-        "symbol": "Te",
-        "atomic_number": 52,
-        "atomic_weight": 127.60,
-        "boiling_point": 1261,
-        "melting_point": 722.66,
-        "oxidation_states": [6,5,4,2,-2],
-		"electronegativity": 2.1,
-	    "period" : 5,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Iodine", 
-        "symbol": "I",
-        "atomic_number": 53,
-        "atomic_weight": 126.90447,
-        "boiling_point": 457.4,
-        "melting_point": 386.85,
-        "oxidation_states": [7,5,3,1,-1],
-		"electronegativity": 2.66,
-	    "period" : 5,
-		"block" : "p",
-		"group": "diatomic-nonmetals"
-    }
-	
-	{
-        "name": "Xenon", 
-        "symbol": "Xe",
-        "atomic_number": 54,
-        "atomic_weight": 131.293,
-        "boiling_point": 165.051,
-        "melting_point": 161.40,
-        "oxidation_states": [0,1,2,4,6,8],
-		"electronegativity": 2.6,
-	    "period" : 5,
-		"block" : "p",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Caesium", 
-        "symbol": "Cs",
-        "atomic_number": 55,
-        "atomic_weight": 132.90545196,
-        "boiling_point": 944,
-        "melting_point": 301.7,
-        "oxidation_states": [1,-1],
-		"electronegativity": 0.79,
-	    "period" : 6,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Barium", 
-        "symbol": "Ba",
-        "atomic_number": 56,
-        "atomic_weight": 137.327,
-        "boiling_point": 2118,
-        "melting_point": 1000,
-        "oxidation_states": [2],
-		"electronegativity": 0.89,
-	    "period" : 6,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Lanthanum", 
-        "symbol": "La",
-        "atomic_number": 57,
-        "atomic_weight": 138.90547,
-        "boiling_point": 3737,
-        "melting_point": 1193,
-        "oxidation_states": [3,2],
-		"electronegativity": 1.10,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Cerium", 
-        "symbol": "Ce",
-        "atomic_number": 58,
-        "atomic_weight": 140.116,
-        "boiling_point": 3716,
-        "melting_point": 1068,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.12,
-	    "period" : 6,
-		"block" : "",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Praseodymium", 
-        "symbol": "Pr",
-        "atomic_number": 59,
-        "atomic_weight": 140.90766,
-        "boiling_point": 3793,
-        "melting_point": 1208,
-        "oxidation_states": [4,3,2],
-		"electronegativity": 1.13,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Neodymium", 
-        "symbol": "Nd",
-        "atomic_number": 60,
-        "atomic_weight": 144.242,
-        "boiling_point": 3347,
-        "melting_point": 1297,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.14,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Promethium", 
-        "symbol": "Pm",
-        "atomic_number": 61,
-        "atomic_weight": 145,
-        "boiling_point": 3273,
-        "melting_point": 1315,
-        "oxidation_states": [3],
-		"electronegativity": 1.13,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Samarium", 
-        "symbol": "Sm",
-        "atomic_number": 62,
-        "atomic_weight": 150.36,
-        "boiling_point": 2067,
-        "melting_point": 1345,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.17,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	
-	
-	{
-        "name": "Europium", 
-        "symbol": "Eu",
-        "atomic_number": 63,
-        "atomic_weight": 151.964,
-        "boiling_point": 1802,
-        "melting_point": 1099,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.2,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Gadolinium", 
-        "symbol": "Gd",
-        "atomic_number": 64,
-        "atomic_weight": 157.25,
-        "boiling_point": 3546,
-        "melting_point": 1585,
-        "oxidation_states": [1,2,3],
-		"electronegativity": 1.20,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Terbium", 
-        "symbol": "Tb",
-        "atomic_number": 65,
-        "atomic_weight": 158.92535,
-        "boiling_point": 3503,
-        "melting_point": 1629,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.2,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Dysprosium", 
-        "symbol": "Dy",
-        "atomic_number": 66,
-        "atomic_weight": 162.500,
-        "boiling_point": 2840,
-        "melting_point": 1680,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.22,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Holmium", 
-        "symbol": "Ho",
-        "atomic_number": 67,
-        "atomic_weight": 164.93033,
-        "boiling_point": 2993,
-        "melting_point": 1734,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.23,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Erbium", 
-        "symbol": "Er",
-        "atomic_number": 68,
-        "atomic_weight": 167.259,
-        "boiling_point": 3141,
-        "melting_point": 1802,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.24,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Thulium", 
-        "symbol": "Tm",
-        "atomic_number": 69,
-        "atomic_weight": 168.93422,
-        "boiling_point": 2223,
-        "melting_point": 1818,
-        "oxidation_states": [2,3,4],
-		"electronegativity": 1.25,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Ytterbium", 
-        "symbol": "Tb",
-        "atomic_number": 70,
-        "atomic_weight": 173.054,
-        "boiling_point": 1469,
-        "melting_point": 1097,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.1,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Lutetium", 
-        "symbol": "Lu",
-        "atomic_number": 71,
-        "atomic_weight": 174.9668,
-        "boiling_point": 3675,
-        "melting_point": 1925,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.27,
-	    "period" : 6,
-		"block" : "f",
-		"group": "lanthanides"
-    }
-	
-	{
-        "name": "Hafnium", 
-        "symbol": "Hf",
-        "atomic_number": 72,
-        "atomic_weight": 178.49,
-        "boiling_point": 4876,
-        "melting_point": 2506,
-        "oxidation_states": [4,3,2],
-		"electronegativity": 1.3,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Tantalum", 
-        "symbol": "Ta",
-        "atomic_number": 73,
-        "atomic_weight": 180.94788,
-        "boiling_point": 5731,
-        "melting_point": 3290,
-        "oxidation_states": [5,4,3,2,-1],
-		"electronegativity": 1.5,
-	    "period" : 6,
-		"block" : "d",
-        "group": "transition-metals"
-	}
-	
-	{
-        "name": "Tungsten", 
-        "symbol": "W",
-        "atomic_number": 74,
-        "atomic_weight": 183.84,
-        "boiling_point": 5828,
-        "melting_point": 3695,
-        "oxidation_states": [6,5,4,3,2,1,0,-1,-2],
-		"electronegativity": 2.36,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Rhenium", 
-        "symbol": "Re",
-        "atomic_number": 75,
-        "atomic_weight": 186.207,
-        "boiling_point": 5869,
-        "melting_point": 3459,
-        "oxidation_states": [7,6,5,4,3,2,1,0,-4],
-		"electronegativity": 1.9,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Osmium", 
-        "symbol": "Os",
-        "atomic_number": 76,
-        "atomic_weight": 190.23,
-        "boiling_point": 5285,
-        "melting_point": 3306,
-        "oxidation_states": [8,7,6,5,4,3,2,1,0,-1,-2],
-		"electronegativity": 2.2,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Iridium", 
-        "symbol": "Ir",
-        "atomic_number": 77,
-        "atomic_weight": 192.217,
-        "boiling_point": 4701,
-        "melting_point": 2739,
-        "oxidation_states": [-3,-1,0,1,2,3,4,5,6,8],
-		"electronegativity": 2.2,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Platinum", 
-        "symbol": "Pt",
-        "atomic_number": 78,
-        "atomic_weight": 195.084,
-        "boiling_point": 4098,
-        "melting_point": 2041.4,
-        "oxidation_states": [6,5,4,3,2,1,-1,-2],
-		"electronegativity": 2.28,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Gold", 
-        "symbol": "Au",
-        "atomic_number": 79,
-        "atomic_weight": 196.966569,
-        "boiling_point": 3129,
-        "melting_point": 1337.33,
-        "oxidation_states": [5,4,3,2,1,-1],
-		"electronegativity": 2.54,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Mercury", 
-        "symbol": "Hg",
-        "atomic_number": 80,
-        "atomic_weight": 200.592,
-        "boiling_point": 629.88,
-        "melting_point": 234.3210,
-        "oxidation_states": [4,2],
-		"electronegativity": 2.00,
-	    "period" : 6,
-		"block" : "d",
-		"group": "transition-metals"
-    
-	}
-	
-	{
-        "name": "Thallium", 
-        "symbol": "Tl",
-        "atomic_number": 81,
-        "atomic_weight": 204.38,
-        "boiling_point": 1746,
-        "melting_point": 577,
-        "oxidation_states": [3,2,1],
-		"electronegativity": 1.62,
-	    "period" : 6,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Lead", 
-        "symbol": "Pb",
-        "atomic_number": 82,
-        "atomic_weight": 207.2,
-        "boiling_point": 2022,
-        "melting_point": 600.61,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.87,
-	    "period" : 6,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Bismuth", 
-        "symbol": "Bi",
-        "atomic_number": 83,
-        "atomic_weight": 208.98040,
-        "boiling_point": 1837,
-        "melting_point": 544.7,
-        "oxidation_states": [5,4,3,2,1],
-		"electronegativity": 2.02,
-	    "period" : 6,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Polonium", 
-        "symbol": Po"",
-        "atomic_number": 84,
-        "atomic_weight": 209,
-        "boiling_point": 1235,
-        "melting_point": 527,
-        "oxidation_states": [6,5,4,2,-2],
-		"electronegativity": 2,
-	    "period" : 6,
-		"block" : "p",
-		"group": "poor-metals"
-    }
-	
-	{
-        "name": "Astatine", 
-        "symbol": "At",
-        "atomic_number": 85,
-        "atomic_weight": 210,
-        "boiling_point": 610,
-        "melting_point": 575,
-        "oxidation_states": [-1,1,3,5,7],
-		"electronegativity": 2.2,
-	    "period" : 6,
-		"block" : "p",
-		"group": "metalloids"
-    }
-	
-	{
-        "name": "Radon", 
-        "symbol": "Rn",
-        "atomic_number": 86,
-        "atomic_weight": 222,
-        "boiling_point": 211.5,
-        "melting_point": 202,
-        "oxidation_states": [6,2,0],
-		"electronegativity": 2.2,
-	    "period" : 6,
-		"block" : "p",
-		"group": "noble-gases"
-    }
-	
-	{
-        "name": "Francium", 
-        "symbol": "Fr",
-        "atomic_number": 87,
-        "atomic_weight": 223,
-        "boiling_point": 950,
-        "melting_point": 300,
-        "oxidation_states": [1],
-		"electronegativity": 0.7,
-	    "period" : 7,
-		"block" : "s",
-		"group": "alkali-metals"
-    }
-	
-	{
-        "name": "Radium", 
-        "symbol": "Ra",
-        "atomic_number": 88,
-        "atomic_weight": 226,
-        "boiling_point": 2010,
-        "melting_point": 973,
-        "oxidation_states": [2],
-		"electronegativity": 0.9,
-	    "period" : 7,
-		"block" : "s",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Actinium", 
-        "symbol": "Ac",
-        "atomic_number": 89,
-        "atomic_weight": 227,
-        "boiling_point": 3471,
-        "melting_point": 1323,
-        "oxidation_states": [3],
-		"electronegativity": 1.1,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Thorium", 
-        "symbol": "Th",
-        "atomic_number": 90,
-        "atomic_weight": 232.0377,
-        "boiling_point": 5061,
-        "melting_point": 2115,
-        "oxidation_states": [4,3,2,1],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Protactinium", 
-        "symbol": "Pa",
-        "atomic_number": 91,
-        "atomic_weight": 231.03588,
-        "boiling_point": 4300,
-        "melting_point": 1841,
-        "oxidation_states": [2,3,4,5],
-		"electronegativity": 1.5,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Uranium", 
-        "symbol": "U",
-        "atomic_number": 92,
-        "atomic_weight": 238.02891,
-        "boiling_point": 4404,
-        "melting_point": 1405.3,
-        "oxidation_states": [6,5,4,3,2,1],
-		"electronegativity": 1.38,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Neptunium", 
-        "symbol": "Np",
-        "atomic_number": 93,
-        "atomic_weight": 237,
-        "boiling_point": 4447,
-        "melting_point": 912,
-        "oxidation_states": [7,6,5,4,3],
-		"electronegativity": 1.36,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Plutonium", 
-        "symbol": "Pu",
-        "atomic_number": 94,
-        "atomic_weight": 244,
-        "boiling_point": 3505,
-        "melting_point": 912.5,
-        "oxidation_states": [8,7,6,5,4,3,2,1],
-		"electronegativity": 1.28,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Americium", 
-        "symbol": "Am",
-        "atomic_number": 95,
-        "atomic_weight": 243,
-        "boiling_point": 2880,
-        "melting_point": 1449,
-        "oxidation_states": [7,6,5,4,3,2],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Curium", 
-        "symbol": "Cm",
-        "atomic_number": 96,
-        "atomic_weight": 247,
-        "boiling_point": 3383,
-        "melting_point": 1613,
-        "oxidation_states": [8,6,4,3,2],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Berkelium", 
-        "symbol": "Bk",
-        "atomic_number": 97,
-        "atomic_weight": 247,
-        "boiling_point": 2900,
-        "melting_point": 1259,
-        "oxidation_states": [3,4],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Californium", 
-        "symbol": "Cf",
-        "atomic_number": 98,
-        "atomic_weight": 251,
-        "boiling_point": 1743,
-        "melting_point": 1173,
-        "oxidation_states": [2,3,4],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Einsteinium", 
-        "symbol": "Es",
-        "atomic_number": 99,
-        "atomic_weight": 252,
-        "boiling_point": 1269,
-        "melting_point": 1133,
-        "oxidation_states": [2,3,4],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Fermium", 
-        "symbol": "Fm",
-        "atomic_number": 100,
-        "atomic_weight": 257,
-        "boiling_point": null,
-        "melting_point": 1125,
-        "oxidation_states": [2,3],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Mendelevium", 
-        "symbol": "Md",
-        "atomic_number": 101,
-        "atomic_weight": 258,
-        "boiling_point": null,
-        "melting_point": 1100,
-        "oxidation_states": [2,3],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Nobelium", 
-        "symbol": "No",
-        "atomic_number": 102,
-        "atomic_weight": 259,
-        "boiling_point": null,
-        "melting_point": 1100,
-        "oxidation_states": [2,3],
-		"electronegativity": 1.3,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	
-	{
-        "name": "Lawrencium", 
-        "symbol": "Lr",
-        "atomic_number": 103,
-        "atomic_weight": 262,
-        "boiling_point": null,
-        "melting_point": 1900,
-        "oxidation_states": [3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "f",
-		"group": "actinides"
-    }
-	
-	{
-        "name": "Rutherfordium", 
-        "symbol": "Rf",
-        "atomic_number": 104,
-        "atomic_weight": 267,
-        "boiling_point": 5800,
-        "melting_point": 2400,
-        "oxidation_states": [4,3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Dubnium", 
-        "symbol": "Db",
-        "atomic_number": 105,
-        "atomic_weight": 268,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [5,4,3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Seaborgium", 
-        "symbol": "Sg",
-        "atomic_number": 106,
-        "atomic_weight": 269,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [6,5,4,3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Bohrium", 
-        "symbol": "Bh",
-        "atomic_number": 107,
-        "atomic_weight": 270,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [7,5,4,3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Hassium", 
-        "symbol": "Hs",
-        "atomic_number": 108,
-        "atomic_weight": 269,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [8,6,5,4,3,2],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "transition-metals"
-    }
-	
-	{
-        "name": "Meitnerium", 
-        "symbol": "Mt",
-        "atomic_number": 109,
-        "atomic_weight": 278,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [9,8,6,4,3,1],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Darmstadtium", 
-        "symbol": "Ds",
-        "atomic_number": 110,
-        "atomic_weight": 281,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [8,6,4,2,0],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Roentgenium", 
-        "symbol": "Rg",
-        "atomic_number": 111,
-        "atomic_weight": 281,
-        "boiling_point": null,
-        "melting_point": null,
-        "oxidation_states": [5,3,1,-1],
-		"electronegativity": ,
-	    "period" : 7,
-		"block" : "d",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Copernicium", 
-        "symbol": "Cn",
-        "atomic_number": 112,
-        "atomic_weight": 285,
-        "boiling_point": 357,
-        "melting_point": null,
-        "oxidation_states": [4,2,0],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "d",
-		"group": "alkaline-earth-metals"
-    }
-	
-	{
-        "name": "Ununtrium", 
-        "symbol": "Uut",
-        "atomic_number": 113,
-        "atomic_weight": 286,
-        "boiling_point": 1430,
-        "melting_point": 700,
-        "oxidation_states": [1,2,3,5],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Flerovium", 
-        "symbol": "Fl",
-        "atomic_number": 114,
-        "atomic_weight": 289,
-        "boiling_point": 420,
-        "melting_point": 340,
-        "oxidation_states": [0,2,4],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Ununpentium", 
-        "symbol": "Uup",
-        "atomic_number": 115,
-        "atomic_weight": 289,
-        "boiling_point": 1400,
-        "melting_point": 670,
-        "oxidation_states": [1,3],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Livermorium", 
-        "symbol": "Lv",
-        "atomic_number": 116,
-        "atomic_weight": 293,
-        "boiling_point": 780,
-        "melting_point": 1135,
-        "oxidation_states": [-2,2,4],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p",
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Ununseptium", 
-        "symbol": "Uus",
-        "atomic_number": 117,
-        "atomic_weight": 294,
-        "boiling_point": 823,
-        "melting_point": 773,
-        "oxidation_states": [-1,1,3,5],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p"
-		"group": "unknown"
-    }
-	
-	{
-        "name": "Ununoctium", 
-        "symbol": "UUo",
-        "atomic_number": 118,
-        "atomic_weight": 294,
-        "boiling_point": 350,
-        "melting_point": 439,
-        "oxidation_states": [-1,0,1,2,4],
-		"electronegativity": null,
-	    "period" : 7,
-		"block" : "p",
-		"group": "unknown"
-    }
-	
+  {
+    "name": "Hydrogen",
+    "symbol": "H",
+    "atomic_number": 1,
+    "atomic_weight": 1.008,
+    "boiling_point": 20.271,
+    "melting_point": 13.99,
+    "oxidation_states": [
+      1,
+      -1
+    ],
+    "electronegativity": 2.2,
+    "period": 1,
+    "block": "s",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Helium",
+    "symbol": "He",
+    "atomic_number": 2,
+    "atomic_weight": 4.002,
+    "boiling_point": 4.222,
+    "melting_point": 0.95,
+    "oxidation_states": [
+      0
+    ],
+    "electronegativity": null,
+    "period": 1,
+    "block": "s",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Lithium",
+    "symbol": "Li",
+    "atomic_number": 3,
+    "atomic_weight": 6.94,
+    "boiling_point": 1615,
+    "melting_point": 453.65,
+    "oxidation_states": [
+      1
+    ],
+    "electronegativity": 0.98,
+    "period": 2,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Beryllium",
+    "symbol": "Be",
+    "atomic_number": 4,
+    "atomic_weight": 9.012,
+    "boiling_point": 2741,
+    "melting_point": 1560,
+    "oxidation_states": [
+      2,
+      1
+    ],
+    "electronegativity": 1.57,
+    "period": 2,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Boron",
+    "symbol": "B",
+    "atomic_number": 5,
+    "atomic_weight": 10.81,
+    "boiling_point": 4200,
+    "melting_point": 2349,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 2.04,
+    "period": 2,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Carbon",
+    "symbol": "C",
+    "atomic_number": 6,
+    "atomic_weight": 12.011,
+    "boiling_point": 5100,
+    "melting_point": 4600,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      -1,
+      -2,
+      -3,
+      -4
+    ],
+    "electronegativity": 2.55,
+    "period": 2,
+    "block": "p",
+    "group": "polyatomic-nonmetals"
+  },
+  {
+    "name": "Nitrogen",
+    "symbol": "N",
+    "atomic_number": 7,
+    "atomic_weight": 14.007,
+    "boiling_point": 77.355,
+    "melting_point": 63.15,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2,
+      -3
+    ],
+    "electronegativity": 3.04,
+    "period": 2,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Oxygen",
+    "symbol": "O",
+    "atomic_number": 8,
+    "atomic_weight": 15.999,
+    "boiling_point": 90.188,
+    "melting_point": 54.36,
+    "oxidation_states": [
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 3.44,
+    "period": 2,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Fluorine",
+    "symbol": "F",
+    "atomic_number": 9,
+    "atomic_weight": 18.998,
+    "boiling_point": 85.03,
+    "melting_point": 53.48,
+    "oxidation_states": [
+      -1
+    ],
+    "electronegativity": 3.98,
+    "period": 2,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Neon",
+    "symbol": "Ne",
+    "atomic_number": 10,
+    "atomic_weight": 20.179,
+    "boiling_point": 27.104,
+    "melting_point": 24.56,
+    "oxidation_states": [
+      1,
+      0
+    ],
+    "electronegativity": null,
+    "period": 2,
+    "block": "p",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Sodium",
+    "symbol": "Na",
+    "atomic_number": 11,
+    "atomic_weight": 22.989,
+    "boiling_point": 1156.09,
+    "melting_point": 370.944,
+    "oxidation_states": [
+      1,
+      -1
+    ],
+    "electronegativity": 0.93,
+    "period": 3,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Magnesium",
+    "symbol": "Mg",
+    "atomic_number": 12,
+    "atomic_weight": 24.305,
+    "boiling_point": 1363,
+    "melting_point": 923,
+    "oxidation_states": [
+      2,
+      1
+    ],
+    "electronegativity": 1.31,
+    "period": 3,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Aluminium",
+    "symbol": "Al",
+    "atomic_number": 13,
+    "atomic_weight": 26.981,
+    "boiling_point": 2792,
+    "melting_point": 933.47,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.61,
+    "period": 3,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Silicon",
+    "symbol": "H",
+    "atomic_number": 14,
+    "atomic_weight": 28.085,
+    "boiling_point": 3538,
+    "melting_point": 1687,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2,
+      -3,
+      -4
+    ],
+    "electronegativity": 1.9,
+    "period": 3,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Phosphorus",
+    "symbol": "P",
+    "atomic_number": 15,
+    "atomic_weight": 30.973,
+    "boiling_point": 553,
+    "melting_point": 317,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2,
+      -3
+    ],
+    "electronegativity": 2.19,
+    "period": 3,
+    "block": "p",
+    "group": "polyatomic-nonmetals"
+  },
+  {
+    "name": "Sulfur",
+    "symbol": "S",
+    "atomic_number": 16,
+    "atomic_weight": 32.066,
+    "boiling_point": 717.8,
+    "melting_point": 388.36,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 2.58,
+    "period": 3,
+    "block": "p",
+    "group": "polyatomic-nonmetals"
+  },
+  {
+    "name": "Chlorine",
+    "symbol": "Cl",
+    "atomic_number": 17,
+    "atomic_weight": 35.45,
+    "boiling_point": 239.11,
+    "melting_point": 171.6,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 3.16,
+    "period": 3,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Argon",
+    "symbol": "Ar",
+    "atomic_number": 18,
+    "atomic_weight": 39.948,
+    "boiling_point": 87.302,
+    "melting_point": 83.81,
+    "oxidation_states": [
+      0
+    ],
+    "electronegativity": null,
+    "period": 3,
+    "block": "p",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Potassium",
+    "symbol": "K",
+    "atomic_number": 19,
+    "atomic_weight": 39.098,
+    "boiling_point": 1032,
+    "melting_point": 336.7,
+    "oxidation_states": [
+      1,
+      -1
+    ],
+    "electronegativity": 0.82,
+    "period": 4,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Calcium",
+    "symbol": "Ca",
+    "atomic_number": 20,
+    "atomic_weight": 40.078,
+    "boiling_point": 1757,
+    "melting_point": 1115,
+    "oxidation_states": [
+      2,
+      1
+    ],
+    "electronegativity": 1,
+    "period": 4,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Scandium",
+    "symbol": "Sc",
+    "atomic_number": 21,
+    "atomic_weight": 44.955,
+    "boiling_point": 3109,
+    "melting_point": 1814,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.36,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Titanium",
+    "symbol": "Ti",
+    "atomic_number": 22,
+    "atomic_weight": 47.867,
+    "boiling_point": 3560,
+    "melting_point": 1941,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.54,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Vanadium",
+    "symbol": "V",
+    "atomic_number": 23,
+    "atomic_weight": 50.9415,
+    "boiling_point": 3680,
+    "melting_point": 2183,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 1.63,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Chromium",
+    "symbol": "Cr",
+    "atomic_number": 24,
+    "atomic_weight": 51.9961,
+    "boiling_point": 2944,
+    "melting_point": 2180,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 1.66,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Manganese",
+    "symbol": "Mn",
+    "atomic_number": 25,
+    "atomic_weight": 54.938,
+    "boiling_point": 2334,
+    "melting_point": 1519,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2,
+      -3
+    ],
+    "electronegativity": 1.55,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Iron",
+    "symbol": "Fe",
+    "atomic_number": 26,
+    "atomic_weight": 55.845,
+    "boiling_point": 3134,
+    "melting_point": 1811,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 1.83,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Cobalt",
+    "symbol": "Co",
+    "atomic_number": 27,
+    "atomic_weight": 58.933194,
+    "boiling_point": 3200,
+    "melting_point": 1768,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 1.88,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Nickel",
+    "symbol": "Ni",
+    "atomic_number": 28,
+    "atomic_weight": 58.6934,
+    "boiling_point": 3186,
+    "melting_point": 1728,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 1.91,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Copper",
+    "symbol": "Cu",
+    "atomic_number": 29,
+    "atomic_weight": 63.546,
+    "boiling_point": 2835,
+    "melting_point": 1357.77,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.9,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Zinc",
+    "symbol": "Zn",
+    "atomic_number": 30,
+    "atomic_weight": 65.38,
+    "boiling_point": 1180,
+    "melting_point": 692.68,
+    "oxidation_states": [
+      2,
+      1,
+      0
+    ],
+    "electronegativity": 1.65,
+    "period": 4,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Gallium",
+    "symbol": "Ga",
+    "atomic_number": 31,
+    "atomic_weight": 69.723,
+    "boiling_point": 2477,
+    "melting_point": 302.9146,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.81,
+    "period": 4,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Germanium",
+    "symbol": "Ge",
+    "atomic_number": 32,
+    "atomic_weight": 72.63,
+    "boiling_point": 3106,
+    "melting_point": 1211.4,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      -1,
+      -2,
+      -3,
+      -4
+    ],
+    "electronegativity": 2.01,
+    "period": 4,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Arsenic",
+    "symbol": "As",
+    "atomic_number": 33,
+    "atomic_weight": 74.921595,
+    "boiling_point": 887,
+    "melting_point": 1089.95,
+    "oxidation_states": [],
+    "electronegativity": null,
+    "period": 4,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Selenium",
+    "symbol": "Se",
+    "atomic_number": 34,
+    "atomic_weight": 78.971,
+    "boiling_point": 958,
+    "melting_point": 494,
+    "oxidation_states": [
+      6,
+      4,
+      2,
+      1,
+      -2
+    ],
+    "electronegativity": 2.55,
+    "period": 4,
+    "block": "p",
+    "group": "polyatomic-nonmetals"
+  },
+  {
+    "name": "Bromine",
+    "symbol": "Br",
+    "atomic_number": 35,
+    "atomic_weight": 79.904,
+    "boiling_point": 332,
+    "melting_point": 265.8,
+    "oxidation_states": [
+      7,
+      5,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 3.96,
+    "period": 4,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Krypton",
+    "symbol": "Kr",
+    "atomic_number": 36,
+    "atomic_weight": 83.798,
+    "boiling_point": 119.93,
+    "melting_point": 115.78,
+    "oxidation_states": [
+      2,
+      1,
+      0
+    ],
+    "electronegativity": 3,
+    "period": 4,
+    "block": "p",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Rubidium",
+    "symbol": "Rb",
+    "atomic_number": 37,
+    "atomic_weight": 85.4678,
+    "boiling_point": 961,
+    "melting_point": 312.45,
+    "oxidation_states": [
+      1,
+      -1
+    ],
+    "electronegativity": 0.82,
+    "period": 5,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Strontium",
+    "symbol": "Sr",
+    "atomic_number": 38,
+    "atomic_weight": 87.62,
+    "boiling_point": 1650,
+    "melting_point": 1050,
+    "oxidation_states": [
+      2,
+      1
+    ],
+    "electronegativity": 0.85,
+    "period": 5,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Yttrium",
+    "symbol": "Y",
+    "atomic_number": 39,
+    "atomic_weight": 88.90584,
+    "boiling_point": 3609,
+    "melting_point": 1799,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.22,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Zirconium",
+    "symbol": "Zr",
+    "atomic_number": 40,
+    "atomic_weight": 91.224,
+    "boiling_point": 4682,
+    "melting_point": 2128,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.33,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Niobium",
+    "symbol": "Nb",
+    "atomic_number": 41,
+    "atomic_weight": 92.90637,
+    "boiling_point": 5017,
+    "melting_point": 2750,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      -1
+    ],
+    "electronegativity": 1.6,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Molybdenum",
+    "symbol": "Mo",
+    "atomic_number": 42,
+    "atomic_weight": 95.95,
+    "boiling_point": 4912,
+    "melting_point": 2896,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 2.16,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Technetium",
+    "symbol": "Tc",
+    "atomic_number": 43,
+    "atomic_weight": 98,
+    "boiling_point": 4538,
+    "melting_point": 2430,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -3
+    ],
+    "electronegativity": 1.9,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Ruthenium",
+    "symbol": "Ru",
+    "atomic_number": 44,
+    "atomic_weight": 101.07,
+    "boiling_point": 4423,
+    "melting_point": 2607,
+    "oxidation_states": [
+      8,
+      7,
+      6,
+      4,
+      3,
+      2,
+      1,
+      -2
+    ],
+    "electronegativity": 2.2,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Rhodium",
+    "symbol": "Rh",
+    "atomic_number": 45,
+    "atomic_weight": 102.9055,
+    "boiling_point": 3968,
+    "melting_point": 2237,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 2.28,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Palladium",
+    "symbol": "Pd",
+    "atomic_number": 46,
+    "atomic_weight": 106.42,
+    "boiling_point": 3236,
+    "melting_point": 1828.05,
+    "oxidation_states": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "electronegativity": 2.2,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Silver",
+    "symbol": "Ag",
+    "atomic_number": 47,
+    "atomic_weight": 107.8682,
+    "boiling_point": 2435,
+    "melting_point": 1234.93,
+    "oxidation_states": [
+      1,
+      2,
+      3
+    ],
+    "electronegativity": 1.93,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Cadmium",
+    "symbol": "Cd",
+    "atomic_number": 48,
+    "atomic_weight": 112.414,
+    "boiling_point": 1040,
+    "melting_point": 594.22,
+    "oxidation_states": [
+      2,
+      1
+    ],
+    "electronegativity": 1.69,
+    "period": 5,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Indium",
+    "symbol": "In",
+    "atomic_number": 49,
+    "atomic_weight": 114.818,
+    "boiling_point": 2345,
+    "melting_point": 429.7485,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.78,
+    "period": 5,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Tin",
+    "symbol": "Sn",
+    "atomic_number": 50,
+    "atomic_weight": 118.71,
+    "boiling_point": 2875,
+    "melting_point": 505.08,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1,
+      -4
+    ],
+    "electronegativity": 1.96,
+    "period": 5,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Antimony",
+    "symbol": "Sb",
+    "atomic_number": 51,
+    "atomic_weight": 121.76,
+    "boiling_point": 1860,
+    "melting_point": 903.78,
+    "oxidation_states": [
+      5,
+      3,
+      -3
+    ],
+    "electronegativity": 2.05,
+    "period": 5,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Tellurium",
+    "symbol": "Te",
+    "atomic_number": 52,
+    "atomic_weight": 127.6,
+    "boiling_point": 1261,
+    "melting_point": 722.66,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      2,
+      -2
+    ],
+    "electronegativity": 2.1,
+    "period": 5,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Iodine",
+    "symbol": "I",
+    "atomic_number": 53,
+    "atomic_weight": 126.90447,
+    "boiling_point": 457.4,
+    "melting_point": 386.85,
+    "oxidation_states": [
+      7,
+      5,
+      3,
+      1,
+      -1
+    ],
+    "electronegativity": 2.66,
+    "period": 5,
+    "block": "p",
+    "group": "diatomic-nonmetals"
+  },
+  {
+    "name": "Xenon",
+    "symbol": "Xe",
+    "atomic_number": 54,
+    "atomic_weight": 131.293,
+    "boiling_point": 165.051,
+    "melting_point": 161.4,
+    "oxidation_states": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      8
+    ],
+    "electronegativity": 2.6,
+    "period": 5,
+    "block": "p",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Caesium",
+    "symbol": "Cs",
+    "atomic_number": 55,
+    "atomic_weight": 132.90545196,
+    "boiling_point": 944,
+    "melting_point": 301.7,
+    "oxidation_states": [
+      1,
+      -1
+    ],
+    "electronegativity": 0.79,
+    "period": 6,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Barium",
+    "symbol": "Ba",
+    "atomic_number": 56,
+    "atomic_weight": 137.327,
+    "boiling_point": 2118,
+    "melting_point": 1000,
+    "oxidation_states": [
+      2
+    ],
+    "electronegativity": 0.89,
+    "period": 6,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Lanthanum",
+    "symbol": "La",
+    "atomic_number": 57,
+    "atomic_weight": 138.90547,
+    "boiling_point": 3737,
+    "melting_point": 1193,
+    "oxidation_states": [
+      3,
+      2
+    ],
+    "electronegativity": 1.1,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Cerium",
+    "symbol": "Ce",
+    "atomic_number": 58,
+    "atomic_weight": 140.116,
+    "boiling_point": 3716,
+    "melting_point": 1068,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.12,
+    "period": 6,
+    "block": "",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Praseodymium",
+    "symbol": "Pr",
+    "atomic_number": 59,
+    "atomic_weight": 140.90766,
+    "boiling_point": 3793,
+    "melting_point": 1208,
+    "oxidation_states": [
+      4,
+      3,
+      2
+    ],
+    "electronegativity": 1.13,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Neodymium",
+    "symbol": "Nd",
+    "atomic_number": 60,
+    "atomic_weight": 144.242,
+    "boiling_point": 3347,
+    "melting_point": 1297,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.14,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Promethium",
+    "symbol": "Pm",
+    "atomic_number": 61,
+    "atomic_weight": 145,
+    "boiling_point": 3273,
+    "melting_point": 1315,
+    "oxidation_states": [
+      3
+    ],
+    "electronegativity": 1.13,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Samarium",
+    "symbol": "Sm",
+    "atomic_number": 62,
+    "atomic_weight": 150.36,
+    "boiling_point": 2067,
+    "melting_point": 1345,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.17,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Europium",
+    "symbol": "Eu",
+    "atomic_number": 63,
+    "atomic_weight": 151.964,
+    "boiling_point": 1802,
+    "melting_point": 1099,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.2,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Gadolinium",
+    "symbol": "Gd",
+    "atomic_number": 64,
+    "atomic_weight": 157.25,
+    "boiling_point": 3546,
+    "melting_point": 1585,
+    "oxidation_states": [
+      1,
+      2,
+      3
+    ],
+    "electronegativity": 1.2,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Terbium",
+    "symbol": "Tb",
+    "atomic_number": 65,
+    "atomic_weight": 158.92535,
+    "boiling_point": 3503,
+    "melting_point": 1629,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.2,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Dysprosium",
+    "symbol": "Dy",
+    "atomic_number": 66,
+    "atomic_weight": 162.5,
+    "boiling_point": 2840,
+    "melting_point": 1680,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.22,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Holmium",
+    "symbol": "Ho",
+    "atomic_number": 67,
+    "atomic_weight": 164.93033,
+    "boiling_point": 2993,
+    "melting_point": 1734,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.23,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Erbium",
+    "symbol": "Er",
+    "atomic_number": 68,
+    "atomic_weight": 167.259,
+    "boiling_point": 3141,
+    "melting_point": 1802,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.24,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Thulium",
+    "symbol": "Tm",
+    "atomic_number": 69,
+    "atomic_weight": 168.93422,
+    "boiling_point": 2223,
+    "melting_point": 1818,
+    "oxidation_states": [
+      2,
+      3,
+      4
+    ],
+    "electronegativity": 1.25,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Ytterbium",
+    "symbol": "Tb",
+    "atomic_number": 70,
+    "atomic_weight": 173.054,
+    "boiling_point": 1469,
+    "melting_point": 1097,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.1,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Lutetium",
+    "symbol": "Lu",
+    "atomic_number": 71,
+    "atomic_weight": 174.9668,
+    "boiling_point": 3675,
+    "melting_point": 1925,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.27,
+    "period": 6,
+    "block": "f",
+    "group": "lanthanides"
+  },
+  {
+    "name": "Hafnium",
+    "symbol": "Hf",
+    "atomic_number": 72,
+    "atomic_weight": 178.49,
+    "boiling_point": 4876,
+    "melting_point": 2506,
+    "oxidation_states": [
+      4,
+      3,
+      2
+    ],
+    "electronegativity": 1.3,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Tantalum",
+    "symbol": "Ta",
+    "atomic_number": 73,
+    "atomic_weight": 180.94788,
+    "boiling_point": 5731,
+    "melting_point": 3290,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      -1
+    ],
+    "electronegativity": 1.5,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Tungsten",
+    "symbol": "W",
+    "atomic_number": 74,
+    "atomic_weight": 183.84,
+    "boiling_point": 5828,
+    "melting_point": 3695,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      -1,
+      -2
+    ],
+    "electronegativity": 2.36,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Rhenium",
+    "symbol": "Re",
+    "atomic_number": 75,
+    "atomic_weight": 186.207,
+    "boiling_point": 5869,
+    "melting_point": 3459,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      -4
+    ],
+    "electronegativity": 1.9,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Osmium",
+    "symbol": "Os",
+    "atomic_number": 76,
+    "atomic_weight": 190.23,
+    "boiling_point": 5285,
+    "melting_point": 3306,
+    "oxidation_states": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      -1,
+      -2
+    ],
+    "electronegativity": 2.2,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Iridium",
+    "symbol": "Ir",
+    "atomic_number": 77,
+    "atomic_weight": 192.217,
+    "boiling_point": 4701,
+    "melting_point": 2739,
+    "oxidation_states": [
+      -3,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "electronegativity": 2.2,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Platinum",
+    "symbol": "Pt",
+    "atomic_number": 78,
+    "atomic_weight": 195.084,
+    "boiling_point": 4098,
+    "melting_point": 2041.4,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1,
+      -2
+    ],
+    "electronegativity": 2.28,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Gold",
+    "symbol": "Au",
+    "atomic_number": 79,
+    "atomic_weight": 196.966569,
+    "boiling_point": 3129,
+    "melting_point": 1337.33,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      -1
+    ],
+    "electronegativity": 2.54,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Mercury",
+    "symbol": "Hg",
+    "atomic_number": 80,
+    "atomic_weight": 200.592,
+    "boiling_point": 629.88,
+    "melting_point": 234.321,
+    "oxidation_states": [
+      4,
+      2
+    ],
+    "electronegativity": 2,
+    "period": 6,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Thallium",
+    "symbol": "Tl",
+    "atomic_number": 81,
+    "atomic_weight": 204.38,
+    "boiling_point": 1746,
+    "melting_point": 577,
+    "oxidation_states": [
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.62,
+    "period": 6,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Lead",
+    "symbol": "Pb",
+    "atomic_number": 82,
+    "atomic_weight": 207.2,
+    "boiling_point": 2022,
+    "melting_point": 600.61,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.87,
+    "period": 6,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Bismuth",
+    "symbol": "Bi",
+    "atomic_number": 83,
+    "atomic_weight": 208.9804,
+    "boiling_point": 1837,
+    "melting_point": 544.7,
+    "oxidation_states": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 2.02,
+    "period": 6,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Polonium",
+    "symbol": "Po",
+    "atomic_number": 84,
+    "atomic_weight": 209,
+    "boiling_point": 1235,
+    "melting_point": 527,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      2,
+      -2
+    ],
+    "electronegativity": 2,
+    "period": 6,
+    "block": "p",
+    "group": "poor-metals"
+  },
+  {
+    "name": "Astatine",
+    "symbol": "At",
+    "atomic_number": 85,
+    "atomic_weight": 210,
+    "boiling_point": 610,
+    "melting_point": 575,
+    "oxidation_states": [
+      -1,
+      1,
+      3,
+      5,
+      7
+    ],
+    "electronegativity": 2.2,
+    "period": 6,
+    "block": "p",
+    "group": "metalloids"
+  },
+  {
+    "name": "Radon",
+    "symbol": "Rn",
+    "atomic_number": 86,
+    "atomic_weight": 222,
+    "boiling_point": 211.5,
+    "melting_point": 202,
+    "oxidation_states": [
+      6,
+      2,
+      0
+    ],
+    "electronegativity": 2.2,
+    "period": 6,
+    "block": "p",
+    "group": "noble-gases"
+  },
+  {
+    "name": "Francium",
+    "symbol": "Fr",
+    "atomic_number": 87,
+    "atomic_weight": 223,
+    "boiling_point": 950,
+    "melting_point": 300,
+    "oxidation_states": [
+      1
+    ],
+    "electronegativity": 0.7,
+    "period": 7,
+    "block": "s",
+    "group": "alkali-metals"
+  },
+  {
+    "name": "Radium",
+    "symbol": "Ra",
+    "atomic_number": 88,
+    "atomic_weight": 226,
+    "boiling_point": 2010,
+    "melting_point": 973,
+    "oxidation_states": [
+      2
+    ],
+    "electronegativity": 0.9,
+    "period": 7,
+    "block": "s",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Actinium",
+    "symbol": "Ac",
+    "atomic_number": 89,
+    "atomic_weight": 227,
+    "boiling_point": 3471,
+    "melting_point": 1323,
+    "oxidation_states": [
+      3
+    ],
+    "electronegativity": 1.1,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Thorium",
+    "symbol": "Th",
+    "atomic_number": 90,
+    "atomic_weight": 232.0377,
+    "boiling_point": 5061,
+    "melting_point": 2115,
+    "oxidation_states": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Protactinium",
+    "symbol": "Pa",
+    "atomic_number": 91,
+    "atomic_weight": 231.03588,
+    "boiling_point": 4300,
+    "melting_point": 1841,
+    "oxidation_states": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "electronegativity": 1.5,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Uranium",
+    "symbol": "U",
+    "atomic_number": 92,
+    "atomic_weight": 238.02891,
+    "boiling_point": 4404,
+    "melting_point": 1405.3,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.38,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Neptunium",
+    "symbol": "Np",
+    "atomic_number": 93,
+    "atomic_weight": 237,
+    "boiling_point": 4447,
+    "melting_point": 912,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3
+    ],
+    "electronegativity": 1.36,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Plutonium",
+    "symbol": "Pu",
+    "atomic_number": 94,
+    "atomic_weight": 244,
+    "boiling_point": 3505,
+    "melting_point": 912.5,
+    "oxidation_states": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "electronegativity": 1.28,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Americium",
+    "symbol": "Am",
+    "atomic_number": 95,
+    "atomic_weight": 243,
+    "boiling_point": 2880,
+    "melting_point": 1449,
+    "oxidation_states": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Curium",
+    "symbol": "Cm",
+    "atomic_number": 96,
+    "atomic_weight": 247,
+    "boiling_point": 3383,
+    "melting_point": 1613,
+    "oxidation_states": [
+      8,
+      6,
+      4,
+      3,
+      2
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Berkelium",
+    "symbol": "Bk",
+    "atomic_number": 97,
+    "atomic_weight": 247,
+    "boiling_point": 2900,
+    "melting_point": 1259,
+    "oxidation_states": [
+      3,
+      4
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Californium",
+    "symbol": "Cf",
+    "atomic_number": 98,
+    "atomic_weight": 251,
+    "boiling_point": 1743,
+    "melting_point": 1173,
+    "oxidation_states": [
+      2,
+      3,
+      4
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Einsteinium",
+    "symbol": "Es",
+    "atomic_number": 99,
+    "atomic_weight": 252,
+    "boiling_point": 1269,
+    "melting_point": 1133,
+    "oxidation_states": [
+      2,
+      3,
+      4
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Fermium",
+    "symbol": "Fm",
+    "atomic_number": 100,
+    "atomic_weight": 257,
+    "boiling_point": null,
+    "melting_point": 1125,
+    "oxidation_states": [
+      2,
+      3
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Mendelevium",
+    "symbol": "Md",
+    "atomic_number": 101,
+    "atomic_weight": 258,
+    "boiling_point": null,
+    "melting_point": 1100,
+    "oxidation_states": [
+      2,
+      3
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Nobelium",
+    "symbol": "No",
+    "atomic_number": 102,
+    "atomic_weight": 259,
+    "boiling_point": null,
+    "melting_point": 1100,
+    "oxidation_states": [
+      2,
+      3
+    ],
+    "electronegativity": 1.3,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Lawrencium",
+    "symbol": "Lr",
+    "atomic_number": 103,
+    "atomic_weight": 262,
+    "boiling_point": null,
+    "melting_point": 1900,
+    "oxidation_states": [
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "f",
+    "group": "actinides"
+  },
+  {
+    "name": "Rutherfordium",
+    "symbol": "Rf",
+    "atomic_number": 104,
+    "atomic_weight": 267,
+    "boiling_point": 5800,
+    "melting_point": 2400,
+    "oxidation_states": [
+      4,
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Dubnium",
+    "symbol": "Db",
+    "atomic_number": 105,
+    "atomic_weight": 268,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      5,
+      4,
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Seaborgium",
+    "symbol": "Sg",
+    "atomic_number": 106,
+    "atomic_weight": 269,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      6,
+      5,
+      4,
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Bohrium",
+    "symbol": "Bh",
+    "atomic_number": 107,
+    "atomic_weight": 270,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      7,
+      5,
+      4,
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Hassium",
+    "symbol": "Hs",
+    "atomic_number": 108,
+    "atomic_weight": 269,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      8,
+      6,
+      5,
+      4,
+      3,
+      2
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "transition-metals"
+  },
+  {
+    "name": "Meitnerium",
+    "symbol": "Mt",
+    "atomic_number": 109,
+    "atomic_weight": 278,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      9,
+      8,
+      6,
+      4,
+      3,
+      1
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "unknown"
+  },
+  {
+    "name": "Darmstadtium",
+    "symbol": "Ds",
+    "atomic_number": 110,
+    "atomic_weight": 281,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      8,
+      6,
+      4,
+      2,
+      0
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "unknown"
+  },
+  {
+    "name": "Roentgenium",
+    "symbol": "Rg",
+    "atomic_number": 111,
+    "atomic_weight": 281,
+    "boiling_point": null,
+    "melting_point": null,
+    "oxidation_states": [
+      5,
+      3,
+      1,
+      -1
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "unknown"
+  },
+  {
+    "name": "Copernicium",
+    "symbol": "Cn",
+    "atomic_number": 112,
+    "atomic_weight": 285,
+    "boiling_point": 357,
+    "melting_point": null,
+    "oxidation_states": [
+      4,
+      2,
+      0
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "d",
+    "group": "alkaline-earth-metals"
+  },
+  {
+    "name": "Ununtrium",
+    "symbol": "Uut",
+    "atomic_number": 113,
+    "atomic_weight": 286,
+    "boiling_point": 1430,
+    "melting_point": 700,
+    "oxidation_states": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  },
+  {
+    "name": "Flerovium",
+    "symbol": "Fl",
+    "atomic_number": 114,
+    "atomic_weight": 289,
+    "boiling_point": 420,
+    "melting_point": 340,
+    "oxidation_states": [
+      0,
+      2,
+      4
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  },
+  {
+    "name": "Ununpentium",
+    "symbol": "Uup",
+    "atomic_number": 115,
+    "atomic_weight": 289,
+    "boiling_point": 1400,
+    "melting_point": 670,
+    "oxidation_states": [
+      1,
+      3
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  },
+  {
+    "name": "Livermorium",
+    "symbol": "Lv",
+    "atomic_number": 116,
+    "atomic_weight": 293,
+    "boiling_point": 780,
+    "melting_point": 1135,
+    "oxidation_states": [
+      -2,
+      2,
+      4
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  },
+  {
+    "name": "Ununseptium",
+    "symbol": "Uus",
+    "atomic_number": 117,
+    "atomic_weight": 294,
+    "boiling_point": 823,
+    "melting_point": 773,
+    "oxidation_states": [
+      -1,
+      1,
+      3,
+      5
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  },
+  {
+    "name": "Ununoctium",
+    "symbol": "UUo",
+    "atomic_number": 118,
+    "atomic_weight": 294,
+    "boiling_point": 350,
+    "melting_point": 439,
+    "oxidation_states": [
+      -1,
+      0,
+      1,
+      2,
+      4
+    ],
+    "electronegativity": null,
+    "period": 7,
+    "block": "p",
+    "group": "unknown"
+  }
 ]
