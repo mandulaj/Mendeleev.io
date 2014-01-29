@@ -5,9 +5,215 @@
         "atomic_number": 1,
         "atomic_weight": 1.008,
         "boiling_point": 20.271,
-        "melting_point": 13.99
-        
-
+        "melting_point": 13.99,
+        "oxidation_states": [1,-1],
+		"electronegativity": 2.2,
+	
     }
-
+	{
+        "name": "Helium", 
+        "symbol": "He",
+        "atomic_number": 2,
+        "atomic_weight": 4.002,
+        "boiling_point": 4.222,
+        "melting_point": 0.95,
+        "oxidation_states": [0],
+		"electronegativity": null,
+	
+    }
+	
+	{
+        "name": "Lithium", 
+        "symbol": "Li",
+        "atomic_number": 3,
+        "atomic_weight": 6.94,
+        "boiling_point": 1615,
+        "melting_point": 453.65,
+        "oxidation_states": [1],
+		"electronegativity": 0.98,
+	
+    }
+	
+	{
+        "name": "Beryllium", 
+        "symbol": "Be",
+        "atomic_number": 4,
+        "atomic_weight": 9.012,
+        "boiling_point": 2741,
+        "melting_point": 1560,
+        "oxidation_states": [2,1],
+		"electronegativity": 1.57,
+	
+    }
+	
+	{
+        "name": "Boron", 
+        "symbol": "B",
+        "atomic_number": 5,
+        "atomic_weight": 10.81,
+        "boiling_point": 4200,
+        "melting_point": 2349,
+        "oxidation_states": [3,2,1],
+		"electronegativity": 2.04,
+	
+    }
+	
+	{
+        "name": "Carbon", 
+        "symbol": "C",
+        "atomic_number": 6,
+        "atomic_weight": 12.011,
+        "boiling_point": 5100,
+        "melting_point": 4600,
+        "oxidation_states": [4,3,2,1,0,-1,-2,-3,-4],
+		"electronegativity": 2.55,
+	
+    }
+	
+	{
+        "name": "Nitrogen", 
+        "symbol": "N",
+        "atomic_number": 7,
+        "atomic_weight": 14.007,
+        "boiling_point": 77.355,
+        "melting_point": 63.15,
+        "oxidation_states": [5,4,3,2,1,-1,-2,-3],
+		"electronegativity": 3.04,
+	
+    }
+	
+	{
+        "name": "Oxygen", 
+        "symbol": "O",
+        "atomic_number": 8,
+        "atomic_weight": 15.999,
+        "boiling_point": 90.188,
+        "melting_point": 54.36,
+        "oxidation_states": [2,1,-1,-2],
+		"electronegativity": 3.44,
+	
+    }
+	
+	{
+        "name": "Fluorine", 
+        "symbol": "F",
+        "atomic_number": 9,
+        "atomic_weight": 18.998,
+        "boiling_point": 85.03,
+        "melting_point": 53.48,
+        "oxidation_states": [-1],
+		"electronegativity": 3.98,
+	
+    }
+	
+	{
+        "name": "Neon", 
+        "symbol": "Ne",
+        "atomic_number": 10,
+        "atomic_weight": 20.179,
+        "boiling_point": 27.104,
+        "melting_point": 24.56,
+        "oxidation_states": [1,0],
+		"electronegativity": null,
+	
+    }
+	
+	{
+        "name": "Sodium", 
+        "symbol": "Na",
+        "atomic_number": 11,
+        "atomic_weight": 22.989,
+        "boiling_point": 1156.090,
+        "melting_point": 370.944,
+        "oxidation_states": [1,-1],
+		"electronegativity": 0.93,
+	
+    }
+	
+	{
+        "name": "Magnesium", 
+        "symbol": "Mg",
+        "atomic_number": 12,
+        "atomic_weight": 24.305,
+        "boiling_point": 1363,
+        "melting_point": 923,
+        "oxidation_states": [2,1],
+		"electronegativity": 1.31,
+	
+    }
+	
+	{
+        "name": "Aluminium", 
+        "symbol": "Al",
+        "atomic_number": 13,
+        "atomic_weight": 26.981,
+        "boiling_point": 2792,
+        "melting_point": 933.47,
+        "oxidation_states": [3,2,1],
+		"electronegativity": 1.61,
+	
+    }
+	
+	{
+        "name": "Silicon", 
+        "symbol": "H",
+        "atomic_number": 14,
+        "atomic_weight": 28.085,
+        "boiling_point": 3538,
+        "melting_point": 1687,
+        "oxidation_states": [4,3,2,1,-1,-2,-3,-4],
+		"electronegativity": 1,90,
+	
+    }
+	
+	{
+        "name": "Phosphorus", 
+        "symbol": "P",
+        "atomic_number": 15,
+        "atomic_weight": 30.973,
+        "boiling_point": 553,
+        "melting_point": 317,
+        "oxidation_states": [5,4,3,2,1,-1,-2,-3],
+		"electronegativity": 2.19,
+	
+    }
+	
+	{
+        "name": "Sulfur", 
+        "symbol": "S",
+        "atomic_number": 16,
+        "atomic_weight": 32.066,
+        "boiling_point": 717.8,
+        "melting_point": 388.36,
+        "oxidation_states": [6,5,4,3,2,1,-1,-2],
+		"electronegativity": 2.58,
+	
+    }
+	
+	{
+        "name": "Chlorine", 
+        "symbol": "Cl",
+        "atomic_number": 17,
+        "atomic_weight": 35.45,
+        "boiling_point": 239.11,
+        "melting_point": 171.6,
+        "oxidation_states": [7,6,5,4,3,2,1,-1],
+		"electronegativity": 3.16,
+	
+    }
+	
+	
+	{
+        "name": "Argon", 
+        "symbol": "Ar",
+        "atomic_number": 18,
+        "atomic_weight": 39.948,
+        "boiling_point": 87.302,
+        "melting_point": 83.81,
+        "oxidation_states": [0],
+		"electronegativity": null,
+	
+    }
+	
+	
 ]
