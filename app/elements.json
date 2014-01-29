@@ -318,7 +318,7 @@
         "oxidation_states": [5,4,3,2,1,-1],
 		"electronegativity": 1.63,
 	    "period" : 4,
-		"block" : "d,
+		"block" : "d",
 		"group": "transition-metals"
     }
 	
