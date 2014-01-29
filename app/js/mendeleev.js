@@ -64,3 +64,12 @@ Mendeleev.about = {};
 Mendeleev.about.show = function() {
 
 }
+
+Mendeleev.showPage = function(hash) {
+  if (hash === "#periodic-table")
+    Mendeleev.table.show();
+  else if (hash === "#element-list")
+    Mendeleev.list.show();
+  else if (hash === "#about")
+    Mendeleev.about.show();
+}
