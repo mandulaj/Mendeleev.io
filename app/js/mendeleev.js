@@ -60,16 +60,27 @@ Mendeleev.list.show = function() {
   root.html("");
 }
 
-Mendeleev.about = {};
-Mendeleev.about.show = function() {
+Mendeleev.calc = {};
 
+Mendeleev.calc.show = function() {
+  var root = $(".mendeleev");
+  root.html("");
 }
 
+Mendeleev.about = {};
+Mendeleev.about.show = function() {
+  var root = $(".mendeleev");
+  root.html("");
+}
+
+// The hash routes
 Mendeleev.showPage = function(hash) {
   if (hash === "#periodic-table")
     Mendeleev.table.show();
   else if (hash === "#element-list")
     Mendeleev.list.show();
+  else if (hash === "#calculator")
+    Mendeleev.calc.show();
   else if (hash === "#about")
     Mendeleev.about.show();
 }
