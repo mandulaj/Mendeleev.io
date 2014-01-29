@@ -1,9 +1,10 @@
 {
   "name": "Mendeleev.io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/zpiman/Mendeleev.io",
   "authors": [
-    "Alexander Selzer <aselzer3@gmail.com>"
+    "Alexander Selzer <aselzer3@gmail.com>",
+    "Jakub Mandula <jakub.aludnam@gmail.com>"
   ],
   "description": "A chemistry engine in the browser.",
   "keywords": [
