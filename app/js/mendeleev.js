@@ -11,10 +11,27 @@ Mendeleev.getElements = function(cb) {
     }
 } 
 
-Mendeleev.showTable = function() {
+Mendeleev.table = {};
+
+
+// Correctly attaches a chemical element to the container and initialized all classes.
+Mendeleev.table.attachElement = function(element, container) {
+
+}
+
+Mendeleev.table.show = function() {
   var root = $(".mendeleev");
+  // Delete content of other pages.
   root.html("");
+  
+  var periodicTableContainer = $("<div>")
+      .addClass("periodic-table");
+
   Mendeleev.getElements(function(elements) {
+
+    // Period 1
+
+
     elements.forEach(function(element) {
       var elementDiv =  $("<div>")
           .addClass("element")
@@ -30,12 +47,20 @@ Mendeleev.showTable = function() {
         .addClass("element-name")
         .text(element.name)
       );
-      root.append(elementDiv)
+      periodicTableContainer.append(elementDiv)
     });
+
+    root.append(periodicTableContainer);
   });
 }
 
-Mendeleev.showList = function() {
+Mendeleev.list = {};
+Mendeleev.list.show = function() {
   var root = $(".mendeleev");
   root.html("");
+}
+
+Mendeleev.about = {};
+Mendeleev.about.show = function() {
+
 }

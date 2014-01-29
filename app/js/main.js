@@ -2,11 +2,11 @@ $(document).ready(function() {
 
 Mendeleev.showPage = function(hash) {
   if (hash === "#periodic-table")
-    Mendeleev.showTable();
+    Mendeleev.table.show();
   else if (hash === "#element-list")
-    Mendeleev.showList();
+    Mendeleev.list.show();
   else if (hash === "#about")
-    Mendeleev.showAbout();
+    Mendeleev.about.show();
 }
 
 // "Redirect" to the default "page" - the periodic table.

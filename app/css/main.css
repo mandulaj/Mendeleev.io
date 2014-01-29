@@ -70,7 +70,23 @@
 
 .main .mendeleev {
   min-height: 600px;
+  margin: 0 auto 10px auto;
   border: 1px solid rgb(134, 134, 134);
   background-color: rgb(224, 224, 224);
-  box-shadow: 0 0 4px rgb(167, 167, 167) inset;
+}
+
+.footer {
+  height: 200px;
+  background-color: rgb(9, 169, 224);
+  text-align: center;
+  padding-top: 60px;
+}
+
+.footertext {
+  font-size: 2.4em;
+  font-family: "Lato", sans-serif;
+}
+
+.footertext a {
+  color: rgb(9, 99, 102);
 }

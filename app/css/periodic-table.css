@@ -1,4 +1,9 @@
-div.element {
+.periodic-table {
+  width: 1100px;
+  margin: 0 auto 0 auto;
+}
+
+.element {
   width: 100px;
   height: 80px;
   display: inline-block;
