@@ -96,10 +96,10 @@ Mendeleev.table.getPeriods = function(cb) {
                 .concat(Mendeleev.table.sliceElements(elements, 103, 118, 56)).reverse();
 
     // Lanthanides
-    periods[7] = Mendeleev.table.sliceElements(elements, 57, 71).reverse();
+    periods[7] = Mendeleev.table.sliceElements(elements, 56, 71);
 
     // Actinides
-    periods[8] = Mendeleev.table.sliceElements(elements,89, 103).reverse();
+    periods[8] = Mendeleev.table.sliceElements(elements,88, 103);
     
     cb(periods);
   });
