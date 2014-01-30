@@ -22,6 +22,10 @@ span.element-symbol {
   font-family: "Open Sans", 300;
 }
 
+.period.lanthanides {
+  margin-top: 40px;
+}
+
 .element.align-left {
   float: left;
 }
@@ -39,7 +43,7 @@ span.element-symbol {
 }
 
 .element.alkaline-earth-metals {
-  background-color: rgb(139, 62, 7);
+  background-color: rgb(153, 72, 24);
 
 }
 
@@ -49,12 +53,12 @@ span.element-symbol {
 }
 
 .element.actinides {
-  background-color: rgb(119, 120, 50);
+  background-color: rgb(87, 120, 48);
 
 }
 
 .element.poor-metals {
-  background-color: rgb(72, 74, 130);
+  background-color: rgb(185, 112, 3);
 
 }
 
@@ -62,12 +66,10 @@ span.element-symbol {
 
 .element.metalloids {
   background-color: rgb(145, 37, 73);
-
 }
 
 .element.polyatomic-nonmetals {
-  background-color: rgb(150, 36, 104);
-
+  background-color: rgb(139, 60, 120);
 }
 
 .element.diatomic-nonmetals {
@@ -78,8 +80,7 @@ span.element-symbol {
 /* End non-metals */
 
 .element.noble-gases {
-  background-color: rgb(76, 160, 159);
-
+  background-color: rgb(29, 174, 187);
 }
 
 .element.unknown {

@@ -100,9 +100,11 @@ Mendeleev.table.getPeriods = function(cb) {
 
     // Lanthanides
     periods[7] = Mendeleev.table.sliceElements(elements, 56, 71);
+    periods[7].name = "lanthanides";
 
     // Actinides
-    periods[8] = Mendeleev.table.sliceElements(elements,88, 103);
+    periods[8] = Mendeleev.table.sliceElements(elements, 88, 103);
+    periods[8].name = "actinides";
     
     cb(periods);
   });
@@ -115,12 +117,14 @@ Mendeleev.table.show = function() {
   
   var periodicTableContainer = $("<div>")
       .addClass("periodic-table");
+
   root.append(periodicTableContainer);
 
   Mendeleev.table.getPeriods(function(periods) {
     periods.forEach(function(period) {
       var tableRow = $("<div>")
-      .addClass("period");
+      .addClass("period")
+      .addClass(period.name);
       
       period.forEach(function(element) {
         Mendeleev.table.attachElement(element, tableRow);
