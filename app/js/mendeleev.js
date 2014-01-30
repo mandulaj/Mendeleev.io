@@ -35,6 +35,13 @@ Mendeleev.table.attachElement = function(element, container) {
 
 };
 
+/**
+* Adds the align-right value to the align property of the
+* element object at a specific atomic number.
+* These elements will be shifted to the side, to make the
+* periodic table work.
+*/
+
 Mendeleev.table.setAlign = function(elements, split) {
   return elements.map(function(element) {
     if (element.atomic_number > split) {
@@ -48,6 +55,11 @@ Mendeleev.table.setAlign = function(elements, split) {
   });
 }
 
+/**
+* Simplifies the very repetitive task of splitting elements into
+* periods, and calls Mendeleev.table.setAlign() for less redundancy.
+*/
+
 Mendeleev.table.sliceElements = function(elements, start, end, split) {
   var slicedElements = elements.filter(function(element) {
     return (element.atomic_number > start && element.atomic_number <= end);
@@ -57,6 +69,11 @@ Mendeleev.table.sliceElements = function(elements, start, end, split) {
   else
     return slicedElements;
 };
+
+/**
+* Assigns elements to the correct periods, with the right layout
+* properties set.
+*/
 
 Mendeleev.table.getPeriods = function(cb) {
   var periods = [];
@@ -78,8 +95,10 @@ Mendeleev.table.getPeriods = function(cb) {
     periods[6] = Mendeleev.table.sliceElements(elements, 86, 88)
                 .concat(Mendeleev.table.sliceElements(elements, 103, 118, 56));
 
+    // Lanthanides
     periods[7] = Mendeleev.table.sliceElements(elements, 57, 71);
 
+    // Actinides
     periods[8] = Mendeleev.table.sliceElements(elements, 89, 103);
     
     cb(periods);
