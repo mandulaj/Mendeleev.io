@@ -43,16 +43,19 @@ Mendeleev.table.attachElement = function(element, container) {
 */
 
 Mendeleev.table.setAlign = function(elements, split) {
-  return elements.map(function(element) {
-    if (element.atomic_number > split) {
-      var alignedElement = element;
-      alignedElement.align = "align-right";
-      return alignedElement;
-    }
-    else {
-       return element;
-    }
+  var left = elements.filter(function(element) {
+    return element.atomic_number <= split;
   });
+  
+  var right = elements.filter(function(element) {
+    return element.atomic_number > split;
+  }).map(function(element) {
+    var alignedElement = element;
+    alignedElement.align = "align-right";
+    return alignedElement;
+  }).reverse();
+
+  return left.concat(right);
 }
 
 /**
@@ -90,10 +93,10 @@ Mendeleev.table.getPeriods = function(cb) {
     periods[4] = Mendeleev.table.sliceElements(elements, 36, 54);
 
     periods[5] = Mendeleev.table.sliceElements(elements, 54, 56)
-                .concat(Mendeleev.table.sliceElements(elements, 71, 86, 56)).reverse();
+                .concat(Mendeleev.table.sliceElements(elements, 71, 86, 56));
 
     periods[6] = Mendeleev.table.sliceElements(elements, 86, 88)
-                .concat(Mendeleev.table.sliceElements(elements, 103, 118, 56)).reverse();
+                .concat(Mendeleev.table.sliceElements(elements, 103, 118, 56));
 
     // Lanthanides
     periods[7] = Mendeleev.table.sliceElements(elements, 56, 71);
