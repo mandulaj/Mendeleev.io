@@ -1,10 +1,10 @@
 .periodic-table {
-  width: 1100px;
+  width: 1548px;
   margin: 0 auto 0 auto;
 }
 
 .element {
-  width: 100px;
+  width: 86px;
   height: 80px;
   display: inline-block;
   text-align: center;
@@ -12,12 +12,22 @@
 
 span.element-name {
   display: block;
-  font-size: 1em;
+  font-size: 0.86em;
+  font-family: "Bitter", serif;
 }
 
 span.element-symbol {
   display: block;
-  font-size: 3em;
+  font-size: 2.6em;
+  font-family: "Open Sans", 300;
+}
+
+.element.align-left {
+  float: left;
+}
+
+.element.align-right {
+  float: right;
 }
 
 .element.transition-metals {
