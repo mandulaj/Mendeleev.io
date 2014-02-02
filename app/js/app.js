@@ -1,6 +1,7 @@
 var mendeleev = angular.module("mendeleev", [
   "ngRoute",
-  "mendeleevControllers"
+  "mendeleevControllers",
+  "mendeleevServices"
 ]);
 
 mendeleev.config(function($routeProvider) {

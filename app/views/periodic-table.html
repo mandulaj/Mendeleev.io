@@ -1,6 +1,8 @@
 <div class="periodic-table">
-  <div class="element" ng-repeat="element in elements">
-    <span class="element-name"> {{element.name}} </span>
+  <div class="period" ng-repeat="period in periods" ng-class="period.name">
+    <div class="element" ng-repeat="element in period" ng-class="element.group + ' ' + element.align">
     <span class="element-symbol"> {{element.symbol}} </span>
+    <span class="element-name"> {{element.name}} </span>
+    </div>
   </div>
 </div>
