@@ -1,3 +1,8 @@
+/**
+OLD and not used anymore.
+Will be deleted
+*/
+
 $(document).ready(function() {
 
 /**

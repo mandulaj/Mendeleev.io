@@ -1,3 +1,8 @@
+/**
+OLD and not used anymore.
+Will be deleted
+*/
+
 var Mendeleev = {};
 
 Mendeleev.getElements = function(cb) {

@@ -39,12 +39,11 @@ span.element-symbol {
 }
 
 .element.alkali-metals {
-  background-color: rgb(176, 100, 0);
+  background-color: rgb(87, 204, 96);
 }
 
 .element.alkaline-earth-metals {
-  background-color: rgb(153, 72, 24);
-
+  background-color: rgb(204, 183, 87);
 }
 
 .element.lanthanides {
@@ -58,22 +57,21 @@ span.element-symbol {
 }
 
 .element.poor-metals {
-  background-color: rgb(185, 112, 3);
-
+  background-color: rgb(255, 101, 44);
 }
 
 /* Start non-metals */
 
 .element.metalloids {
-  background-color: rgb(145, 37, 73);
+  background-color: rgb(255, 68, 46);
 }
 
 .element.polyatomic-nonmetals {
-  background-color: rgb(139, 60, 120);
+  background-color: rgb(204, 69, 66);
 }
 
 .element.diatomic-nonmetals {
-  background-color: rgb(150, 89, 159);
+  background-color: rgb(160, 65, 200) /*rgb(71, 124, 255)*/;
 
 }
 
