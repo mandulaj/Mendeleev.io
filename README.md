@@ -6,16 +6,28 @@ The online chemistry engine.
 
 ##Setup
 
-Get node.js and npm (http://www.nodejs.org)
+Install node.js and npm (http://www.nodejs.org)
+
+We use Gulp for amazing convencience!
 
 ```bash
 $ cd Mendeleev.io
 $ npm install
 
-$ sudo npm install -g bower
+$ sudo npm install -g gulp bower  # if not already installed
+$ gulp  # compile the LESS files to CSS. Check JavaScript for errors.
+
 $ cd app
 $ bower install
+
+$ gulp dev  # start a server on localhost
 ```
+
+`gulp dev` will automatically restart the node.js server when it is
+modified.
+
+All JavaScript and LESS files are continually watched for errors,
+and compiled.
 
 ##Why
 

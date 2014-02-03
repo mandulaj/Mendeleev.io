@@ -14,7 +14,7 @@
     }
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "chemistry",
     "mendeleev",
     "elements",
-	"table"
+	  "table"
   ],
   "author": "",
   "license": "MIT",
@@ -35,6 +35,14 @@
 
   "dependencies" : {
     "express" : "3.x"
+  },
+  "devDependencies" : {
+    "gulp" : "3.x",
+    "gulp-util" : "2.x",
+    "gulp-nodemon" : "0.1.x",
+    "gulp-jshint" : "1.3.x",
+    "gulp-less" : "1.2.1",
+    "gulp-recess" : "0.2.x"
   }
 
 }

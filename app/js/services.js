@@ -31,7 +31,7 @@ mendeleevServices.factory("Periods", function($http) {
   function splitElementsIntoPeriods(elements) {
     var periods =  [];
 
-    periods[0] = slicePeriod(elements, 0, 2, 1),
+    periods[0] = slicePeriod(elements, 0, 2, 1);
 
     periods[1] = slicePeriod(elements, 2, 10, 4);
 
@@ -65,6 +65,6 @@ mendeleevServices.factory("Periods", function($http) {
         cb(periods);
       });
     }
-  }
+  };
 });
 
