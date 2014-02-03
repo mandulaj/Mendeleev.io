@@ -2,6 +2,7 @@ var gulp = require("gulp"),
     log = require("gulp-util").log,
     nodemon = require("gulp-nodemon"),
     jshint = require("gulp-jshint"),
+    autoprefixer = require("gulp-autoprefixer"),
     recess = require("gulp-recess"),
     less = require("gulp-less");
 
@@ -19,6 +20,7 @@ gulp.task("less", function() {
   log("compiling less files...");
   gulp.src(lessfiles)
   .pipe(less())
+  .pipe(autoprefixer("last 2 versions", "Firefox ESR", "> 1%", "ie 8"))
   .pipe(gulp.dest("app/css"));
 });
 
