@@ -1,14 +1,13 @@
 var mendeleev = angular.module("mendeleev", [
   "ngRoute",
-  "mendeleevControllers",
-  "mendeleevServices"
+  "periodicTable"
 ]);
 
 mendeleev.config(function($routeProvider) {
   $routeProvider
   .when("/periodic-table", {
     templateUrl: "/views/periodic-table.html",
-    controller: "periodicTableCtrl"
+    controller: "periodicTableView"
   }).
   when("/element-list", {
     templateUrl: "/views/element-list.html",

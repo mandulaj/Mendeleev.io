@@ -1,6 +1,6 @@
-var mendeleevServices = angular.module("mendeleevServices", []);
+angular.module("periodicTable")
 
-mendeleevServices.factory("Periods", function($http) {
+.factory("Periods", function($http) {
 
   function splitPeriod(elements, split) {
     var left = elements.filter(function(element) {

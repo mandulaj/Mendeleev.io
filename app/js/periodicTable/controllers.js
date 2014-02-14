@@ -1,0 +1,8 @@
+angular.module("periodicTable")
+
+.controller("periodicTableView",
+function($scope, Periods) {
+  Periods.get(function(periods) {
+    $scope.periods = periods; 
+  });
+});
