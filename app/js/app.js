@@ -7,15 +7,15 @@ mendeleev.config(function($routeProvider) {
   $routeProvider
   .when("/periodic-table", {
     templateUrl: "/views/periodic-table.html",
-    controller: "periodicTableView"
+    controller: "periodicTableControl"
   }).
   when("/element-list", {
     templateUrl: "/views/element-list.html",
-    controller: "elementListCtrl"
+    controller: "elementListControl"
   })
   .when("/calculator", {
     templateUrl: "/views/calculator.html",
-    controller: "calculatorCtrl"
+    controller: "calculatorControl"
   })
   .when("/about", {
     templateUrl: "/views/about.html"
