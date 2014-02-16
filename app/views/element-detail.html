@@ -1,6 +1,23 @@
 <div class="element-detail">
-  <div ng-class="element.group" class="element element-symbol">{{element.symbol}}</div>
-  <div ng-class="element.group" class="element-2 element-name">{{element.name}}</div>
-  <div ng-class="element.group" class="element-3 element-weight">{{element.atomic_weight}}</div>
-  <div ng-class="element.group" class="element-3 element-number">{{element.atomic_number}}</div>
+  <div ng-class="element.group" class="element element-symbol">
+    {{element.symbol}}
+  </div>
+  <div class="basic-properties">
+    <div ng-class="element.group" class="element-2 element-name">
+      {{element.name}}
+    </div>
+    <div ng-class="element.group" class="element-3 element-weight">
+      {{element.atomic_weight | number:2}}
+    </div>
+    <div ng-class="element.group" class="element-3 element-number">
+      {{element.atomic_number}}
+    </div>
+  </div>
+  <div class="oxidation-states">
+    <ul>
+      <li ng-class="element.group" class="element-2" ng-repeat="oxidation_state in element.oxidation_states">
+        {{oxidation_state}}
+      </li>
+    </ul>
+  </div>
 </div>

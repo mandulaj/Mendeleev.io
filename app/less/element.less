@@ -2,23 +2,25 @@
 
 .element-detail {
   width: 600px;
-  height: 360px;
+  height: 380px;
   background-color: #666;
   
   .element-symbol {
     .no-select();
     cursor: default;
+    padding-top: 10px;
     width: 180px;
     height: 140px;
     float: left;
-    font-size: 100px;
+    font-size: 80px;
     font-family: "Open Sans", sans-serif;
     text-align: center;
   }
   
   .element-name {
     width: 420px;
-    height: 60px;
+    padding-top: 26px;
+    height: 70px;
     float: right;
     padding-top: 6px;
     font-size: 34px;
@@ -29,10 +31,51 @@
   .element-number,
   .element-weight {
     width: 210px;
-    height: 60px;
+    padding-top: 12px;
+    height: 70px;
     float: right;
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-size: 42px;
+  }
+  
+  .element-number::before {
+    content: "Protons";
+    font-size: 18px;
+    position: absolute;
+    top: 70px;
+    left: 184px;
+    color: rgb(45, 45, 45);
+  }
+  
+  .element-weight::before {
+    content: "Mass";
+    font-size: 18px;
+    position: absolute;
+    top: 70px;
+    left: 380px;
+    color: rgb(45, 45, 45);
+  }
+  
+  .oxidation-states {
+    width: 180px;
+    height: 200px;
+    float: left;
+    
+    ul {
+      padding-left: 0; 
+      border-bottom: solid 1px rgb(23, 23, 23);
+    }
+    
+    li {
+      border: solid 1px rgb(23, 23, 23);
+      border-bottom: none;
+      list-style: none;
+      padding-left: 32px;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+      display: block;
+      width: 100%;
+    }
   }
 }
