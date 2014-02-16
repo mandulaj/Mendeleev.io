@@ -1,3 +1,6 @@
+@import "mixins.less";
+@import "colours.less";
+
 .periodic-table {
   width: 1548px;
   margin: 0 auto 0 auto;
@@ -8,22 +11,21 @@
   height: 80px;
   display: inline-block;
   text-align: center;
-}
+  
+  .element-name {
+    cursor: default;
+    display: block;
+    font-size: 0.86em;
+    font-family: "Bitter", serif;
+  }
 
-span.element-name {
-  display: block;
-  font-size: 0.86em;
-  font-family: "Bitter", serif;
-}
-
-span.element-symbol {
-  display: block;
-  font-size: 2.6em;
-  font-family: "Open Sans", 300;
-}
-
-.period.lanthanides {
-  margin-top: 40px;
+  .element-symbol {
+    .no-select();
+    cursor: pointer;
+    display: block;
+    font-size: 2.6em;
+    font-family: "Open Sans", 300;
+  }
 }
 
 .element.align-left {
@@ -34,53 +36,108 @@ span.element-symbol {
   float: right;
 }
 
+.period.lanthanides {
+  margin-top: 40px;
+}
+
 .element.transition-metals {
-  background-color: rgb(162, 104, 60);
+  background-color: @transition-metals;
 }
 
 .element.alkali-metals {
-  background-color: rgb(87, 204, 96);
+  background-color: @alkali-metals;
 }
 
 .element.alkaline-earth-metals {
-  background-color: rgb(204, 183, 87);
+  background-color: @alkaline-earth-metals;
 }
 
 .element.lanthanides {
-  background-color: rgb(84, 145, 32);
-
+  background-color: @lanthanides;
 }
 
 .element.actinides {
-  background-color: rgb(87, 120, 48);
+  background-color: @actinides;
 
 }
 
 .element.poor-metals {
-  background-color: rgb(255, 101, 44);
+  background-color: @poor-metals;
 }
 
 /* Start non-metals */
 
 .element.metalloids {
-  background-color: rgb(255, 68, 46);
+  background-color: @metalloids;
 }
 
 .element.polyatomic-nonmetals {
-  background-color: rgb(204, 69, 66);
+  background-color: @polyatomic-nonmetals;
 }
 
 .element.diatomic-nonmetals {
-  background-color: rgb(112, 95, 255) /*rgb(71, 124, 255)*/;
+  background-color: @diatomic-nonmetals;
 
 }
 
 /* End non-metals */
 
 .element.noble-gases {
-  background-color: rgb(29, 174, 187);
+  background-color: @noble-gases;
 }
 
 .element.unknown {
-  background-color: rgb(187, 84, 38);
+  background-color: @unknown;
+}
+
+
+
+.element-name.transition-metals {
+  background-color: @transition-metals-2;
+}
+
+.element-name.alkali-metals {
+  background-color: @alkali-metals-2;
+}
+
+.element-name.alkaline-earth-metals {
+  background-color: @alkaline-earth-metals-2;
+}
+
+.element-name.lanthanides {
+  background-color: @lanthanides-2;
+}
+
+.element-name.actinides {
+  background-color: @actinides-2;
+
+}
+
+.element-name.poor-metals {
+  background-color: @poor-metals-2;
+}
+
+/* Start non-metals */
+
+.element-name.metalloids {
+  background-color: @metalloids-2;
+}
+
+.element-name.polyatomic-nonmetals {
+  background-color: @polyatomic-nonmetals-2;
+}
+
+.element-name.diatomic-nonmetals {
+  background-color: @diatomic-nonmetals-2;
+
+}
+
+/* End non-metals */
+
+.element-name.noble-gases {
+  background-color: @noble-gases-2;
+}
+
+.element-name.unknown {
+  background-color: @unknown-2;
 }

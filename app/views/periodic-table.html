@@ -1,8 +1,15 @@
 <div class="periodic-table">
   <div class="period" ng-repeat="period in periods" ng-class="period.name">
-    <div md-element class="element" ng-repeat="element in period" ng-class="element.group + ' ' + element.align">
+    <div ng-controller="elementController"
+         ng-mouseover="hover()"
+         ng-click="showDetailView()"
+         ng-repeat="element in period"
+         ng-class="element.group + ' ' + element.align"
+         class="element">
+    
     <span class="element-symbol"> {{element.symbol}} </span>
     <span class="element-name"> {{element.name}} </span>
+    
     </div>
   </div>
 </div>

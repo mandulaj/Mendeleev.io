@@ -59,7 +59,7 @@ angular.module("periodicTable")
   }
 
   return {
-    get: function(cb) {
+    getPeriods: function(cb) {
       $http.get("/elements.json").success(function(elements) {
         var periods = splitElementsIntoPeriods(elements);
         cb(periods);
