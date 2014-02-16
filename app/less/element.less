@@ -6,6 +6,8 @@
   background-color: #666;
   
   .element-symbol {
+    .no-select();
+    cursor: default;
     width: 180px;
     height: 140px;
     float: left;
@@ -22,5 +24,15 @@
     font-size: 34px;
     font-family: "Bitter", serif;
     text-align: center;
+  }
+  
+  .element-number,
+  .element-weight {
+    width: 210px;
+    height: 60px;
+    float: right;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 42px;
   }
 }
