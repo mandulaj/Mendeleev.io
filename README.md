@@ -45,6 +45,8 @@ There is very much for us to implement and enhance.
 The application will presumably go online, when the Periodic Table, the custom-sorted Table of Elements,
 and parts of the Calculator have been finished.
 
+![The Application](https://raw.github.com/zpiman/Mendeleev.io/master/screenshot.png)
+
 ##Credits
 
 
