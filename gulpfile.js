@@ -38,4 +38,4 @@ gulp.task("watch", function() {
 
 gulp.task("default", ["lint", "less"]);
 
-gulp.task("dev", ["watch", "server"]);
+gulp.task("dev", ["watch", "lint", "less",  "server"]);

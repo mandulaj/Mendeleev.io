@@ -1,6 +1,9 @@
 @import "mixins.less";
 @import "colours.less";
 
+
+.generate-colours(2, 6%);
+
 .periodic-table {
   width: 1548px;
   margin: 0 auto 0 auto;
@@ -138,20 +141,24 @@
 
 /* End non-metals */
 
+.noble-gases .element-2,
 .element-2.noble-gases {
   background-color: @noble-gases-2;
 }
 
 /* Even darker colours */
 
+.transition-metals .element-3,
 .element-3.transition-metals {
   background-color: @transition-metals-3;
 }
 
+.alkali-metals .element-3,
 .element-3.alkali-metals {
   background-color: @alkali-metals-3;
 }
 
+.element-3 .alkaline-earth-metals,
 .element-3.alkaline-earth-metals {
   background-color: @alkaline-earth-metals-3;
 }
@@ -192,4 +199,56 @@
 
 .element-3.unknown {
   background-color: @unknown-3;
+}
+
+/* Even even darker colours */
+
+.element-4.transition-metals {
+  background-color: @transition-metals-4;
+}
+
+.element-4.alkali-metals {
+  background-color: @alkali-metals-4;
+}
+
+.element-4.alkaline-earth-metals {
+  background-color: @alkaline-earth-metals-4;
+}
+
+.element-4.lanthanides {
+  background-color: @lanthanides-4;
+}
+
+.element-4.actinides {
+  background-color: @actinides-4;
+
+}
+
+.element-4.poor-metals {
+  background-color: @poor-metals-4;
+}
+
+/* Start non-metals */
+
+.element-4.metalloids {
+  background-color: @metalloids-4;
+}
+
+.element-4.polyatomic-nonmetals {
+  background-color: @polyatomic-nonmetals-4;
+}
+
+.element-4.diatomic-nonmetals {
+  background-color: @diatomic-nonmetals-4;
+
+}
+
+/* End non-metals */
+
+.element-4.noble-gases {
+  background-color: @noble-gases-4;
+}
+
+.element-4.unknown {
+  background-color: @unknown-4;
 }

@@ -10,6 +10,36 @@
 @noble-gases:           rgb(29, 174, 187);
 @unknown:               rgb(187, 84, 38);
 
+@element-colours: 
+  transition-metals       rgb(162, 104, 60),
+  alkali-metals           rgb(87, 204, 96),
+  alkaline-earth-metals   rgb(204, 183, 87),
+  lanthanides             rgb(84, 145, 32),
+  actinides               rgb(87, 120, 48),
+  poor-metals             rgb(255, 101, 44),
+  metalloids              rgb(255, 68, 46),
+  polyatomic-nonmetals    rgb(204, 69, 66),
+  diatomic-nonmetals      rgb(112, 95, 255),
+  noble-gases             rgb(29, 174, 187),
+  unknown                 rgb(187, 84, 38);
+
+.element-tone(@index, @name, @colour, @darken) when (isnumber(@index)) and (iscolor(@colour)) {
+  &.element-@{index}.@{name} {
+    background-color: darken(@colour, @darken);
+  }
+}
+
+.generate-colours(@index, @darken) {
+  .loop(@i) when (@i > 0) {
+    @name: extract(@element-colours, @i);
+    @colour: extract(@name, 1);
+    .element-tone(@index, @name, rgb(200,39,5), @darken);
+    .loop(@i - 1);
+  }
+  .loop(0) {}
+  .loop(length(@element-colours));
+}
+
 @transition-metals-2:     darken(@transition-metals, 6%);
 @alkali-metals-2:         darken(@alkali-metals, 6%);
 @alkaline-earth-metals-2: darken(@alkaline-earth-metals, 6%);
@@ -33,3 +63,15 @@
 @diatomic-nonmetals-3:    darken(@diatomic-nonmetals, 8%);
 @noble-gases-3:           darken(@noble-gases, 8%);
 @unknown-3:               darken(@unknown, 8%);
+
+@transition-metals-4:     darken(@transition-metals, 16%);
+@alkali-metals-4:         darken(@alkali-metals, 16%);
+@alkaline-earth-metals-4: darken(@alkaline-earth-metals, 16%);
+@lanthanides-4:           darken(@lanthanides, 16%);
+@actinides-4:             darken(@actinides, 16%);
+@poor-metals-4:           darken(@poor-metals, 16%);
+@metalloids-4:            darken(@metalloids, 16%);
+@polyatomic-nonmetals-4:  darken(@polyatomic-nonmetals, 16%);
+@diatomic-nonmetals-4:    darken(@diatomic-nonmetals, 16%);
+@noble-gases-4:           darken(@noble-gases, 16%);
+@unknown-4:               darken(@unknown, 16%);

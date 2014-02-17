@@ -4,6 +4,7 @@
   </div>
   <div class="basic-properties">
     <div ng-class="element.group" class="element-2 element-name">
+      
       {{element.name}}
     </div>
     <div ng-class="element.group" class="element-3 element-weight">
@@ -14,9 +15,10 @@
     </div>
   </div>
   <div class="oxidation-states">
-    <ul>
-      <li ng-class="element.group" class="element-2" ng-repeat="oxidation_state in element.oxidation_states">
-        {{oxidation_state}}
+    <div ng-class="element.group" class="element-2 name">Oxidation States</div>
+    <ul class="list-group">
+      <li ng-class="element.group" class="element-2 list-group-item" ng-repeat="oxidation_state in element.oxidation_states">
+        <span ng-class="element.group" class="element-4 badge" class="badge">{{oxidation_state}}</span>
       </li>
     </ul>
   </div>
