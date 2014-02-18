@@ -3,7 +3,7 @@
 .element-detail {
   width: 600px;
   height: 410px;
-  background-color: #666;
+  background-color: rgb(121, 121, 121);
   
   .element-symbol {
     .no-select();
@@ -31,30 +31,20 @@
   .element-number,
   .element-weight {
     width: 210px;
-    padding-top: 12px;
     height: 70px;
     float: right;
-    text-align: center;
     font-family: "Open Sans", sans-serif;
-    font-size: 42px;
-  }
-  
-  .element-number::before {
-    content: "Protons";
-    font-size: 18px;
-    position: absolute;
-    top: 70px;
-    left: 184px;
-    color: rgb(45, 45, 45);
-  }
-  
-  .element-weight::before {
-    content: "Mass";
-    font-size: 18px;
-    position: absolute;
-    top: 70px;
-    left: 380px;
-    color: rgb(45, 45, 45);
+    
+    .header {
+      text-align: center;
+      font-size: 20px; 
+      height: 30px;
+    }
+    .content {
+      text-align: center;
+      font-size: 32px;
+      height: 36px; 
+    }
   }
   
   .oxidation-states {
@@ -80,6 +70,8 @@
       height: 24px;
       width: 100%;
       border: 1px solid rgb(56, 56, 56);
+      border-left: none;
+      border-right: none;
       
       .badge {
         display: block;

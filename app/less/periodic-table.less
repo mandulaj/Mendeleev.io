@@ -1,6 +1,14 @@
 @import "mixins.less";
 @import "colours.less";
 
+/**
+* Generate CSS rules for colouring components of the element-
+* displays.
+* .generate-colours(x, x%) will generate rules for all elements
+* with the classes element-x and the corresponding element group name
+* E.g. <div class="element-2 alkaline-metals">
+* The second argument declares the darkness relative to the default colours.
+*/
 
 .generate-colours(1, 0%);
 .generate-colours(2, 6%);

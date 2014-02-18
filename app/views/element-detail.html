@@ -4,14 +4,15 @@
   </div>
   <div class="basic-properties">
     <div ng-class="element.group" class="element-2 element-name">
-      
       {{element.name}}
     </div>
     <div ng-class="element.group" class="element-3 element-weight">
-      {{element.atomic_weight | number:2}}
+      <div class="header">Protons</div>
+      <div class="content">{{element.atomic_weight | number:2}}</div>
     </div>
     <div ng-class="element.group" class="element-3 element-number">
-      {{element.atomic_number}}
+      <div class="header">Mass</div>
+      <div class="content">{{element.atomic_number}}</div>
     </div>
   </div>
   <div class="oxidation-states">

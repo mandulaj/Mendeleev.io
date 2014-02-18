@@ -1,3 +1,19 @@
+/**
+* Everything here is slightly hacky, because LESS does not provide
+* built-in support for hash-tables.
+* The data is structured like:
+* {
+*  "transition-metals": rgb(162,104,60),
+*  "alkali-metals": rgb(87, 204, 96),
+*  ...
+* }
+* We use a relational schema, mapping the
+* @element-names list to the @element-colours list
+* via index.
+*/
+
+/* Define colour values of element types */
+
 @transition-metals:     rgb(162, 104, 60);
 @alkali-metals:         rgb(87, 204, 96);
 @alkaline-earth-metals: rgb(204, 183, 87);
@@ -10,6 +26,7 @@
 @noble-gases:           rgb(29, 174, 187);
 @unknown:               rgb(187, 84, 38);
 
+/* Define element names */
 
 @element-names: 
   transition-metals,
@@ -24,25 +41,37 @@
   noble-gases,
   unknown;
 
+/* Define colours of all elements */
 
-@element-colours: 
-rgb(162, 104, 60),
-rgb(87, 204, 96),
-rgb(204, 183, 87),
-rgb(84, 145, 32),
-rgb(87, 120, 48),
-rgb(255, 101, 44),
-rgb(255, 68, 46),
-rgb(204, 69, 66),
-rgb(112, 95, 255),
-rgb(29, 174, 187),
-rgb(187, 84, 38);
+@element-colours:
+  @transition-metals,
+  @alkali-metals,
+  @alkaline-earth-metals,
+  @lanthanides,
+  @actinides,
+  @poor-metals,
+  @metalloids,
+  @polyatomic-nonmetals,
+  @diatomic-nonmetals,
+  @noble-gases,
+  @unknown;
+
+/**
+* Call for generating one rule for one colour of one colour group
+* E.g.
+* .generate-class(2, actinides, rgb(87, 120, 48), 8%)
+* -> .element-2.actinides {
+*   background-color: rgb(87, 120, 48)-20%;
+* }
+*/
 
 .generate-class(@index, @name, @colour, @darken) when (isnumber(@index)) and (iscolor(@colour)) {
   &.element-@{index}.@{name} {
     background-color: darken(@colour, @darken);
   }
 }
+
+/* Generate all colours of one group, with one darkness factor. */
 
 .generate-colours(@index, @darken) {
   .loop(@i) when (@i > 0) {
