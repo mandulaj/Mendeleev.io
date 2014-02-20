@@ -3,7 +3,10 @@
 //});
 var elements = require("./elements.json")
 
-function getelementObject(element)
+const avogadros = 6.0221413e23;
+
+// TODO: write a better function for getting the element property
+function getElementObject(element) 
 {
     for ( var i = 0; i < elements.length; i++ )
     {
@@ -14,6 +17,14 @@ function getelementObject(element)
     }
 }
 
+// TODO: write a parse function
+
+function parseExpression(exp)
+{
+    return exp
+}
+
+
 
 
 // Atom ***************************************************************************
@@ -21,17 +32,26 @@ function Atom(element,number)
 {
     this.element = element;
     this.n = number;
-    this.property = getelementObject(element)
+    this.property = getElementObject(element)
 }
 
 Atom.prototype.getNumOfAtoms = function()
+// Get number of atoms
 {
     return this.n;
 }
 
 Atom.prototype.getAtomName = function()
+// Get atom name
+// TODO: This will be changed
 {
     return this.element;
+}
+
+
+Atom.prototype.getMass = function()
+{
+    return this.property.atomic_weight * this.n;
 }
 
 // Molecule ***************************************************************************
@@ -42,6 +62,7 @@ function Molecule(moles,molecule)
 }
 
 Molecule.prototype.numOfElement = function(element)
+// Returns number of elements `element` in Molecule
 {
 	var i,
         numOfElem = 0;
@@ -64,6 +85,49 @@ Molecule.prototype.numOfElement = function(element)
     return numOfElem;
 }
 
+Molecule.prototype.formulaMass = function()
+{
+    var i,
+    mass = 0;
+    for ( i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Atom )
+        {
+            mass += this.molecule[i].getMass();
+            
+        }
+        else if ( this.molecule[i] instanceof Molecule )
+        {
+            // If part of molecule is a sub-molecule
+            mass += this.molecule[i].formulaMass();
+        }
+    }
+    return mass * this.n_moles;
+}
+
+Molecule.prototype.percentageComposition = function(element)
+{
+    // TODO: Finish this function
+    var totalMass = this.formulaMass()
+    
+    if (this.numOfElement())
+    
+    if ( element instanceof Atom )
+    {
+        var elementMass = element.getMass();
+    }
+    else if ( element instanceof Molecule )
+    {
+        var elementMass = element.formulaMass();
+    }
+    else
+    {
+        var tempAtom = new Atom(element,1)
+        var elementMass = tempAtom.getMass()
+    }
+    
+    return elementMass/totalMass;
+}
 
 
 // Expression ***************************************************************************
@@ -73,6 +137,7 @@ function Expression(expression)
 }
 
 Expression.prototype.numOfElement = function(element)
+// Returns number of elements `element` in Expression
 {
     var i,
         numOfEle = 0;
@@ -94,6 +159,14 @@ function Equation ()
 
 }
 
+Equation.prototype.balance = function()
+{
+ // TODO: implement balance    
+}
+    
+
+
+
 var test = new Expression([
     new Molecule(1,[
         new Atom("C",1),
@@ -103,8 +176,7 @@ var test = new Expression([
         new Atom("O",2)
     ])
 ])
-console.log(test.numOfElement("C"))
-console.log(test.numOfElement("H"))
-console.log(test.numOfElement("O"))
+console.log(test.expression[0].percentageComposition("H"))
+
 
 
