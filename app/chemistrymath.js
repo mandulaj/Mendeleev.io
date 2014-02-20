@@ -19,12 +19,21 @@ function getElementObject(element)
 
 // TODO: write a parse function
 
-function parseExpression(exp)
+function parseEquation(eq)
 {
-    return exp
+    var count = eq.match(/=/g);
+    if (count.length === 1)
+    {
+        var equations = eq.split("=");
+        return new Equation( parseExpression(equations[0]), parseExpression(equations[1]) );
+    }
+    else
+    {
+        return parseExpression( eq );
+    }
 }
 
-
+function parseExpression(exp)
 
 
 // Atom ***************************************************************************
@@ -154,7 +163,7 @@ Expression.prototype.numOfElement = function(element)
 
 
 // Equation ***************************************************************************
-function Equation ()
+function Equation (left_expression, right_expression)
 {
 	this.leftHandSide = new Expression(left_expression);
 	this.rightHandSide = new Expression(right_expression);
@@ -178,7 +187,7 @@ var test = new Expression([
         new Atom("O",2)
     ])
 ])
-console.log(test.expression[0].percentageComposition("H"))
-
+//console.log(test.expression[0].percentageComposition("H"))
+parseEquation("asdasdasda::")
 
 
