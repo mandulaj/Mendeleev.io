@@ -86,6 +86,7 @@ Molecule.prototype.numOfElement = function(element)
 }
 
 Molecule.prototype.formulaMass = function()
+// Returns mass of molecule
 {
     var i,
     mass = 0;
@@ -106,6 +107,7 @@ Molecule.prototype.formulaMass = function()
 }
 
 Molecule.prototype.percentageComposition = function(element)
+// Returns percentage composition of `element` in molecule 
 {
     // TODO: Finish this function
     var totalMass = this.formulaMass()
