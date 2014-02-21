@@ -313,18 +313,13 @@ Equation.prototype.balance = function()
     
 
 
+// Tests and Examples *************************************************
 
-var test = new Expression([
-    new Molecule(1,[
-        new Atom("C",1),
-        new Atom("H",4)
-    ]),
-    new Molecule(2,[
-        new Atom("O",2)
-    ])
-])
-//console.log(test.expression[0].percentageComposition("H"))
-//console.log(JSON.stringify(parseEquation("CH4+O2=CO2+H2O"),null,1))
-console.log(parseMolecule("NH4NO3").percentageComposition("N")*100)
+
+var methane = parseMolecule("CH4")
+console.log("Percentage Composition of H in methane: "+methane.percentageComposition("H")+"%");
+console.log("Mass of methane: "+methane.formulaMass())
+console.log("Mass of 5 methane: "+methane.formulaMass(5))
+
 
 
