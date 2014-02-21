@@ -411,8 +411,8 @@ Expression.prototype.printable = function()
 */
 function Equation (left_expression, right_expression)
 {
-	this.leftHandSide = new Expression(left_expression);
-	this.rightHandSide = new Expression(right_expression);
+	this.leftHandSide = left_expression;
+	this.rightHandSide = right_expression;
 
 }
 
@@ -437,11 +437,14 @@ console.log("Mass of 5 methane: "+methane.formulaMass(5))
 
 
 test = parseMolecule("C2H4")
-console.log(test.printable())
+//console.log(test.printable())
 test.toEmpirical()
 
-console.log(test.printable())
+//console.log(test.printable())
 
 test2 = parseEquation("CH4+O2=CO2+H2O")
-//console.log(JSON.stringify(test2,null,2))
+console.log(JSON.stringify(test2,null,2))
 console.log(test2.printable())
+
+test3 = { eq: parseExpression("C+C+C+H") }
+//console.log(JSON.stringify(test3,null,2))
