@@ -224,7 +224,7 @@ Molecule.prototype.numOfElement = function(element)
 
 Molecule.prototype.formulaMass = function(moles)
 {
-    if ( typeof moles = 'undefined' )
+    if ( typeof moles === 'undefined' )
     {
         var moles = this.n_moles;
     }
