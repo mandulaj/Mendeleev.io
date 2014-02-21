@@ -83,6 +83,9 @@ function parseEquation(eq)
  * Converts Atoms to Molecules --> Atom+Molecule+Atom ==> Molecule+Molecule+Molecule
  * viz. parsing Molecule for details on Molecule form
 */ 
+
+
+// BUG: returns expression.expression: [molec1,molec2 ...] instead of expression:  [molec1,molec2 ...] 
 function parseExpression( exp )
 {
     var count = exp.match(/\+/g);
@@ -383,10 +386,13 @@ Expression.prototype.printable = function()
 {
     var returnString = "",
         moleculeList = [];
+    console.log(this.expression.length)
     for ( var i = 0; i < this.expression.length; i++ )
     {
-        moleculeList[i] = expression[i].printable();
+        moleculeList[i] = this.expression[i].printable();
+        console.log("This: "+this.expression[i].printable())
     }
+    console.log(moleculeList)
     returnString = moleculeList.join(" + ");
     return returnString;
 }
@@ -414,7 +420,11 @@ Equation.prototype.balance = function()
 {
  // TODO: implement balance    
 }
-    
+
+Equation.prototype.printable = function()
+{
+    return this.leftHandSide.printable() + "=" + this.rightHandSide.printable();
+}
 
 
 // Tests and Examples *************************************************
@@ -429,4 +439,9 @@ console.log("Mass of 5 methane: "+methane.formulaMass(5))
 test = parseMolecule("C2H4")
 console.log(test.printable())
 test.toEmpirical()
+
 console.log(test.printable())
+
+test2 = parseEquation("CH4+O2=CO2+H2O")
+//console.log(JSON.stringify(test2,null,2))
+console.log(test2.printable())
