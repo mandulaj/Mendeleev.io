@@ -29,7 +29,7 @@ function parseEquation(eq)
     }
     else
     {
-        return parseExpression( eq );
+        return null; //parseExpression( eq );
     }
 }
 
@@ -37,9 +37,11 @@ function parseExpression( exp )
 {
     var count = exp.match(/\+/g);
     var returnMolecules = []
-    if ( count <= 1 )
+    
+    if ( count.length >= 1 )
     {
         var molecules = exp.split("+");
+        
         for ( var i = 0; i < molecules.length; i++ )
         {
             returnMolecules[i] = parseMolecule( molecules[i] );
@@ -48,7 +50,7 @@ function parseExpression( exp )
     }
     else
     {
-        return parseMolecule( exp )
+        return new Expression( [parseMolecule( exp )])
     }
     
 }
@@ -91,7 +93,7 @@ function parseAtom( at )
         number = number[0]
     }
     
-    if ( !getElementObject(element) )
+    if ( typeof getElementObject(element) != 'undefined' )
     {
         return new Atom(element, number)
     }
@@ -109,7 +111,7 @@ function Atom(element,number)
 {
     this.element = element;
     this.n = number;
-    this.property = getElementObject(element)
+    //this.property = getElementObject(element)
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -256,7 +258,7 @@ var test = new Expression([
     ])
 ])
 //console.log(test.expression[0].percentageComposition("H"))
-console.log(JSON.stringify(parseEquation("He3")))
+console.log(JSON.stringify(parseExpression("CH4+2O2+He2+Fe3")))
 
 
 
