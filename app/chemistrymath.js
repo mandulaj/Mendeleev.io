@@ -130,7 +130,12 @@ Atom.prototype.getAtomName = function()
 
 Atom.prototype.getMass = function()
 {
-    return this.property.atomic_weight * this.n;
+    return parseInt(this.property.atomic_weight * this.n);
+}
+
+Atom.prototype.getNumOfMoles = function(mass)
+{
+    return mass/this.property.atomic_weigth;
 }
 
 // Molecule ***************************************************************************
@@ -151,13 +156,13 @@ Molecule.prototype.numOfElement = function(element)
         {
             if ( this.molecule[i].getAtomName() === element )
             {
-                numOfElem += this.molecule[i].getNumOfAtoms();
+                numOfElem += parseInt(this.molecule[i].getNumOfAtoms());
             }
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             // If part of molecule is a sub-molecule
-            numOfElem += this.molecule[i].numOfElement(element)
+            numOfElem += parseInt(this.molecule[i].numOfElement(element));
         }
     }
     numOfElem *= this.n_moles;
@@ -173,13 +178,13 @@ Molecule.prototype.formulaMass = function()
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            mass += this.molecule[i].getMass();
+            mass += parseInt(this.molecule[i].getMass());
             
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             // If part of molecule is a sub-molecule
-            mass += this.molecule[i].formulaMass();
+            mass += parseInt(this.molecule[i].formulaMass());
         }
     }
     return mass * this.n_moles;
@@ -189,25 +194,13 @@ Molecule.prototype.percentageComposition = function(element)
 // Returns percentage composition of `element` in molecule 
 {
     // TODO: Finish this function
-    var totalMass = this.formulaMass()
+    var totalMass = this.formulaMass();
+    var numOfElem = this.numOfElement(element);
     
-    if (this.numOfElement())
+    var tempElement = new Atom(element,numOfElem);
+    var massElement = tempElement.getMass();
     
-    if ( element instanceof Atom )
-    {
-        var elementMass = element.getMass();
-    }
-    else if ( element instanceof Molecule )
-    {
-        var elementMass = element.formulaMass();
-    }
-    else
-    {
-        var tempAtom = new Atom(element,1)
-        var elementMass = tempAtom.getMass()
-    }
-    
-    return elementMass/totalMass;
+    return massElement/totalMass;
 }
 
 
@@ -258,7 +251,7 @@ var test = new Expression([
     ])
 ])
 //console.log(test.expression[0].percentageComposition("H"))
-console.log(JSON.stringify(parseEquation("CH4+O2=CO2+H2O"),null,1))
-
+//console.log(JSON.stringify(parseEquation("CH4+O2=CO2+H2O"),null,1))
+console.log(parseMolecule("NH4NO3").percentageComposition("N")*100)
 
 
