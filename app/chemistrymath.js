@@ -111,7 +111,7 @@ function Atom(element,number)
 {
     this.element = element;
     this.n = number;
-    //this.property = getElementObject(element)
+    this.property = getElementObject(element)
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -258,7 +258,7 @@ var test = new Expression([
     ])
 ])
 //console.log(test.expression[0].percentageComposition("H"))
-console.log(JSON.stringify(parseExpression("CH4+2O2+He2+Fe3")))
+console.log(JSON.stringify(parseEquation("CH4+O2=CO2+H2O"),null,1))
 
 
 
