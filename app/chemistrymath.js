@@ -17,9 +17,14 @@ function getElementObject(element)
     }
 }
 
-// TODO: write a parse function
-
-function parseEquation(eq)
+/* Function for parsing Equations
+ * 
+ * Returns a Equation object. 
+ * If `eq` is not a equation ie. has no "=" returns null.
+ * Equation must be of form Expression=Expression
+ * -- viz. parseExpression() for more --
+*/
+function parseEquation(eq)  
 {
     var count = eq.match(/=/g);
     if (count != null && count.length === 1)
@@ -29,10 +34,18 @@ function parseEquation(eq)
     }
     else
     {
-        return null; //parseExpression( eq );
+        return null;
     }
 }
 
+/* Function for parsing Expressions
+ * 
+ * Returns a Expression object.
+ * Expressions are of form Molecule+Molecule+...
+ * Can have any number of molecules greater or equal to 1
+ * Converts Atoms to Molecules --> Atom+Molecule+Atom ==> Molecule+Molecule+Molecule
+ * viz. parsing Molecule for details on Molecule form
+*/ 
 function parseExpression( exp )
 {
     var count = exp.match(/\+/g);
@@ -55,6 +68,14 @@ function parseExpression( exp )
     
 }
 
+/* Function for parsing Molecules
+ * 
+ * Returns a Molecule object.
+ * Molecule must be in the form of MXnYnZn where:
+ *  M is the number of moles of the molecule
+ *  X,Y,Z are valid element symbols eg. H, He Uuo ...
+ *  n are number of the preceding element in the molecule (H2O = Water, 3CH4 = 3 Moles of Methane)
+*/ 
 function parseMolecule( mol )
 {
     var moles = mol.match( /^[0-9]*/ )[0]
@@ -80,6 +101,14 @@ function parseMolecule( mol )
     }
 }
 
+/* Function for parsing Atoms
+ * 
+ * Returns a Atom object
+ * Atoms must be in the form Xn where
+ *  X is a valid element
+ *  n is a the number of element X
+ * if no n is specified n = 1
+*/ 
 function parseAtom( at )
 {
     var number = at.match(/[0-9]+/g)
@@ -107,6 +136,20 @@ function parseAtom( at )
 }
 
 // Atom ***************************************************************************
+/*
+ * used for storing and manipulating individual atoms
+ * 
+ * Properties:
+ *  Atom.element    - Symbol of elements used to identify atom
+ *  Atom.n          - Number of the element
+ *  Atom.property   - object from element.json with a list of properties
+ * 
+ * Methods:
+ *  Atom.getNumOfAtoms()        - returns the number of atoms per mole
+ *  Atom.getAtomName()          - returns element symbol
+ *  Atom.getMass()              - returns mass of n moles of element
+ *  Atom.getNumOfMoles(mass)    - returns number of moles that weigh mass grams
+*/ 
 function Atom(element,number)
 {
     this.element = element;
@@ -115,13 +158,12 @@ function Atom(element,number)
 }
 
 Atom.prototype.getNumOfAtoms = function()
-// Get number of atoms
+
 {
     return this.n;
 }
 
 Atom.prototype.getAtomName = function()
-// Get atom name
 // TODO: This will be changed
 {
     return this.element;
@@ -139,6 +181,18 @@ Atom.prototype.getNumOfMoles = function(mass)
 }
 
 // Molecule ***************************************************************************
+/*
+ * used for storing and manipulating molecules
+ * 
+ * Properties:
+ *  Molecule.n_moles    - number of moles of the molecule
+ *  Molecule.molecule   - a array of Atom objects that make up the molecule
+ * 
+ * Methods:
+ *  Molecule.numOfElement(element)          - number of atoms of element in molecule
+ *  Molecule.formulaMass([moles])           - mass of [moles]/n_moles moles of molecule
+ *  Molecule.percentageComposition(element) - percentage composition of `element` in molecule
+*/
 function Molecule(moles,molecule)
 {
 	this.n_moles = moles;
@@ -146,7 +200,6 @@ function Molecule(moles,molecule)
 }
 
 Molecule.prototype.numOfElement = function(element)
-// Returns number of elements `element` in Molecule
 {
 	var i,
         numOfElem = 0;
@@ -169,9 +222,12 @@ Molecule.prototype.numOfElement = function(element)
     return numOfElem;
 }
 
-Molecule.prototype.formulaMass = function()
-// Returns mass of molecule
+Molecule.prototype.formulaMass = function(moles)
 {
+    if ( typeof moles = 'undefined' )
+    {
+        var moles = this.n_moles;
+    }
     var i,
     mass = 0;
     for ( i = 0; i < this.molecule.length; i++ )
@@ -187,13 +243,11 @@ Molecule.prototype.formulaMass = function()
             mass += parseInt(this.molecule[i].formulaMass());
         }
     }
-    return mass * this.n_moles;
+    return mass * moles;
 }
 
 Molecule.prototype.percentageComposition = function(element)
-// Returns percentage composition of `element` in molecule 
 {
-    // TODO: Finish this function
     var totalMass = this.formulaMass();
     var numOfElem = this.numOfElement(element);
     
@@ -205,13 +259,21 @@ Molecule.prototype.percentageComposition = function(element)
 
 
 // Expression ***************************************************************************
+/*
+ * used for storing and manipulating expressions
+ * 
+ * Properties:
+ *  Expression.expression   - array of Molecules that make up the expression
+ * 
+ * Methods:
+ *  Expression.numOfElement(element) - returns the total number of element in expression
+*/
 function Expression(expression) 
 {
 	this.expression = expression;
 }
 
 Expression.prototype.numOfElement = function(element)
-// Returns number of elements `element` in Expression
 {
     var i,
         numOfEle = 0;
@@ -226,6 +288,17 @@ Expression.prototype.numOfElement = function(element)
 
 
 // Equation ***************************************************************************
+/*
+ * used for storing and manipulating Equations
+ * 
+ * Properties:
+ *  Equation.leftHandSide   - a Expression object containing the left-hand side of the equation 
+ *  Equation.rightHandSide  - a Expression object containing the right-hand side of the equation
+ * 
+ * Methods:
+ *  Equation.balance()  - automatically balances the right-hand and left-hand side
+ * 
+*/
 function Equation (left_expression, right_expression)
 {
 	this.leftHandSide = new Expression(left_expression);
