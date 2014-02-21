@@ -22,7 +22,7 @@ function getElementObject(element)
 function parseEquation(eq)
 {
     var count = eq.match(/=/g);
-    if (count.length === 1)
+    if (count != null && count.length === 1)
     {
         var equations = eq.split("=");
         return new Equation( parseExpression(equations[0]), parseExpression(equations[1]) );
@@ -35,12 +35,12 @@ function parseEquation(eq)
 
 function parseExpression( exp )
 {
-    var count = exp.match(/+/g);
+    var count = exp.match(/\+/g);
     var returnMolecules = []
     if ( count <= 1 )
     {
         var molecules = exp.split("+");
-        for ( var i = 0; y < molecules.length; i++ )
+        for ( var i = 0; i < molecules.length; i++ )
         {
             returnMolecules[i] = parseMolecule( molecules[i] );
         }
@@ -62,9 +62,47 @@ function parseMolecule( mol )
     }
     
     var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*/g )
-    console.log(atoms)
+    var returnAtoms = []
+    if ( atoms != null )
+    {
+        for ( var i = 0; i < atoms.length; i++ )
+        {
+            returnAtoms[i] = parseAtom(atoms[i]);
+        }
+        
+        return new Molecule(moles,returnAtoms);
+    }
+    else
+    {
+        // TODO: when atoms === null
+    }
 }
 
+function parseAtom( at )
+{
+    var number = at.match(/[0-9]+/g)
+    var element = at.match(/[A-Z][a-z]{0,2}/g)[0]
+    if ( number === null )
+    {
+        number = 1;
+    }
+    else
+    {
+        number = number[0]
+    }
+    
+    if ( !getElementObject(element) )
+    {
+        return new Atom(element, number)
+    }
+    else
+    {
+        // TODO: if element doesn't exist.
+        console.log(number)
+        console.log(element)
+    }
+    
+}
 
 // Atom ***************************************************************************
 function Atom(element,number)
@@ -218,6 +256,7 @@ var test = new Expression([
     ])
 ])
 //console.log(test.expression[0].percentageComposition("H"))
-parseMolecule("4CH4")
+console.log(JSON.stringify(parseEquation("He3")))
+
 
 
