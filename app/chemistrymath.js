@@ -17,7 +17,42 @@ function getElementObject(element)
     }
 }
 
-
+function GCD(array)
+{
+    var x, y;
+    if (array[0] < 0)
+    {
+        x = -array[0];
+    }
+    else
+    {
+        x = array[0];
+    }
+    for ( var i = 1; i < array.length; i++ )
+    {
+        if ( array[i] < 0 )
+        {
+            y = -array[i]
+        }
+        else
+        {
+            y = array[i];
+        }
+        while ( x && y )
+        { 
+            if ( x > y )
+            {
+                x %= y
+            }
+            else
+            {
+                y %= x; 
+            }
+        }
+        x += y;
+    }
+    return x;
+}
 
 /* Function for parsing Equations
  * 
