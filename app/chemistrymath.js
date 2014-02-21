@@ -33,7 +33,37 @@ function parseEquation(eq)
     }
 }
 
-function parseExpression(exp)
+function parseExpression( exp )
+{
+    var count = exp.match(/+/g);
+    var returnMolecules = []
+    if ( count <= 1 )
+    {
+        var molecules = exp.split("+");
+        for ( var i = 0; y < molecules.length; i++ )
+        {
+            returnMolecules[i] = parseMolecule( molecules[i] );
+        }
+        return new Expression( returnMolecules )
+    }
+    else
+    {
+        return parseMolecule( exp )
+    }
+    
+}
+
+function parseMolecule( mol )
+{
+    var moles = mol.match( /^[0-9]*/ )[0]
+    if ( moles ==  0 )
+    {
+        moles = 1;
+    }
+    
+    var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*/g )
+    console.log(atoms)
+}
 
 
 // Atom ***************************************************************************
@@ -188,6 +218,6 @@ var test = new Expression([
     ])
 ])
 //console.log(test.expression[0].percentageComposition("H"))
-parseEquation("asdasdasda::")
+parseMolecule("4CH4")
 
 
