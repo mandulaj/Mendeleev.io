@@ -319,7 +319,6 @@ Molecule.prototype.toEmpirical = function()
     {
         listOfns[i] = this.molecule[i].getNumOfAtoms()
     }
-    console.log(listOfns)
     var gcd = GCD(listOfns);
     for ( var i = 0; i < this.molecule.length; i++ )
     {
@@ -334,7 +333,7 @@ Molecule.prototype.printable = function()
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            returnString += this.molecule[i].printable());
+            returnString += this.molecule[i].printable();
             
         }
         else if ( this.molecule[i] instanceof Molecule )
@@ -375,12 +374,22 @@ Expression.prototype.numOfElement = function(element)
     
     for ( i = 0; i < this.expression.length; i++ )
     {
-        numOfEle += this.expression[i].numOfElement(element)
+        numOfEle += this.expression[i].numOfElement(element);
     }
     return numOfEle;
 }
 
-
+Expression.prototype.printable = function()
+{
+    var returnString = "",
+        moleculeList = [];
+    for ( var i = 0; i < this.expression.length; i++ )
+    {
+        moleculeList[i] = expression[i].printable();
+    }
+    returnString = moleculeList.join(" + ");
+    return returnString;
+}
 
 // Equation ***************************************************************************
 /*
@@ -418,5 +427,6 @@ console.log("Mass of 5 methane: "+methane.formulaMass(5))
 
 
 test = parseMolecule("C2H4")
+console.log(test.printable())
 test.toEmpirical()
-console.log(test)
+console.log(test.printable())
