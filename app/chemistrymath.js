@@ -17,6 +17,8 @@ function getElementObject(element)
     }
 }
 
+
+
 /* Function for parsing Equations
  * 
  * Returns a Equation object. 
@@ -160,7 +162,7 @@ function Atom(element,number)
 Atom.prototype.getNumOfAtoms = function()
 
 {
-    return this.n;
+    return parseInt(this.n);
 }
 
 Atom.prototype.getAtomName = function()
@@ -178,6 +180,23 @@ Atom.prototype.getMass = function()
 Atom.prototype.getNumOfMoles = function(mass)
 {
     return mass/this.property.atomic_weigth;
+}
+
+Atom.prototype.setNumOfAtoms = function(number)
+{
+    this.n = number;
+}
+
+Atom.prototype.printable = function()
+{
+    if ( this.n == 1 )
+    {
+        return this.element
+    }
+    else
+    {
+        return this.element + this.n;
+    }
 }
 
 // Molecule ***************************************************************************
@@ -258,6 +277,47 @@ Molecule.prototype.percentageComposition = function(element)
 }
 
 
+Molecule.prototype.toEmpirical = function()
+{
+    var listOfns = []
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        listOfns[i] = this.molecule[i].getNumOfAtoms()
+    }
+    console.log(listOfns)
+    var gcd = GCD(listOfns);
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        this.molecule[i].setNumOfAtoms(listOfns[i]/gcd)
+    }
+}
+
+Molecule.prototype.printable = function()
+{
+    var returnString = "";
+    for ( i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Atom )
+        {
+            returnString += this.molecule[i].printable());
+            
+        }
+        else if ( this.molecule[i] instanceof Molecule )
+        {
+            // If part of molecule is a sub-molecule
+            returnString += "(" + this.molecule[i].printable() + ")";
+        }
+    }
+    if (this.n_moles == 1)
+    {
+        return returnString;
+    }
+    else
+    {
+        return this.n_moles + this.n_moles
+    }
+}
+
 // Expression ***************************************************************************
 /*
  * used for storing and manipulating expressions
@@ -322,4 +382,6 @@ console.log("Mass of methane: "+methane.formulaMass())
 console.log("Mass of 5 methane: "+methane.formulaMass(5))
 
 
-
+test = parseMolecule("C2H4")
+test.toEmpirical()
+console.log(test)
