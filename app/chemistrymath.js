@@ -279,6 +279,20 @@ Molecule.prototype.numOfElement = function(element)
     return numOfElem;
 }
 
+Molecule.prototype.listElements = function()
+{
+    var listOfElem = []
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        var element = this.molecule[i].getAtomName();
+        if ( listOfElem.indexOf(element) === -1 )
+        {
+            listOfElem.push(element)
+        }
+    }
+    return listOfElem;
+}
+
 Molecule.prototype.formulaMass = function(moles)
 {
     if ( typeof moles === 'undefined' )
@@ -352,6 +366,21 @@ Molecule.prototype.printable = function()
     else
     {
         return this.n_moles + this.n_moles
+    }
+}
+
+Molecule.prototype.simplify = function()
+{
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Atom )
+        {
+            
+        }
+        else if ( this.molecuel[i] instanceof Molecule )
+        {
+            this.molecule[i].simplify()
+        }
     }
 }
 
@@ -436,15 +465,16 @@ console.log("Mass of methane: "+methane.formulaMass())
 console.log("Mass of 5 methane: "+methane.formulaMass(5))
 
 
-test = parseMolecule("C2H4")
-//console.log(test.printable())
+test = parseMolecule("C2C2H8Cl16H4I4Kr20Uuo6Fe4")
+console.log(test.printable())
+console.log("Weight: " + test.formulaMass())
 test.toEmpirical()
-
-//console.log(test.printable())
+console.log(test.listElements())
+console.log(test.printable())
 
 test2 = parseEquation("CH4+O2=CO2+H2O")
-console.log(JSON.stringify(test2,null,2))
-console.log(test2.printable())
+//console.log(JSON.stringify(test2,null,2))
+//console.log(test2.printable())
 
 test3 = { eq: parseExpression("C+C+C+H") }
 //console.log(JSON.stringify(test3,null,2))
