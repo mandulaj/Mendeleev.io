@@ -119,9 +119,6 @@ function parseEquation(eq)
  * Converts Atoms to Molecules --> Atom+Molecule+Atom ==> Molecule+Molecule+Molecule
  * viz. parsing Molecule for details on Molecule form
 */ 
-
-
-// BUG: returns expression.expression: [molec1,molec2 ...] instead of expression:  [molec1,molec2 ...] 
 function parseExpression( exp )
 {
     var count = exp.match(/\+/g);
@@ -150,7 +147,8 @@ function parseExpression( exp )
  * Molecule must be in the form of MXnYnZn where:
  *  M is the number of moles of the molecule
  *  X,Y,Z are valid element symbols eg. H, He Uuo ...
- *  n are number of the preceding element in the molecule (H2O = Water, 3CH4 = 3 Moles of Methane)
+ *  n is number of the preceding element in the molecule (H2O = Water, 3CH4 = 3 Moles of Methane)
+ *  Can take sub-molecules eg. Fe2(SO4)3
 */ 
 function parseMolecule( mol )
 {
@@ -372,11 +370,19 @@ Molecule.prototype.listElements = function()
     var listOfElem = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        var element = this.molecule[i].getAtomName();
-        if ( listOfElem.indexOf(element) === -1 )
+        if ( this.molecule[i] instanceof Atom )
         {
-            listOfElem.push(element);
+            var element = this.molecule[i].getAtomName();
+            if ( listOfElem.indexOf(element) === -1 )
+            {
+                listOfElem.push(element);
+            }
         }
+        else if ( this.molecule[i] instanceof Molecule )
+        {
+            //Case sub-molecule =
+        }
+        
     }
     return listOfElem;
 }
@@ -430,8 +436,8 @@ Molecule.prototype.toEmpirical = function()
         if ( this.molecule[i] instanceof Molecule )
         {
             //Complicated ... 
-            this.molecule[i].
-            listOfns[i] = this.molecule[i].
+            this.molecule[i].a
+            listOfns[i] = this.molecule[i].a
         }
     }
     var gcd = Math.GCD(listOfns);
@@ -559,6 +565,23 @@ Expression.prototype.printable = function()
     return returnString;
 }
 
+Expression.prototype.listElements = function()
+{
+    var list = []
+    for ( var i = 0; i < this.expression.length; i++ )
+    {
+        var listInMolecule = this.expression[i].listElements();
+        for ( var j = 0; j < listInMolecule.length; j++ )
+        {
+            if ( list.indexOf(listInMolecule[i]) != -1 )
+            {
+                list.push(listInMolecule[i])
+            }    
+        }
+    }
+    return list
+}
+
 // Equation ***************************************************************************
 /*
  * used for storing and manipulating Equations
@@ -580,7 +603,8 @@ function Equation (left_expression, right_expression)
 
 Equation.prototype.balance = function()
 {
- // TODO: implement balance    
+ // TODO: implement balance
+    console.log(this.leftHandSide.listElements())
 }
 
 Equation.prototype.printable = function()
@@ -614,12 +638,17 @@ test2 = parseEquation("CH4+O2=CO2+H2O");
 
 test3 = { eq: parseExpression("C+C+C+H") };
 //console.log(JSON.stringify(test3,null,2));
-*/
+
 
 test = parseMolecule("C2(SO4(C2H4)2)2")
 console.log(test.formulaMass())
 console.log(test.printable())
 test.toEmpirical()
 console.log(test.printable())
+*/
 
 //console.log(JSON.stringify(test,null,2))
+
+test1 = parseExpression("CO2+SO4+C(SH4)2");
+console.log(test1.printable())
+console.log(test1.listElements())
