@@ -402,7 +402,7 @@ Molecule.prototype.formulaMass = function(moles)
             mass += this.molecule[i].formulaMass();
         }
     }
-    console.log(mass * moles)
+    
     return mass * moles;
 }
 
