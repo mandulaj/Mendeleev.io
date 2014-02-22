@@ -423,7 +423,16 @@ Molecule.prototype.toEmpirical = function()
     var listOfns = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        listOfns[i] = this.molecule[i].getNumOfAtoms();
+        if ( this.molecule[i] instanceof Atom )
+        {
+            listOfns[i] = this.molecule[i].getNumOfAtoms();
+        }
+        if ( this.molecule[i] instanceof Molecule )
+        {
+            //Complicated ... 
+            this.molecule[i].
+            listOfns[i] = this.molecule[i].
+        }
     }
     var gcd = Math.GCD(listOfns);
     for ( var i = 0; i < this.molecule.length; i++ )
