@@ -414,11 +414,16 @@ Molecule.prototype.expand = function()
         {
             if ( this.molecule[i] instanceof Atom )
             {
-                this.molecule[i].setNumOfAtoms( this.n_moles * this.molecule[i].getNumOfAtoms() )
+                this.molecule[i].setNumOfAtoms( this.n_moles * this.molecule[i].getNumOfAtoms() );
             }
         }
         this.n_moles = 1;
     }
+}
+
+Molecule.prototype.getAtoms = function()
+{
+    return this.molecule;
 }
 
 // Expression ***************************************************************************
