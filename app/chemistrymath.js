@@ -300,7 +300,7 @@ Atom.prototype.getAtomName = function()
 
 Atom.prototype.getMass = function()
 {
-    return parseInt(this.property.atomic_weight * this.n);
+    return parseFloat(this.property.atomic_weight * this.n);
 }
 
 Atom.prototype.getNumOfMoles = function(mass)
@@ -393,15 +393,16 @@ Molecule.prototype.formulaMass = function(moles)
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            mass += parseInt(this.molecule[i].getMass());
+            mass += this.molecule[i].getMass();
             
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             // If part of molecule is a sub-molecule
-            mass += parseInt(this.molecule[i].formulaMass());
+            mass += this.molecule[i].formulaMass();
         }
     }
+    console.log(mass * moles)
     return mass * moles;
 }
 
@@ -593,6 +594,7 @@ test3 = { eq: parseExpression("C+C+C+H") };
 //console.log(JSON.stringify(test3,null,2));
 */
 
-test = parseMolecule("C(SO4(CH2)22)5(SO)121C2")
-console.log(test.getAtoms())
+test = parseMolecule("C(SO4(CH2)2)2")
+console.log(test.formulaMass())
+
 //console.log(JSON.stringify(test,null,2))
