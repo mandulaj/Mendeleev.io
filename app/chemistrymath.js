@@ -432,8 +432,12 @@ Molecule.prototype.toEmpirical = function()
     }
 }
 
-Molecule.prototype.printable = function()
+Molecule.prototype.printable = function(molesInFront)
 {
+    if ( typeof molesInFront == "undefined" )
+    {
+        molesInFront = true;
+    }
     var returnString = "";
     for ( i = 0; i < this.molecule.length; i++ )
     {
@@ -444,17 +448,26 @@ Molecule.prototype.printable = function()
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
+            var moles = this.molecule[i].n_moles;
+            console.log(JSON.stringify(this.molecule[i],null,2))
             // If part of molecule is a sub-molecule
-            returnString += "(" + this.molecule[i].printable() + ")";
+            returnString += "(" + this.molecule[i].printable(false) + ")" + moles;
         }
     }
-    if (this.n_moles == 1)
+    if ( this.n_moles == 1 )
     {
         return returnString;
     }
     else
     {
-        return this.n_moles + this.n_moles;
+        if (molesInFront)
+        {
+            return this.n_moles + returnString;
+        }
+        else
+        {
+            return returnString
+        }
     }
 }
 
@@ -594,7 +607,10 @@ test3 = { eq: parseExpression("C+C+C+H") };
 //console.log(JSON.stringify(test3,null,2));
 */
 
-test = parseMolecule("C(SO4(CH2)2)2")
+test = parseMolecule("C2(SO4(C2H4)2)2")
 console.log(test.formulaMass())
+console.log(test.printable())
+test.toEmpirical()
+console.log(test.printable())
 
 //console.log(JSON.stringify(test,null,2))
