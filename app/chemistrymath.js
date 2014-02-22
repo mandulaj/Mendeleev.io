@@ -17,7 +17,7 @@ function getElementObject(element)
     }
 }
 
-function GCD(array)
+Math.GCD = function(array)
 {
     var x, y;
     if (array[0] < 0)
@@ -52,6 +52,28 @@ function GCD(array)
         x += y;
     }
     return x;
+}
+
+Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
+{   
+    var a = Math.abs(array[0]);
+    for ( var i = 1; i < array.length; i++ )
+    { 
+        var b = Math.abs(array[i]), c = a;
+        while (a && b)
+        {
+            if ( a > b )
+            {
+                a %= b;
+            }
+            else
+            {
+                b %= a;                
+            }
+        } 
+        a = Math.abs(c*array[i])/(a+b);
+    }
+    return a;
 }
 
 /* Function for parsing Equations
@@ -336,7 +358,7 @@ Molecule.prototype.toEmpirical = function()
     {
         listOfns[i] = this.molecule[i].getNumOfAtoms()
     }
-    var gcd = GCD(listOfns);
+    var gcd = Math.GCD(listOfns);
     for ( var i = 0; i < this.molecule.length; i++ )
     {
         this.molecule[i].setNumOfAtoms(listOfns[i]/gcd)
