@@ -533,6 +533,28 @@ Molecule.prototype.getAtoms = function()
     return returnList;
 }
 
+Molecule.prototype.getListOfAtomNums = function()
+{
+    var list = [];
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Atom )
+        {
+            list.push(this.molecule[i].getNumOfAtoms())
+        }
+        else if ( this.molecule[i] instanceof Molecule )
+        {
+            var sublist = this.molecule[i].getListOfAtomNums()
+            
+            for ( var j = 0; j < sublist.length; j++ )
+            {
+                list.push(sublist);
+            }
+        }
+    }
+    return list;
+}
+
 // Expression ***************************************************************************
 /*
  * used for storing and manipulating expressions
@@ -662,3 +684,12 @@ console.log(test1.listElements())
 */
 
 
+test = parseMolecule("CO2(SnO4)2")
+//console.log(test.percentageComposition("S")) // OK
+//console.log(test.listElements()) // Ok
+//console.log(test.numOfElement("O")) //OK
+//console.log(test.formulaMass()) //OK
+console.log(test.toEmpirical(2))
+/*console.log(test.printable())
+console.log(test.simplify(12))
+console.log(test.expand())*/
