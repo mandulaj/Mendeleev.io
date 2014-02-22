@@ -17,6 +17,22 @@ function getElementObject(element)
     }
 }
 
+function mergeLists(superlist,sublist,unique)
+{
+    if ( typeof unique == "undefined" )
+    {
+        unique = false;
+    }
+    for ( var i = 0; i < sublist.length; i++ )
+    {
+        if (!unique || superlist.indexOf(sublist[i]) === -1)
+        {
+            superlist.push(sublist[i])
+        }
+    }
+    return superlist;
+}
+
 
 Object.prototype.cloneSelf = function() 
 {
@@ -381,13 +397,7 @@ Molecule.prototype.listElements = function()
         else if ( this.molecule[i] instanceof Molecule )
         {
             var list = this.molecule[i].listElements();
-            for ( var j = 0; j < list.length; j++ )
-            {
-                if ( listOfElem.indexOf(list[j]) === -1 )
-                {
-                    listOfElem.push(list[j]);
-                }
-            }
+            listOfElem = mergeLists(listOfElem,list,true);
         }
         
     }
@@ -546,10 +556,7 @@ Molecule.prototype.getListOfAtomNums = function()
         {
             var sublist = this.molecule[i].getListOfAtomNums()
             
-            for ( var j = 0; j < sublist.length; j++ )
-            {
-                list.push(sublist);
-            }
+            list = listOfElem(list,sublist);
         }
     }
     return list;
@@ -602,7 +609,7 @@ Expression.prototype.listElements = function()
         var listInMolecule = this.expression[i].listElements();
         for ( var j = 0; j < listInMolecule.length; j++ )
         {
-            if ( list.indexOf(listInMolecule[i]) != -1 )
+            if ( list.indexOf(listInMolecule[i]) !== -1 )
             {
                 list.push(listInMolecule[i])
             }    
@@ -686,10 +693,12 @@ console.log(test1.listElements())
 
 test = parseMolecule("CO2(SnO4)2")
 //console.log(test.percentageComposition("S")) // OK
-//console.log(test.listElements()) // Ok
+console.log(test.listElements()) // Ok
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
-console.log(test.toEmpirical(2))
+//console.log(test.toEmpirical(2))
 /*console.log(test.printable())
 console.log(test.simplify(12))
 console.log(test.expand())*/
+
+console.log(mergeLists([1,2,3],[3,4,5],true))
