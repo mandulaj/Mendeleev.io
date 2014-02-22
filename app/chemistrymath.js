@@ -380,7 +380,14 @@ Molecule.prototype.listElements = function()
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
-            //Case sub-molecule =
+            var list = this.molecule[i].listElements();
+            for ( var j = 0; j < list.length; j++ )
+            {
+                if ( listOfElem.indexOf(list[j]) === -1 )
+                {
+                    listOfElem.push(list[j]);
+                }
+            }
         }
         
     }
@@ -655,12 +662,3 @@ console.log(test1.listElements())
 */
 
 
-test = parseAtom("C12")
-console.log(test.getNumOfAtoms())
-console.log(test.getAtomName())
-console.log(test.getMass(12))
-console.log(test.getNumOfMoles(12.011))
-test.setNumOfAtoms(2)
-console.log(test.printable())
-console.log(test.getMass(12))
-console.log(test.property.atomic_weight)
