@@ -1,7 +1,7 @@
 //Mendeleev.getElements(function(e){
 //	var elements = e;
 //});
-var elements = require("./elements.json")
+var elements = require("./elements.json");
 
 const avogadros = 6.0221413e23;
 
@@ -32,7 +32,7 @@ Math.GCD = function(array)
     {
         if ( array[i] < 0 )
         {
-            y = -array[i]
+            y = -array[i];
         }
         else
         {
@@ -42,7 +42,7 @@ Math.GCD = function(array)
         { 
             if ( x > y )
             {
-                x %= y
+                x %= y;
             }
             else
             {
@@ -111,7 +111,7 @@ function parseEquation(eq)
 function parseExpression( exp )
 {
     var count = exp.match(/\+/g);
-    var returnMolecules = []
+    var returnMolecules = [];
     
     if ( count.length >= 1 )
     {
@@ -121,11 +121,11 @@ function parseExpression( exp )
         {
             returnMolecules[i] = parseMolecule( molecules[i] );
         }
-        return new Expression( returnMolecules )
+        return new Expression( returnMolecules );
     }
     else
     {
-        return new Expression( [parseMolecule( exp )])
+        return new Expression( [parseMolecule( exp )]);
     }
     
 }
@@ -140,14 +140,14 @@ function parseExpression( exp )
 */ 
 function parseMolecule( mol )
 {
-    var moles = mol.match( /^[0-9]*/ )[0]
+    var moles = mol.match( /^[0-9]*/ )[0];
     if ( moles ==  0 )
     {
         moles = 1;
     }
     
-    var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*/g )
-    var returnAtoms = []
+    var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*/g );
+    var returnAtoms = [];
     if ( atoms != null )
     {
         for ( var i = 0; i < atoms.length; i++ )
@@ -173,26 +173,26 @@ function parseMolecule( mol )
 */ 
 function parseAtom( at )
 {
-    var number = at.match(/[0-9]+/g)
-    var element = at.match(/[A-Z][a-z]{0,2}/g)[0]
+    var number = at.match(/[0-9]+/g);
+    var element = at.match(/[A-Z][a-z]{0,2}/g)[0];
     if ( number === null )
     {
         number = 1;
     }
     else
     {
-        number = number[0]
+        number = number[0];
     }
     
     if ( typeof getElementObject(element) != 'undefined' )
     {
-        return new Atom(element, number)
+        return new Atom(element, number);
     }
     else
     {
         // TODO: if element doesn't exist.
-        console.log(number)
-        console.log(element)
+        console.log(number);
+        console.log(element);
     }
     
 }
@@ -216,7 +216,7 @@ function Atom(element,number)
 {
     this.element = element;
     this.n = number;
-    this.property = getElementObject(element)
+    this.property = getElementObject(element);
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -251,7 +251,7 @@ Atom.prototype.printable = function()
 {
     if ( this.n == 1 )
     {
-        return this.element
+        return this.element;
     }
     else
     {
@@ -303,13 +303,13 @@ Molecule.prototype.numOfElement = function(element)
 
 Molecule.prototype.listElements = function()
 {
-    var listOfElem = []
+    var listOfElem = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
         var element = this.molecule[i].getAtomName();
         if ( listOfElem.indexOf(element) === -1 )
         {
-            listOfElem.push(element)
+            listOfElem.push(element);
         }
     }
     return listOfElem;
@@ -353,15 +353,15 @@ Molecule.prototype.percentageComposition = function(element)
 
 Molecule.prototype.toEmpirical = function()
 {
-    var listOfns = []
+    var listOfns = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        listOfns[i] = this.molecule[i].getNumOfAtoms()
+        listOfns[i] = this.molecule[i].getNumOfAtoms();
     }
     var gcd = Math.GCD(listOfns);
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        this.molecule[i].setNumOfAtoms(listOfns[i]/gcd)
+        this.molecule[i].setNumOfAtoms(listOfns[i]/gcd);
     }
 }
 
@@ -387,7 +387,7 @@ Molecule.prototype.printable = function()
     }
     else
     {
-        return this.n_moles + this.n_moles
+        return this.n_moles + this.n_moles;
     }
 }
 
@@ -397,11 +397,11 @@ Molecule.prototype.simplify = function()
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            
+            // Complicated ...
         }
         else if ( this.molecuel[i] instanceof Molecule )
         {
-            this.molecule[i].simplify()
+            this.molecule[i].simplify();
         }
     }
 }
@@ -457,13 +457,10 @@ Expression.prototype.printable = function()
 {
     var returnString = "",
         moleculeList = [];
-    console.log(this.expression.length)
     for ( var i = 0; i < this.expression.length; i++ )
     {
         moleculeList[i] = this.expression[i].printable();
-        console.log("This: "+this.expression[i].printable())
     }
-    console.log(moleculeList)
     returnString = moleculeList.join(" + ");
     return returnString;
 }
@@ -501,22 +498,22 @@ Equation.prototype.printable = function()
 // Tests and Examples *************************************************
 
 
-var methane = parseMolecule("CH4")
+var methane = parseMolecule("CH4");
 console.log("Percentage Composition of H in methane: "+methane.percentageComposition("H")+"%");
-console.log("Mass of methane: "+methane.formulaMass())
-console.log("Mass of 5 methane: "+methane.formulaMass(5))
+console.log("Mass of methane: "+methane.formulaMass());
+console.log("Mass of 5 methane: "+methane.formulaMass(5));
 
 
-test = parseMolecule("C2C2H8Cl16H4I4Kr20Uuo6Fe4")
-console.log(test.printable())
-console.log("Weight: " + test.formulaMass())
-test.toEmpirical()
-console.log(test.listElements())
-console.log(test.printable())
+test = parseMolecule("C2C2H8Cl16H4I4Kr20Uuo6Fe4");
+console.log(test.printable());
+console.log("Weight: " + test.formulaMass());
+test.toEmpirical();
+console.log(test.listElements());
+console.log(test.printable());
 
-test2 = parseEquation("CH4+O2=CO2+H2O")
-//console.log(JSON.stringify(test2,null,2))
-//console.log(test2.printable())
+test2 = parseEquation("CH4+O2=CO2+H2O");
+//console.log(JSON.stringify(test2,null,2));
+//console.log(test2.printable());
 
-test3 = { eq: parseExpression("C+C+C+H") }
-//console.log(JSON.stringify(test3,null,2))
+test3 = { eq: parseExpression("C+C+C+H") };
+//console.log(JSON.stringify(test3,null,2));
