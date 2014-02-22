@@ -127,7 +127,7 @@ function parseExpression( exp )
     var count = exp.match(/\+/g);
     var returnMolecules = [];
     
-    if ( count.length >= 1 )
+    if ( count != null && count.length >= 1 )
     {
         var molecules = exp.split("+");
         
