@@ -406,6 +406,21 @@ Molecule.prototype.simplify = function()
     }
 }
 
+Molecule.prototype.expand = function()
+{
+    if (this.n_moles != 1)
+    {
+        for ( var i = 0; i < this.molecule.length; i++ )
+        {
+            if ( this.molecule[i] instanceof Atom )
+            {
+                this.molecule[i].setNumOfAtoms( this.n_moles * this.molecule[i].getNumOfAtoms() )
+            }
+        }
+        this.n_moles = 1;
+    }
+}
+
 // Expression ***************************************************************************
 /*
  * used for storing and manipulating expressions
