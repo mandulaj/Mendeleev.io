@@ -17,6 +17,20 @@ function getElementObject(element)
     }
 }
 
+
+Object.prototype.cloneSelf = function() 
+{
+    var target = {};
+    for ( var i in this ) 
+    {
+        if ( this.hasOwnProperty(i) ) 
+        {
+            target[i] = this[i];
+        }
+    }
+    return target;
+}
+
 Math.GCD = function(array)
 {
     var x, y;
@@ -423,7 +437,12 @@ Molecule.prototype.expand = function()
 
 Molecule.prototype.getAtoms = function()
 {
-    return this.molecule;
+    var returnList = [];
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        returnList[i] = this.molecule[i].cloneSelf();
+    }
+    return returnList;
 }
 
 // Expression ***************************************************************************
@@ -510,6 +529,9 @@ console.log("Weight: " + test.formulaMass());
 test.toEmpirical();
 console.log(test.listElements());
 console.log(test.printable());
+
+test4 = test.getAtoms()
+console.log(test4)
 
 test2 = parseEquation("CH4+O2=CO2+H2O");
 //console.log(JSON.stringify(test2,null,2));
