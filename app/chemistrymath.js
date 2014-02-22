@@ -160,13 +160,65 @@ function parseMolecule( mol )
         moles = 1;
     }
     
-    var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*/g );
+    if (mol.match(/\(/g) != null && mol.match(/\)/g) != null)
+    {
+        if ( mol.match(/\(/g).length != mol.match(/\)/g).length )
+        {
+            return null
+        }
+    }
+    
+    var subMolecules = []
+    
+    while ( mol.indexOf("(") != -1 )
+    {
+        var pos =  mol.indexOf("("),
+            startIndex = pos;
+            counter = 0;
+        do
+        {
+            if ( mol[pos] == "(" )
+            {
+                counter++;
+            }
+            else if ( mol[pos] == ")")
+            {
+                counter--;
+            }
+            pos++;
+        }
+        while (counter)
+        
+        var sufNumber = ""
+        while ( /[0-9]/.test(mol[pos]) )
+        {
+            pos++;
+            sufNumber += mol[pos-1]
+        }
+        var string = mol.substring(startIndex,pos);
+        mol = mol.replace(string,"$");
+        
+        string = string.slice( 1,-1 - sufNumber.length );
+        string = sufNumber + string;
+        subMolecules.push( parseMolecule( string ) );
+    }
+    
+    var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*|\$/g );
     var returnAtoms = [];
     if ( atoms != null )
     {
+        var indexOfSubMolecule = 0;
         for ( var i = 0; i < atoms.length; i++ )
         {
-            returnAtoms[i] = parseAtom(atoms[i]);
+            if ( atoms[i] == "$" )
+            {
+                returnAtoms[i] = subMolecules[indexOfSubMolecule]
+                indexOfSubMolecule++;
+            }
+            else
+            {
+                returnAtoms[i] = parseAtom(atoms[i]);
+            }
         }
         
         return new Molecule(moles,returnAtoms);
@@ -516,7 +568,7 @@ Equation.prototype.printable = function()
 
 // Tests and Examples *************************************************
 
-
+/*
 var methane = parseMolecule("CH4");
 console.log("Percentage Composition of H in methane: "+methane.percentageComposition("H")+"%");
 console.log("Mass of methane: "+methane.formulaMass());
@@ -539,3 +591,8 @@ test2 = parseEquation("CH4+O2=CO2+H2O");
 
 test3 = { eq: parseExpression("C+C+C+H") };
 //console.log(JSON.stringify(test3,null,2));
+*/
+
+test = parseMolecule("C(SO4(CH2)22)5(SO)121C2")
+console.log(test.getAtoms())
+//console.log(JSON.stringify(test,null,2))
