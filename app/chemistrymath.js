@@ -474,7 +474,7 @@ Equation.prototype.balance = function()
 
 Equation.prototype.printable = function()
 {
-    return this.leftHandSide.printable() + "=" + this.rightHandSide.printable();
+    return this.leftHandSide.printable() + " = " + this.rightHandSide.printable();
 }
 
 
