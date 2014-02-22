@@ -303,7 +303,7 @@ Atom.prototype.getMass = function()
 
 Atom.prototype.getNumOfMoles = function(mass)
 {
-    return mass/this.property.atomic_weigth;
+    return mass/this.property.atomic_weight;
 }
 
 Atom.prototype.setNumOfAtoms = function(number)
@@ -645,10 +645,22 @@ console.log(test.formulaMass())
 console.log(test.printable())
 test.toEmpirical()
 console.log(test.printable())
-*/
+
 
 //console.log(JSON.stringify(test,null,2))
 
 test1 = parseExpression("CO2+SO4+C(SH4)2");
 console.log(test1.printable())
 console.log(test1.listElements())
+*/
+
+
+test = parseAtom("C12")
+console.log(test.getNumOfAtoms())
+console.log(test.getAtomName())
+console.log(test.getMass(12))
+console.log(test.getNumOfMoles(12.011))
+test.setNumOfAtoms(2)
+console.log(test.printable())
+console.log(test.getMass(12))
+console.log(test.property.atomic_weight)
