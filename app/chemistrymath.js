@@ -581,7 +581,6 @@ Molecule.prototype.simplify = function(clone)
     }
 }
 
-
 Molecule.prototype.expand = function(copy)
 {
     if ( typeof copy == "undefined" )
@@ -742,52 +741,3 @@ Equation.prototype.printable = function()
 
 // Tests and Examples *************************************************
 
-/*
-var methane = parseMolecule("CH4");
-console.log("Percentage Composition of H in methane: "+methane.percentageComposition("H")+"%");
-console.log("Mass of methane: "+methane.formulaMass());
-console.log("Mass of 5 methane: "+methane.formulaMass(5));
-
-
-test = parseMolecule("C2C2H8Cl16H4I4Kr20Uuo6Fe4");
-console.log(test.printable());
-console.log("Weight: " + test.formulaMass());
-test.toEmpirical();
-console.log(test.listElements());
-console.log(test.printable());
-
-test4 = test.getAtoms()
-console.log(test4)
-
-test2 = parseEquation("CH4+O2=CO2+H2O");
-//console.log(JSON.stringify(test2,null,2));
-//console.log(test2.printable());
-
-test3 = { eq: parseExpression("C+C+C+H") };
-//console.log(JSON.stringify(test3,null,2));
-
-
-test = parseMolecule("C2(SO4(C2H4)2)2")
-console.log(test.formulaMass())
-console.log(test.printable())
-test.toEmpirical()
-console.log(test.printable())
-
-
-//console.log(JSON.stringify(test,null,2))
-
-test1 = parseExpression("CO2+SO4+C(SH4)2");
-console.log(test1.printable())
-console.log(test1.listElements())
-*/
-
-
-test = parseMolecule("C6H12O6")
-//console.log(test.percentageComposition("S")) // OK
-//console.log(test.listElements()) // Ok
-//console.log(test.numOfElement("O")) //OK
-//console.log(test.formulaMass()) //OK
-console.log("Test Before: " + test.printable()) //OK
-
-test.toEmpirical(false) //Not OK
-console.log("Test After: " + test.printable())
