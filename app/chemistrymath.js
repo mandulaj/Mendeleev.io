@@ -19,8 +19,10 @@ function getElementObject(element)
 
 function mergeLists(superlist,sublist,unique)
 {
-    var unique = unique||false;
-    
+    if ( typeof unique == "undefined" )
+    {
+        unique = false;
+    }
     for ( var i = 0; i < sublist.length; i++ )
     {
         if (!unique || superlist.indexOf(sublist[i]) === -1)
@@ -477,8 +479,10 @@ Molecule.prototype.toEmpirical = function()
 
 Molecule.prototype.printable = function(molesInFront)
 {
-    var molesInFront = molesInFront||true;
-    
+    if ( typeof molesInFront == "undefined" )
+    {
+        molesInFront = true;
+    }
     var returnString = "";
     for ( i = 0; i < this.molecule.length; i++ )
     {
@@ -529,8 +533,10 @@ Molecule.prototype.simplify = function()
 
 Molecule.prototype.expand = function(copy)
 {
-    var copy = copy||true;
-    
+    if ( typeof copy == "undefined" )
+    {
+        copy = true;
+    }
     var newMolecule = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
@@ -723,7 +729,7 @@ test = parseMolecule("CO2(SnO4)2")
 //console.log(test.formulaMass()) //OK
 
 console.log("Test Before: " + test.printable()) //OK
-console.log(test.simplify(12))
-//test.expand(false) // OK
+//console.log(test.simplify(12))
+test.expand(false)
 //console.log(test.toEmpirical //Not OK
 console.log("Test After: " + test.printable())
