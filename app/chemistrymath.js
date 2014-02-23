@@ -17,7 +17,7 @@ function getElementObject(element)
     }
 }
 
-function mergeLists(superlist,sublist,unique)
+Array.prototype.mergeList = function(sublist,unique)
 {
     if ( typeof unique == "undefined" )
     {
@@ -30,12 +30,12 @@ function mergeLists(superlist,sublist,unique)
     
     for ( var i = 0; i < sublist.length; i++ )
     {
-        if (!unique || superlist.indexOf(sublist[i]) === -1)
+        if (!unique || this.indexOf(sublist[i]) === -1)
         {
-            superlist.push(sublist[i])
+            this.push(sublist[i])
         }
     }
-    return superlist;
+    return this;
 }
 
 
@@ -409,7 +409,7 @@ Molecule.prototype.listElements = function()
         else if ( this.molecule[i] instanceof Molecule )
         {
             var list = this.molecule[i].listElements();
-            listOfElem = mergeLists(listOfElem,list,true);
+            listOfElem.mergeList(list,true);
         }
         
     }
@@ -602,7 +602,7 @@ Molecule.prototype.expand = function(copy)
             {
                 molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles )
             }
-            newMolecule = mergeLists(newMolecule,molecule,false);
+            newMolecule.mergeList(molecule,false);
         }
         else if ( this.molecule[i] instanceof Atom )
         {
@@ -741,3 +741,4 @@ Equation.prototype.printable = function()
 
 // Tests and Examples *************************************************
 
+a
