@@ -267,7 +267,7 @@ function parseAtom( at )
         number = number[0];
     }
     
-    if ( typeof getElementObject(element) != 'undefined' )
+    if ( typeof Atom.prototype.getElementObject(element) != 'undefined' )
     {
         return new Atom(element, number);
     }
