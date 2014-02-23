@@ -6,16 +6,7 @@ var elements = require("./elements.json");
 const avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
-function getElementObject(element) 
-{
-    for ( var i = 0; i < elements.length; i++ )
-    {
-        if ( elements[i].symbol == element )
-        {
-            return elements[i];
-        }
-    }
-}
+
 
 Array.prototype.mergeList = function(sublist,unique)
 {
@@ -308,7 +299,7 @@ function Atom(element,number)
 {
     this.element = element;
     this.n = number;
-    this.property = getElementObject(element);
+    this.property = this.getElementObject(element);
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -351,6 +342,16 @@ Atom.prototype.printable = function()
     }
 }
 
+Atom.prototype.getElementObject = function (element) 
+{
+    for ( var i = 0; i < elements.length; i++ )
+    {
+        if ( elements[i].symbol == element )
+        {
+            return elements[i];
+        }
+    }
+}
 // Molecule ***************************************************************************
 /*
  * used for storing and manipulating molecules
