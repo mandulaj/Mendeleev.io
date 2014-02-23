@@ -23,6 +23,10 @@ function mergeLists(superlist,sublist,unique)
     {
         var unique = false;
     }
+    else
+    {
+        var unique = unique;
+    }
     
     for ( var i = 0; i < sublist.length; i++ )
     {
@@ -418,6 +422,10 @@ Molecule.prototype.formulaMass = function(moles)
     {
         var moles = this.n_moles;
     }
+    else
+    {
+        var moles = moles;
+    }
     var i,
     mass = 0;
     for ( i = 0; i < this.molecule.length; i++ )
@@ -455,6 +463,10 @@ Molecule.prototype.toEmpirical = function(clone)
     {
         var clone = true;
     }
+    else
+    {
+        var clone = clone;
+    }
     var listOfns = [];
     var copyMolecule = this.simplify();
     for ( var i = 0; i < copyMolecule.length; i++ )
@@ -482,6 +494,10 @@ Molecule.prototype.printable = function(molesInFront)
     if ( typeof molesInFront == "undefined" )
     {
         var molesInFront = true;
+    }
+    else
+    {
+        var molesInFront = molesInFront;
     }
     var returnString = "";
     for ( i = 0; i < this.molecule.length; i++ )
@@ -519,7 +535,11 @@ Molecule.prototype.simplify = function(clone)
 {
     if ( typeof clone == "undefined" )
     {
-        var copy = true;
+        var clone = true;
+    }
+    else
+    {
+        var clone = clone;
     }
     
     var moleculeCopy = this.expand(true);
@@ -551,7 +571,7 @@ Molecule.prototype.simplify = function(clone)
              newMolecule.push(moleculeCopy[i]);
         }
     }
-    if (copy)
+    if (clone)
     {
         return newMolecule;
     }
@@ -566,7 +586,11 @@ Molecule.prototype.expand = function(copy)
 {
     if ( typeof copy == "undefined" )
     {
-        var copy = copy||true;
+        var copy = true;
+    }
+    else
+    {
+        var copy = copy;
     }
     
     var newMolecule = [];
@@ -574,7 +598,11 @@ Molecule.prototype.expand = function(copy)
     {
         if ( this.molecule[i] instanceof Molecule )
         {
-            var molecule = this.molecule[i].expand(true);
+            var molecule = this.molecule[i].expand();
+            for ( var j = 0; j < molecule.length; j++)
+            {
+                molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles )
+            }
             newMolecule = mergeLists(newMolecule,molecule,false);
         }
         else if ( this.molecule[i] instanceof Atom )
@@ -754,14 +782,12 @@ console.log(test1.listElements())
 */
 
 
-test = parseMolecule("C2O2(SnO4(FeO2)2)2")
+test = parseMolecule("C6H12O6")
 //console.log(test.percentageComposition("S")) // OK
 //console.log(test.listElements()) // Ok
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
-
 console.log("Test Before: " + test.printable()) //OK
-test.simplify(false) // OK
-console.log("Test Simplify: " + test.printable())
+
 test.toEmpirical(false) //Not OK
 console.log("Test After: " + test.printable())
