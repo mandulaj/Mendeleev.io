@@ -21,8 +21,13 @@ function mergeLists(superlist,sublist,unique)
 {
     if ( typeof unique == "undefined" )
     {
-        unique = false;
+        var unique = false;
     }
+    else
+    {
+        var unique = unique;
+    }
+    
     for ( var i = 0; i < sublist.length; i++ )
     {
         if (!unique || superlist.indexOf(sublist[i]) === -1)
@@ -36,12 +41,19 @@ function mergeLists(superlist,sublist,unique)
 
 Object.prototype.cloneSelf = function() 
 {
-    var target = {};
+    var target = new this.constructor();
     for ( var i in this ) 
     {
         if ( this.hasOwnProperty(i) ) 
         {
-            target[i] = this[i];
+            if ( this[i] instanceof Object )
+            {
+                target[i] = this[i].cloneSelf();
+            }
+            else
+            {
+                target[i] = this[i];
+            }
         }
     }
     return target;
@@ -410,6 +422,10 @@ Molecule.prototype.formulaMass = function(moles)
     {
         var moles = this.n_moles;
     }
+    else
+    {
+        var moles = moles;
+    }
     var i,
     mass = 0;
     for ( i = 0; i < this.molecule.length; i++ )
@@ -441,32 +457,35 @@ Molecule.prototype.percentageComposition = function(element)
 }
 
 
-Molecule.prototype.toEmpirical = function()
+Molecule.prototype.toEmpirical = function(clone)
 {
-    var listOfns = [];
-    for ( var i = 0; i < this.molecule.length; i++ )
+    if ( typeof clone == "undefined" )
     {
-        if ( this.molecule[i] instanceof Atom )
-        {
-            listOfns[i] = this.molecule[i].getNumOfAtoms();
-        }
-        if ( this.molecule[i] instanceof Molecule )
-        {
-            listOfns[i] = this.molecule[i].getListOfAtomNums();
-        }
+        var clone = true;
+    }
+    else
+    {
+        var clone = clone;
+    }
+    var listOfns = [];
+    var copyMolecule = this.simplify();
+    for ( var i = 0; i < copyMolecule.length; i++ )
+    {
+        listOfns[i] = copyMolecule[i].getNumOfAtoms();
     }
     var gcd = Math.GCD(listOfns);
-    for ( var i = 0; i < this.molecule.length; i++ )
+    for ( var i = 0; i < copyMolecule.length; i++ )
     {
-        if ( this.molecule[i] instanceof Atom )
-        {
-            this.molecule[i].setNumOfAtoms(listOfns[i]/gcd);
-        }
-        else if ( this.molecule[i] instanceof Molecule )
-        {
-            for ( var j = 0; j < this.molecule[i].molecule.length; j++)
-            this.molecule[i]
-        }
+        copyMolecule[i].setNumOfAtoms(listOfns[i]/gcd);
+    }
+    
+    if ( clone )
+    {
+        return copyMolecule;
+    }
+    else
+    {
+        this.molecule = copyMolecule;
     }
 }
 
@@ -474,7 +493,11 @@ Molecule.prototype.printable = function(molesInFront)
 {
     if ( typeof molesInFront == "undefined" )
     {
-        molesInFront = true;
+        var molesInFront = true;
+    }
+    else
+    {
+        var molesInFront = molesInFront;
     }
     var returnString = "";
     for ( i = 0; i < this.molecule.length; i++ )
@@ -488,7 +511,7 @@ Molecule.prototype.printable = function(molesInFront)
         {
             var moles = this.molecule[i].n_moles;
             // If part of molecule is a sub-molecule
-            returnString += "(" + this.molecule[i].printable(false) + ")" + moles;
+            returnString += "(" + this.molecule[i].printable(false) + ")" + moles; 
         }
     }
     if ( this.n_moles == 1 )
@@ -508,34 +531,94 @@ Molecule.prototype.printable = function(molesInFront)
     }
 }
 
-Molecule.prototype.simplify = function()
+Molecule.prototype.simplify = function(clone)
 {
-    for ( var i = 0; i < this.molecule.length; i++ )
+    if ( typeof clone == "undefined" )
     {
-        if ( this.molecule[i] instanceof Atom )
+        var clone = true;
+    }
+    else
+    {
+        var clone = clone;
+    }
+    
+    var moleculeCopy = this.expand(true);
+    //a = new Molecule(1,moleculeCopy)
+    //console.log("A: "+a.printable())
+    
+    //console.log(JSON.stringify(moleculeCopy,null,2))
+    var newMolecule = [];
+    
+    for ( var i = 0; i < moleculeCopy.length; i++ )
+    {
+        var breakFlag = false;
+        if ( newMolecule.length == 0 )
         {
-            // Complicated ...
+            newMolecule.push(moleculeCopy[i]);
+            continue;
         }
-        else if ( this.molecuel[i] instanceof Molecule )
+        for ( var j = 0; j < newMolecule.length; j++ )
         {
-            this.molecule[i].simplify();
+            if (moleculeCopy[i].getAtomName() === newMolecule[j].getAtomName())
+            {
+                newMolecule[j].setNumOfAtoms( newMolecule[j].getNumOfAtoms() + moleculeCopy[i].getNumOfAtoms());
+                breakFlag = true;
+                break;
+            }
         }
+        if ( !breakFlag )
+        {
+             newMolecule.push(moleculeCopy[i]);
+        }
+    }
+    if (clone)
+    {
+        return newMolecule;
+    }
+    else
+    {
+        this.molecule = newMolecule;
     }
 }
 
 
-Molecule.prototype.expand = function()
+Molecule.prototype.expand = function(copy)
 {
-    if (this.n_moles != 1)
+    if ( typeof copy == "undefined" )
     {
-        for ( var i = 0; i < this.molecule.length; i++ )
+        var copy = true;
+    }
+    else
+    {
+        var copy = copy;
+    }
+    
+    var newMolecule = [];
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Molecule )
         {
-            if ( this.molecule[i] instanceof Atom )
+            var molecule = this.molecule[i].expand();
+            for ( var j = 0; j < molecule.length; j++)
             {
-                this.molecule[i].setNumOfAtoms( this.n_moles * this.molecule[i].getNumOfAtoms() );
+                molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles )
             }
+            newMolecule = mergeLists(newMolecule,molecule,false);
         }
-        this.n_moles = 1;
+        else if ( this.molecule[i] instanceof Atom )
+        {
+            var temp = this.molecule[i].cloneSelf()
+            temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles )
+            newMolecule.push(temp);
+        }
+    }
+    if (copy) 
+    {
+        return newMolecule;
+    }
+    else
+    {
+        this.molecule = newMolecule;
     }
 }
 
@@ -699,14 +782,12 @@ console.log(test1.listElements())
 */
 
 
-test = parseMolecule("CO2(SnO4)2")
+test = parseMolecule("C6H12O6")
 //console.log(test.percentageComposition("S")) // OK
 //console.log(test.listElements()) // Ok
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
+console.log("Test Before: " + test.printable()) //OK
 
-//console.log(test.printable()) //OK
-//console.log(test.simplify(12))
-console.log(test.expand())
-//console.log(test.toEmpirical //Not OK
-console.log(test.printable())
+test.toEmpirical(false) //Not OK
+console.log("Test After: " + test.printable())
