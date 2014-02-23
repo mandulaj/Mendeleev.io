@@ -449,32 +449,31 @@ Molecule.prototype.percentageComposition = function(element)
 }
 
 
-Molecule.prototype.toEmpirical = function()
+Molecule.prototype.toEmpirical = function(clone)
 {
-    var listOfns = [];
-    for ( var i = 0; i < this.molecule.length; i++ )
+    if ( typeof clone == "undefined" )
     {
-        if ( this.molecule[i] instanceof Atom )
-        {
-            listOfns[i] = this.molecule[i].getNumOfAtoms();
-        }
-        if ( this.molecule[i] instanceof Molecule )
-        {
-            listOfns[i] = this.molecule[i].getListOfAtomNums();
-        }
+        var clone = true;
+    }
+    var listOfns = [];
+    var copyMolecule = this.simplify();
+    for ( var i = 0; i < copyMolecule.length; i++ )
+    {
+        listOfns[i] = copyMolecule[i].getNumOfAtoms();
     }
     var gcd = Math.GCD(listOfns);
-    for ( var i = 0; i < this.molecule.length; i++ )
+    for ( var i = 0; i < copyMolecule.length; i++ )
     {
-        if ( this.molecule[i] instanceof Atom )
-        {
-            this.molecule[i].setNumOfAtoms(listOfns[i]/gcd);
-        }
-        else if ( this.molecule[i] instanceof Molecule )
-        {
-            for ( var j = 0; j < this.molecule[i].molecule.length; j++)
-            this.molecule[i]
-        }
+        copyMolecule[i].setNumOfAtoms(listOfns[i]/gcd);
+    }
+    
+    if ( clone )
+    {
+        return copyMolecule;
+    }
+    else
+    {
+        this.molecule = copyMolecule;
     }
 }
 
@@ -755,14 +754,14 @@ console.log(test1.listElements())
 */
 
 
-test = parseMolecule("CO2(SnO4(FeO2)2)2")
+test = parseMolecule("C2O2(SnO4(FeO2)2)2")
 //console.log(test.percentageComposition("S")) // OK
 //console.log(test.listElements()) // Ok
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
 
 console.log("Test Before: " + test.printable()) //OK
-//test.simplify(false) //OK
-//test.expand(false) // OK
-//console.log(test.toEmpirical //Not OK
+test.simplify(false) // OK
+console.log("Test Simplify: " + test.printable())
+test.toEmpirical(false) //Not OK
 console.log("Test After: " + test.printable())
