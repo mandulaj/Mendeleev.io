@@ -36,12 +36,19 @@ function mergeLists(superlist,sublist,unique)
 
 Object.prototype.cloneSelf = function() 
 {
-    var target = {};
+    var target = new this.constructor();
     for ( var i in this ) 
     {
         if ( this.hasOwnProperty(i) ) 
         {
-            target[i] = this[i];
+            if ( this[i] instanceof Object )
+            {
+                target[i] = this[i].cloneSelf();
+            }
+            else
+            {
+                target[i] = this[i];
+            }
         }
     }
     return target;
@@ -488,7 +495,7 @@ Molecule.prototype.printable = function(molesInFront)
         {
             var moles = this.molecule[i].n_moles;
             // If part of molecule is a sub-molecule
-            returnString += "(" + this.molecule[i].printable(false) + ")" + moles;
+            returnString += "(" + this.molecule[i].printable(false) + ")" + moles; 
         }
     }
     if ( this.n_moles == 1 )
@@ -524,18 +531,34 @@ Molecule.prototype.simplify = function()
 }
 
 
-Molecule.prototype.expand = function()
+Molecule.prototype.expand = function(copy)
 {
-    if (this.n_moles != 1)
+    if ( typeof copy == "undefined" )
     {
-        for ( var i = 0; i < this.molecule.length; i++ )
+        copy = true;
+    }
+    var newMolecule = [];
+    for ( var i = 0; i < this.molecule.length; i++ )
+    {
+        if ( this.molecule[i] instanceof Molecule )
         {
-            if ( this.molecule[i] instanceof Atom )
-            {
-                this.molecule[i].setNumOfAtoms( this.n_moles * this.molecule[i].getNumOfAtoms() );
-            }
+            var molecule = this.molecule[i].expand(true);
+            newMolecule = mergeLists(newMolecule,molecule,false);
         }
-        this.n_moles = 1;
+        else if ( this.molecule[i] instanceof Atom )
+        {
+            var temp = this.molecule[i].cloneSelf()
+            temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles )
+            newMolecule.push(temp);
+        }
+    }
+    if (copy) 
+    {
+        return newMolecule;
+    }
+    else
+    {
+        this.molecule = newMolecule;
     }
 }
 
@@ -705,8 +728,8 @@ test = parseMolecule("CO2(SnO4)2")
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
 
-//console.log(test.printable()) //OK
+console.log("Test Before: " + test.printable()) //OK
 //console.log(test.simplify(12))
-console.log(test.expand())
+test.expand(false)
 //console.log(test.toEmpirical //Not OK
-console.log(test.printable())
+console.log("Test After: " + test.printable())
