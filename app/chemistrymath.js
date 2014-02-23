@@ -452,15 +452,21 @@ Molecule.prototype.toEmpirical = function()
         }
         if ( this.molecule[i] instanceof Molecule )
         {
-            //Complicated ... 
-            this.molecule[i].a
-            listOfns[i] = this.molecule[i].a
+            listOfns[i] = this.molecule[i].getListOfAtomNums();
         }
     }
     var gcd = Math.GCD(listOfns);
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        this.molecule[i].setNumOfAtoms(listOfns[i]/gcd);
+        if ( this.molecule[i] instanceof Atom )
+        {
+            this.molecule[i].setNumOfAtoms(listOfns[i]/gcd);
+        }
+        else if ( this.molecule[i] instanceof Molecule )
+        {
+            for ( var j = 0; j < this.molecule[i].molecule.length; j++)
+            this.molecule[i]
+        }
     }
 }
 
@@ -481,7 +487,6 @@ Molecule.prototype.printable = function(molesInFront)
         else if ( this.molecule[i] instanceof Molecule )
         {
             var moles = this.molecule[i].n_moles;
-            console.log(JSON.stringify(this.molecule[i],null,2))
             // If part of molecule is a sub-molecule
             returnString += "(" + this.molecule[i].printable(false) + ")" + moles;
         }
@@ -518,6 +523,7 @@ Molecule.prototype.simplify = function()
     }
 }
 
+
 Molecule.prototype.expand = function()
 {
     if (this.n_moles != 1)
@@ -532,6 +538,7 @@ Molecule.prototype.expand = function()
         this.n_moles = 1;
     }
 }
+
 
 Molecule.prototype.getAtoms = function()
 {
@@ -561,6 +568,7 @@ Molecule.prototype.getListOfAtomNums = function()
     }
     return list;
 }
+
 
 // Expression ***************************************************************************
 /*
@@ -693,12 +701,12 @@ console.log(test1.listElements())
 
 test = parseMolecule("CO2(SnO4)2")
 //console.log(test.percentageComposition("S")) // OK
-console.log(test.listElements()) // Ok
+//console.log(test.listElements()) // Ok
 //console.log(test.numOfElement("O")) //OK
 //console.log(test.formulaMass()) //OK
-//console.log(test.toEmpirical(2))
-/*console.log(test.printable())
-console.log(test.simplify(12))
-console.log(test.expand())*/
 
-console.log(mergeLists([1,2,3],[3,4,5],true))
+//console.log(test.printable()) //OK
+//console.log(test.simplify(12))
+console.log(test.expand())
+//console.log(test.toEmpirical //Not OK
+console.log(test.printable())
