@@ -109,6 +109,12 @@ Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,44
     return a;
 }
 
+
+function ChemistryMath()
+{
+
+}
+
 /* Function for parsing Equations
  * 
  * Returns a Equation object. 
@@ -116,13 +122,13 @@ Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,44
  * Equation must be of form Expression=Expression
  * -- viz. parseExpression() for more --
 */
-function parseEquation(eq)  
+ChemistryMath.prototype.parseEquation = function(eq)  
 {
     var count = eq.match(/=/g);
     if (count != null && count.length === 1)
     {
         var equations = eq.split("=");
-        return new Equation( parseExpression(equations[0]), parseExpression(equations[1]) );
+        return new Equation( this.parseExpression(equations[0]), this.parseExpression(equations[1]) );
     }
     else
     {
@@ -138,7 +144,7 @@ function parseEquation(eq)
  * Converts Atoms to Molecules --> Atom+Molecule+Atom ==> Molecule+Molecule+Molecule
  * viz. parsing Molecule for details on Molecule form
 */ 
-function parseExpression( exp )
+ChemistryMath.prototype.parseExpression = function( exp )
 {
     var count = exp.match(/\+/g);
     var returnMolecules = [];
@@ -149,13 +155,13 @@ function parseExpression( exp )
         
         for ( var i = 0; i < molecules.length; i++ )
         {
-            returnMolecules[i] = parseMolecule( molecules[i] );
+            returnMolecules[i] = this.parseMolecule( molecules[i] );
         }
         return new Expression( returnMolecules );
     }
     else
     {
-        return new Expression( [parseMolecule( exp )]);
+        return new Expression( [this.parseMolecule( exp )]);
     }
     
 }
@@ -169,7 +175,7 @@ function parseExpression( exp )
  *  n is number of the preceding element in the molecule (H2O = Water, 3CH4 = 3 Moles of Methane)
  *  Can take sub-molecules eg. Fe2(SO4)3
 */ 
-function parseMolecule( mol )
+ChemistryMath.prototype.parseMolecule = function( mol )
 {
     var moles = mol.match( /^[0-9]*/ )[0];
     if ( moles ==  0 )
@@ -217,7 +223,7 @@ function parseMolecule( mol )
         
         string = string.slice( 1,-1 - sufNumber.length );
         string = sufNumber + string;
-        subMolecules.push( parseMolecule( string ) );
+        subMolecules.push( this.parseMolecule( string ) );
     }
     
     var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*|\$/g );
@@ -234,7 +240,7 @@ function parseMolecule( mol )
             }
             else
             {
-                returnAtoms[i] = parseAtom(atoms[i]);
+                returnAtoms[i] = this.parseAtom(atoms[i]);
             }
         }
         
@@ -254,7 +260,7 @@ function parseMolecule( mol )
  *  n is a the number of element X
  * if no n is specified n = 1
 */ 
-function parseAtom( at )
+ChemistryMath.prototype.parseAtom = function( at )
 {
     var number = at.match(/[0-9]+/g);
     var element = at.match(/[A-Z][a-z]{0,2}/g)[0];
