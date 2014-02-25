@@ -6,7 +6,7 @@ var gulp = require("gulp"),
     recess = require("gulp-recess"),
     less = require("gulp-less");
 
-var jsfiles = ["*.js", "app/js/**.js"];
+var jsfiles = ["*.js", "app/**.js" , "app/js/**.js"];
 var lessfiles = ["app/less/**.less"];
 
 gulp.task("lint", function() {

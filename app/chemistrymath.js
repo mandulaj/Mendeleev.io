@@ -3,7 +3,9 @@
 //});
 var elements = require("./elements.json");
 
-const avogadros = 6.0221413e23;
+
+// Only available in ES6. Would break.
+/* const */ var avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
 
@@ -12,22 +14,22 @@ Array.prototype.mergeList = function(sublist,unique)
 {
     if ( typeof unique == "undefined" )
     {
-        var unique = false;
+        unique = false;
     }
     else
     {
-        var unique = unique;
+        unique = unique;
     }
     
     for ( var i = 0; i < sublist.length; i++ )
     {
         if (!unique || this.indexOf(sublist[i]) === -1)
         {
-            this.push(sublist[i])
+            this.push(sublist[i]);
         }
     }
     return this;
-}
+};
 
 
 Object.prototype.cloneSelf = function() 
@@ -48,7 +50,7 @@ Object.prototype.cloneSelf = function()
         }
     }
     return target;
-}
+};
 
 Math.GCD = function(array)
 {
@@ -85,7 +87,7 @@ Math.GCD = function(array)
         x += y;
     }
     return x;
-}
+};
 
 Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
 {   
@@ -107,7 +109,7 @@ Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,44
         a = Math.abs(c*array[i])/(a+b);
     }
     return a;
-}
+};
 
 
 function ChemistryMath()
@@ -125,7 +127,7 @@ function ChemistryMath()
 ChemistryMath.prototype.parseEquation = function(eq)  
 {
     var count = eq.match(/=/g);
-    if (count != null && count.length === 1)
+    if (count !== null && count.length === 1)
     {
         var equations = eq.split("=");
         return new Equation( this.parseExpression(equations[0]), this.parseExpression(equations[1]) );
@@ -134,7 +136,7 @@ ChemistryMath.prototype.parseEquation = function(eq)
     {
         return null;
     }
-}
+};
 
 /* Function for parsing Expressions
  * 
@@ -149,7 +151,7 @@ ChemistryMath.prototype.parseExpression = function( exp )
     var count = exp.match(/\+/g);
     var returnMolecules = [];
     
-    if ( count != null && count.length >= 1 )
+    if ( count !== null && count.length >= 1 )
     {
         var molecules = exp.split("+");
         
@@ -164,7 +166,7 @@ ChemistryMath.prototype.parseExpression = function( exp )
         return new Expression( [this.parseMolecule( exp )]);
     }
     
-}
+};
 
 /* Function for parsing Molecules
  * 
@@ -178,22 +180,22 @@ ChemistryMath.prototype.parseExpression = function( exp )
 ChemistryMath.prototype.parseMolecule = function( mol )
 {
     var moles = mol.match( /^[0-9]*/ )[0];
-    if ( moles ==  0 )
+    if ( moles ===  0 )
     {
         moles = 1;
     }
     
-    if (mol.match(/\(/g) != null && mol.match(/\)/g) != null)
+    if (mol.match(/\(/g) !== null && mol.match(/\)/g) !== null)
     {
-        if ( mol.match(/\(/g).length != mol.match(/\)/g).length )
+        if ( mol.match(/\(/g).length !== mol.match(/\)/g).length )
         {
-            return null
+            return null;
         }
     }
     
-    var subMolecules = []
+    var subMolecules = [];
     
-    while ( mol.indexOf("(") != -1 )
+    while ( mol.indexOf("(") !== -1 )
     {
         var pos =  mol.indexOf("("),
             startIndex = pos;
@@ -210,13 +212,13 @@ ChemistryMath.prototype.parseMolecule = function( mol )
             }
             pos++;
         }
-        while (counter)
+        while (counter);
         
-        var sufNumber = ""
+        var sufNumber = "";
         while ( /[0-9]/.test(mol[pos]) )
         {
             pos++;
-            sufNumber += mol[pos-1]
+            sufNumber += mol[pos-1];
         }
         var string = mol.substring(startIndex,pos);
         mol = mol.replace(string,"$");
@@ -228,14 +230,14 @@ ChemistryMath.prototype.parseMolecule = function( mol )
     
     var atoms = mol.match( /[A-Z][a-z]{0,2}[0-9]*|\$/g );
     var returnAtoms = [];
-    if ( atoms != null )
+    if ( atoms !== null )
     {
         var indexOfSubMolecule = 0;
         for ( var i = 0; i < atoms.length; i++ )
         {
             if ( atoms[i] == "$" )
             {
-                returnAtoms[i] = subMolecules[indexOfSubMolecule]
+                returnAtoms[i] = subMolecules[indexOfSubMolecule];
                 indexOfSubMolecule++;
             }
             else
@@ -250,7 +252,7 @@ ChemistryMath.prototype.parseMolecule = function( mol )
     {
         // TODO: when atoms === null
     }
-}
+};
 
 /* Function for parsing Atoms
  * 
@@ -273,7 +275,7 @@ ChemistryMath.prototype.parseAtom = function( at )
         number = number[0];
     }
     
-    if ( typeof Atom.prototype.getElementObject(element) != 'undefined' )
+    if ( typeof Atom.prototype.getElementObject(element) !== 'undefined' )
     {
         return new Atom(element, number);
     }
@@ -284,7 +286,7 @@ ChemistryMath.prototype.parseAtom = function( at )
         console.log(element);
     }
     
-}
+};
 
 // Atom ***************************************************************************
 /*
@@ -312,29 +314,29 @@ Atom.prototype.getNumOfAtoms = function()
 
 {
     return parseInt(this.n);
-}
+};
 
 Atom.prototype.getAtomName = function()
 // TODO: This will be changed
 {
     return this.element;
-}
+};
 
 
 Atom.prototype.getMass = function()
 {
     return parseFloat(this.property.atomic_weight * this.n);
-}
+};
 
 Atom.prototype.getNumOfMoles = function(mass)
 {
     return mass/this.property.atomic_weight;
-}
+};
 
 Atom.prototype.setNumOfAtoms = function(number)
 {
     this.n = number;
-}
+};
 
 Atom.prototype.printable = function()
 {
@@ -346,7 +348,7 @@ Atom.prototype.printable = function()
     {
         return this.element + this.n;
     }
-}
+};
 
 Atom.prototype.getElementObject = function (element) 
 {
@@ -357,7 +359,7 @@ Atom.prototype.getElementObject = function (element)
             return elements[i];
         }
     }
-}
+};
 // Molecule ***************************************************************************
 /*
  * used for storing and manipulating molecules
@@ -398,7 +400,7 @@ Molecule.prototype.numOfElement = function(element)
     }
     numOfElem *= this.n_moles;
     return numOfElem;
-}
+};
 
 Molecule.prototype.listElements = function()
 {
@@ -421,17 +423,17 @@ Molecule.prototype.listElements = function()
         
     }
     return listOfElem;
-}
+};
 
 Molecule.prototype.formulaMass = function(moles)
 {
     if ( typeof moles === 'undefined' )
     {
-        var moles = this.n_moles;
+        moles = this.n_moles;
     }
     else
     {
-        var moles = moles;
+        moles = moles;
     }
     var i,
     mass = 0;
@@ -450,7 +452,7 @@ Molecule.prototype.formulaMass = function(moles)
     }
     
     return mass * moles;
-}
+};
 
 Molecule.prototype.percentageComposition = function(element)
 {
@@ -461,18 +463,18 @@ Molecule.prototype.percentageComposition = function(element)
     var massElement = tempElement.getMass();
     
     return massElement/totalMass;
-}
+};
 
 
 Molecule.prototype.toEmpirical = function(clone)
 {
     if ( typeof clone == "undefined" )
     {
-        var clone = true;
+        clone = true;
     }
     else
     {
-        var clone = clone;
+        clone = clone;
     }
     var listOfns = [];
     var copyMolecule = this.simplify();
@@ -494,17 +496,17 @@ Molecule.prototype.toEmpirical = function(clone)
     {
         this.molecule = copyMolecule;
     }
-}
+};
 
 Molecule.prototype.printable = function(molesInFront)
 {
     if ( typeof molesInFront == "undefined" )
     {
-        var molesInFront = true;
+        molesInFront = true;
     }
     else
     {
-        var molesInFront = molesInFront;
+        molesInFront = molesInFront;
     }
     var returnString = "";
     for ( i = 0; i < this.molecule.length; i++ )
@@ -533,20 +535,20 @@ Molecule.prototype.printable = function(molesInFront)
         }
         else
         {
-            return returnString
+            return returnString;
         }
     }
-}
+};
 
 Molecule.prototype.simplify = function(clone)
 {
     if ( typeof clone == "undefined" )
     {
-        var clone = true;
+        clone = true;
     }
     else
     {
-        var clone = clone;
+        clone = clone;
     }
     
     var moleculeCopy = this.expand(true);
@@ -559,7 +561,7 @@ Molecule.prototype.simplify = function(clone)
     for ( var i = 0; i < moleculeCopy.length; i++ )
     {
         var breakFlag = false;
-        if ( newMolecule.length == 0 )
+        if ( newMolecule.length === 0 )
         {
             newMolecule.push(moleculeCopy[i]);
             continue;
@@ -586,17 +588,17 @@ Molecule.prototype.simplify = function(clone)
     {
         this.molecule = newMolecule;
     }
-}
+};
 
 Molecule.prototype.expand = function(copy)
 {
     if ( typeof copy == "undefined" )
     {
-        var copy = true;
+        copy = true;
     }
     else
     {
-        var copy = copy;
+        copy = copy;
     }
     
     var newMolecule = [];
@@ -607,14 +609,14 @@ Molecule.prototype.expand = function(copy)
             var molecule = this.molecule[i].expand();
             for ( var j = 0; j < molecule.length; j++)
             {
-                molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles )
+                molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles );
             }
             newMolecule.mergeList(molecule,false);
         }
         else if ( this.molecule[i] instanceof Atom )
         {
-            var temp = this.molecule[i].cloneSelf()
-            temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles )
+            var temp = this.molecule[i].cloneSelf();
+            temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles );
             newMolecule.push(temp);
         }
     }
@@ -626,7 +628,7 @@ Molecule.prototype.expand = function(copy)
     {
         this.molecule = newMolecule;
     }
-}
+};
 
 
 Molecule.prototype.getAtoms = function()
@@ -637,7 +639,7 @@ Molecule.prototype.getAtoms = function()
         returnList[i] = this.molecule[i].cloneSelf();
     }
     return returnList;
-}
+};
 
 Molecule.prototype.getListOfAtomNums = function()
 {
@@ -646,17 +648,17 @@ Molecule.prototype.getListOfAtomNums = function()
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            list.push(this.molecule[i].getNumOfAtoms())
+            list.push(this.molecule[i].getNumOfAtoms());
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
-            var sublist = this.molecule[i].getListOfAtomNums()
+            var sublist = this.molecule[i].getListOfAtomNums();
             
             list = listOfElem(list,sublist);
         }
     }
     return list;
-}
+};
 
 
 // Expression ***************************************************************************
@@ -684,7 +686,7 @@ Expression.prototype.numOfElement = function(element)
         numOfEle += this.expression[i].numOfElement(element);
     }
     return numOfEle;
-}
+};
 
 Expression.prototype.printable = function()
 {
@@ -696,11 +698,11 @@ Expression.prototype.printable = function()
     }
     returnString = moleculeList.join(" + ");
     return returnString;
-}
+};
 
 Expression.prototype.listElements = function()
 {
-    var list = []
+    var list = [];
     for ( var i = 0; i < this.expression.length; i++ )
     {
         var listInMolecule = this.expression[i].listElements();
@@ -708,12 +710,12 @@ Expression.prototype.listElements = function()
         {
             if ( list.indexOf(listInMolecule[i]) !== -1 )
             {
-                list.push(listInMolecule[i])
+                list.push(listInMolecule[i]);
             }    
         }
     }
-    return list
-}
+    return list;
+};
 
 // Equation ***************************************************************************
 /*
@@ -737,15 +739,13 @@ function Equation (left_expression, right_expression)
 Equation.prototype.balance = function()
 {
  // TODO: implement balance
-    console.log(this.leftHandSide.listElements())
-}
+    console.log(this.leftHandSide.listElements());
+};
 
 Equation.prototype.printable = function()
 {
     return this.leftHandSide.printable() + " = " + this.rightHandSide.printable();
-}
+};
 
 
 // Tests and Examples *************************************************
-
-a
