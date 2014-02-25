@@ -112,9 +112,9 @@ Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,44
 };
 
 
-function ChemistryMath()
+function ChemistryMath(elements)
 {
-
+  this.elements = elements;
 }
 
 /* Function for parsing Equations
