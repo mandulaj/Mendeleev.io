@@ -9,14 +9,9 @@
                                            |___/                       |__/     
 \*                                                                                  */
 
-//Mendeleev.getElements(function(e){
-//	var elements = e;
-//});
 var elements = require("./elements.json");
 
-
-// Only available in ES6. Would break.
-/* const */ var avogadros = 6.0221413e23;
+var avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
 
