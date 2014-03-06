@@ -558,10 +558,6 @@ Molecule.prototype.simplify = function(clone)
     }
     
     var moleculeCopy = this.expand(true);
-    //a = new Molecule(1,moleculeCopy)
-    //console.log("A: "+a.printable())
-    
-    //console.log(JSON.stringify(moleculeCopy,null,2))
     var newMolecule = [];
     
     for ( var i = 0; i < moleculeCopy.length; i++ )
