@@ -1,20 +1,23 @@
 /*
-   _____ _                    _     _             ___  ___      _   _       _       *\
+   _____ _                    _     _             ___  ___      _   _       _       
   /  __ \ |                  (_)   | |            |  \/  |     | | | |     (_)    
   | /  \/ |__   ___ _ __ ___  _ ___| |_ _ __ _   _| .  . | __ _| |_| |__    _ ___ 
   | |   | '_ \ / _ \ '_ ` _ \| / __| __| '__| | | | |\/| |/ _` | __| '_ \  | / __|
   | \__/\ | | |  __/ | | | | | \__ \ |_| |  | |_| | |  | | (_| | |_| | | |_| \__ \
    \____/_| |_|\___|_| |_| |_|_|___/\__|_|   \__, \_|  |_/\__,_|\__|_| |_(_) |___/
                                             __/ |                       _/ |    
-                                           |___/                       |__/     
-\*                                                                                  */
-
-var elements = require("./elements.json");
+                                           |___/                       |__/     */
 
 var avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
 
+/*
+  TODO: Please remove extensions of builtin objects.
+  This is dangerous. I would also recomment not naming
+  functions LCM or GCD, because this suggests them being
+  a constant.
+*/
 
 Array.prototype.mergeList = function(sublist,unique)
 {
@@ -358,11 +361,11 @@ Atom.prototype.printable = function()
 
 Atom.prototype.getElementObject = function (element) 
 {
-    for ( var i = 0; i < elements.length; i++ )
+    for ( var i = 0; i < this.elements.length; i++ )
     {
-        if ( elements[i].symbol == element )
+        if ( this.elements[i].symbol == element )
         {
-            return elements[i];
+            return this.elements[i];
         }
     }
 };
@@ -753,5 +756,7 @@ Equation.prototype.printable = function()
     return this.leftHandSide.printable() + " = " + this.rightHandSide.printable();
 };
 
-
-// Tests and Examples *************************************************
+// CommonJS module
+if (module.exports) {
+  module.exports = ChemistryMath;
+}
