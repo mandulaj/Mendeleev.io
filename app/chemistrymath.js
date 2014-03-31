@@ -278,17 +278,29 @@ ChemistryMath.prototype.parseAtom = function( at )
         number = number[0];
     }
     
-    if ( typeof Atom.prototype.getElementObject(element) !== 'undefined' )
+    if ( typeof ChemistryMath.prototype.getElementObject( element ) !== 'undefined' )
     {
-        return new Atom(element, number);
+        return new Atom( element, number );
     }
     else
     {
         // TODO: if element doesn't exist.
-        console.log(number);
-        console.log(element);
+        console.log( number );
+        console.log( element );
     }
     
+};
+
+ChemistryMath.prototype.getElementObject = function ( element ) 
+{
+    for ( var i = 0; i < this.elements.length; i++ )
+    {
+        if ( this.elements[i].symbol == element )
+        {
+            return this.elements[i];
+        }
+    }
+    return null;
 };
 
 // Atom ***************************************************************************
@@ -306,11 +318,11 @@ ChemistryMath.prototype.parseAtom = function( at )
  *  Atom.getMass()              - returns mass of n moles of element
  *  Atom.getNumOfMoles(mass)    - returns number of moles that weigh mass grams
 */ 
-function Atom(element,number)
+function Atom( element, number )
 {
     this.element = element;
     this.n = number;
-    this.property = this.getElementObject(element);
+    this.property = ChemistryMath.prototype.getElementObject(element);
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -353,16 +365,7 @@ Atom.prototype.printable = function()
     }
 };
 
-Atom.prototype.getElementObject = function (element) 
-{
-    for ( var i = 0; i < this.elements.length; i++ )
-    {
-        if ( this.elements[i].symbol == element )
-        {
-            return this.elements[i];
-        }
-    }
-};
+
 // Molecule ***************************************************************************
 /*
  * used for storing and manipulating molecules
