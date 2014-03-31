@@ -12,14 +12,8 @@ var avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
 
-/*
-  TODO: Please remove extensions of builtin objects.
-  This is dangerous. I would also recomment not naming
-  functions LCM or GCD, because this suggests them being
-  a constant.
-*/
 
-Array.prototype.mergeList = function(sublist,unique)
+function mergeLists(main,sublist,unique)
 {
     if ( typeof unique == "undefined" )
     {
@@ -32,36 +26,36 @@ Array.prototype.mergeList = function(sublist,unique)
     
     for ( var i = 0; i < sublist.length; i++ )
     {
-        if (!unique || this.indexOf(sublist[i]) === -1)
+        if (!unique || main.indexOf(sublist[i]) === -1)
         {
-            this.push(sublist[i]);
+            main.push(sublist[i]);
         }
     }
-    return this;
+    return main;
 };
 
 
-Object.prototype.cloneSelf = function() 
+function clone(obj) 
 {
-    var target = new this.constructor();
-    for ( var i in this ) 
+    var target = new obj.constructor();
+    for ( var i in obj ) 
     {
-        if ( this.hasOwnProperty(i) ) 
+        if ( obj.hasOwnProperty(i) ) 
         {
-            if ( this[i] instanceof Object )
+            if ( obj[i] instanceof Object )
             {
-                target[i] = this[i].cloneSelf();
+                target[i] = clone(obj[i]);
             }
             else
             {
-                target[i] = this[i];
+                target[i] = obj[i];
             }
         }
     }
     return target;
 };
 
-Math.GCD = function(array)
+function gcd(array)
 {
     var x, y;
     if (array[0] < 0)
@@ -98,7 +92,7 @@ Math.GCD = function(array)
     return x;
 };
 
-Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
+function lcm(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
 {   
     var a = Math.abs(array[0]);
     for ( var i = 1; i < array.length; i++ )
@@ -427,7 +421,7 @@ Molecule.prototype.listElements = function()
         else if ( this.molecule[i] instanceof Molecule )
         {
             var list = this.molecule[i].listElements();
-            listOfElem.mergeList(list,true);
+            listOfElem = mergeLists(listOfElem,list,true);
         }
         
     }
@@ -491,7 +485,7 @@ Molecule.prototype.toEmpirical = function(clone)
     {
         listOfns[i] = copyMolecule[i].getNumOfAtoms();
     }
-    var gcd = Math.GCD(listOfns);
+    var gcd = gcd(listOfns);
     for ( var i = 0; i < copyMolecule.length; i++ )
     {
         copyMolecule[i].setNumOfAtoms(listOfns[i]/gcd);
@@ -620,11 +614,11 @@ Molecule.prototype.expand = function(copy)
             {
                 molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles );
             }
-            newMolecule.mergeList(molecule,false);
+            newMolecule = mergeLists(newMolecule,molecule,false);
         }
         else if ( this.molecule[i] instanceof Atom )
         {
-            var temp = this.molecule[i].cloneSelf();
+            var temp = clone(this.molecule[i]);
             temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles );
             newMolecule.push(temp);
         }
@@ -645,7 +639,7 @@ Molecule.prototype.getAtoms = function()
     var returnList = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        returnList[i] = this.molecule[i].cloneSelf();
+        returnList[i] = clone(this.molecule[i]);
     }
     return returnList;
 };
