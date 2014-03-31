@@ -117,7 +117,8 @@ function lcm( array )  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
 
 function ChemistryMath( elements )
 {
-  this.elements = elements;
+    this.elements = elements;
+    console.log(typeof elements)
 }
 
 /* Function for parsing Equations
@@ -293,6 +294,8 @@ ChemistryMath.prototype.parseAtom = function( at )
 
 ChemistryMath.prototype.getElementObject = function ( element ) 
 {
+    console.log(this instanceof ChemistryMath)
+    console.log(this.elements)
     for ( var i = 0; i < this.elements.length; i++ )
     {
         if ( this.elements[i].symbol == element )
@@ -751,5 +754,5 @@ Equation.prototype.printable = function()
 
 // CommonJS module
 if ( module.exports ) {
-  module.exports = ChemistryMath;
+  module.exports.ChemistryMath = ChemistryMath;
 }
