@@ -1,22 +1,19 @@
 /*
-   _____ _                    _     _             ___  ___      _   _       _       *\
+   _____ _                    _     _             ___  ___      _   _       _       
   /  __ \ |                  (_)   | |            |  \/  |     | | | |     (_)    
   | /  \/ |__   ___ _ __ ___  _ ___| |_ _ __ _   _| .  . | __ _| |_| |__    _ ___ 
   | |   | '_ \ / _ \ '_ ` _ \| / __| __| '__| | | | |\/| |/ _` | __| '_ \  | / __|
   | \__/\ | | |  __/ | | | | | \__ \ |_| |  | |_| | |  | | (_| | |_| | | |_| \__ \
    \____/_| |_|\___|_| |_| |_|_|___/\__|_|   \__, \_|  |_/\__,_|\__|_| |_(_) |___/
                                             __/ |                       _/ |    
-                                           |___/                       |__/     
-\*                                                                                  */
-
-var elements = require("./elements.json");
+                                           |___/                       |__/     */
 
 var avogadros = 6.0221413e23;
 
 // TODO: write a better function for getting the element property
 
 
-Array.prototype.mergeList = function(sublist,unique)
+function mergeLists( main, sublist, unique )
 {
     if ( typeof unique == "undefined" )
     {
@@ -29,39 +26,39 @@ Array.prototype.mergeList = function(sublist,unique)
     
     for ( var i = 0; i < sublist.length; i++ )
     {
-        if (!unique || this.indexOf(sublist[i]) === -1)
+        if (!unique || main.indexOf( sublist[i]) === -1 )
         {
-            this.push(sublist[i]);
+            main.push( sublist[i] );
         }
     }
-    return this;
+    return main;
 };
 
 
-Object.prototype.cloneSelf = function() 
+function clone( obj ) 
 {
-    var target = new this.constructor();
-    for ( var i in this ) 
+    var target = new obj.constructor();
+    for ( var i in obj ) 
     {
-        if ( this.hasOwnProperty(i) ) 
+        if ( obj.hasOwnProperty(i) ) 
         {
-            if ( this[i] instanceof Object )
+            if ( obj[i] instanceof Object )
             {
-                target[i] = this[i].cloneSelf();
+                target[i] = clone( obj[i] );
             }
             else
             {
-                target[i] = this[i];
+                target[i] = obj[i];
             }
         }
     }
     return target;
 };
 
-Math.GCD = function(array)
+function gcd( array )
 {
     var x, y;
-    if (array[0] < 0)
+    if ( array[0] < 0 )
     {
         x = -array[0];
     }
@@ -95,13 +92,13 @@ Math.GCD = function(array)
     return x;
 };
 
-Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
+function lcm( array )  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
 {   
-    var a = Math.abs(array[0]);
+    var a = Math.abs( array[0] );
     for ( var i = 1; i < array.length; i++ )
     { 
-        var b = Math.abs(array[i]), c = a;
-        while (a && b)
+        var b = Math.abs( array[i] ), c = a;
+        while ( a && b )
         {
             if ( a > b )
             {
@@ -112,13 +109,13 @@ Math.LCM = function(array)  // A is an integer array (e.g. [-50,25,-45,-18,90,44
                 b %= a;                
             }
         } 
-        a = Math.abs(c*array[i])/(a+b);
+        a = Math.abs( c * array[i] ) / ( a + b );
     }
     return a;
 };
 
 
-function ChemistryMath(elements)
+function ChemistryMath( elements )
 {
   this.elements = elements;
 }
@@ -130,13 +127,13 @@ function ChemistryMath(elements)
  * Equation must be of form Expression=Expression
  * -- viz. parseExpression() for more --
 */
-ChemistryMath.prototype.parseEquation = function(eq)  
+ChemistryMath.prototype.parseEquation = function( eq )  
 {
-    var count = eq.match(/=/g);
-    if (count !== null && count.length === 1)
+    var count = eq.match( /=/g );
+    if ( count !== null && count.length === 1 )
     {
-        var equations = eq.split("=");
-        return new Equation( this.parseExpression(equations[0]), this.parseExpression(equations[1]) );
+        var equations = eq.split( "=" );
+        return new Equation( this.parseExpression( equations[0] ), this.parseExpression( equations[1] ) );
     }
     else
     {
@@ -154,7 +151,7 @@ ChemistryMath.prototype.parseEquation = function(eq)
 */ 
 ChemistryMath.prototype.parseExpression = function( exp )
 {
-    var count = exp.match(/\+/g);
+    var count = exp.match( /\+/g );
     var returnMolecules = [];
     
     if ( count !== null && count.length >= 1 )
@@ -169,7 +166,7 @@ ChemistryMath.prototype.parseExpression = function( exp )
     }
     else
     {
-        return new Expression( [this.parseMolecule( exp )]);
+        return new Expression( [this.parseMolecule( exp )] );
     }
     
 };
@@ -191,9 +188,9 @@ ChemistryMath.prototype.parseMolecule = function( mol )
         moles = 1;
     }
     
-    if (mol.match(/\(/g) !== null && mol.match(/\)/g) !== null)
+    if ( mol.match( /\(/g ) !== null && mol.match( /\)/g ) !== null )
     {
-        if ( mol.match(/\(/g).length !== mol.match(/\)/g).length )
+        if ( mol.match( /\(/g ).length !== mol.match( /\)/g ).length )
         {
             return null;
         }
@@ -201,9 +198,9 @@ ChemistryMath.prototype.parseMolecule = function( mol )
     
     var subMolecules = [];
     
-    while ( mol.indexOf("(") !== -1 )
+    while ( mol.indexOf( "(" ) !== -1 )
     {
-        var pos =  mol.indexOf("("),
+        var pos =  mol.indexOf( "(" ),
             startIndex = pos;
             counter = 0;
         do
@@ -221,13 +218,13 @@ ChemistryMath.prototype.parseMolecule = function( mol )
         while (counter);
         
         var sufNumber = "";
-        while ( /[0-9]/.test(mol[pos]) )
+        while ( /[0-9]/.test( mol[pos] ) )
         {
             pos++;
             sufNumber += mol[pos-1];
         }
-        var string = mol.substring(startIndex,pos);
-        mol = mol.replace(string,"$");
+        var string = mol.substring( startIndex, pos) ;
+        mol = mol.replace( string, "$" );
         
         string = string.slice( 1,-1 - sufNumber.length );
         string = sufNumber + string;
@@ -252,7 +249,7 @@ ChemistryMath.prototype.parseMolecule = function( mol )
             }
         }
         
-        return new Molecule(moles,returnAtoms);
+        return new Molecule( moles, returnAtoms );
     }
     else
     {
@@ -270,8 +267,8 @@ ChemistryMath.prototype.parseMolecule = function( mol )
 */ 
 ChemistryMath.prototype.parseAtom = function( at )
 {
-    var number = at.match(/[0-9]+/g);
-    var element = at.match(/[A-Z][a-z]{0,2}/g)[0];
+    var number = at.match( /[0-9]+/g );
+    var element = at.match( /[A-Z][a-z]{0,2}/g )[0];
     if ( number === null )
     {
         number = 1;
@@ -281,17 +278,29 @@ ChemistryMath.prototype.parseAtom = function( at )
         number = number[0];
     }
     
-    if ( typeof Atom.prototype.getElementObject(element) !== 'undefined' )
+    if ( typeof ChemistryMath.prototype.getElementObject( element ) !== 'undefined' )
     {
-        return new Atom(element, number);
+        return new Atom( element, number );
     }
     else
     {
         // TODO: if element doesn't exist.
-        console.log(number);
-        console.log(element);
+        console.log( number );
+        console.log( element );
     }
     
+};
+
+ChemistryMath.prototype.getElementObject = function ( element ) 
+{
+    for ( var i = 0; i < this.elements.length; i++ )
+    {
+        if ( this.elements[i].symbol == element )
+        {
+            return this.elements[i];
+        }
+    }
+    return null;
 };
 
 // Atom ***************************************************************************
@@ -309,11 +318,11 @@ ChemistryMath.prototype.parseAtom = function( at )
  *  Atom.getMass()              - returns mass of n moles of element
  *  Atom.getNumOfMoles(mass)    - returns number of moles that weigh mass grams
 */ 
-function Atom(element,number)
+function Atom( element, number )
 {
     this.element = element;
     this.n = number;
-    this.property = this.getElementObject(element);
+    this.property = ChemistryMath.prototype.getElementObject( element );
 }
 
 Atom.prototype.getNumOfAtoms = function()
@@ -331,15 +340,15 @@ Atom.prototype.getAtomName = function()
 
 Atom.prototype.getMass = function()
 {
-    return parseFloat(this.property.atomic_weight * this.n);
+    return parseFloat( this.property.atomic_weight * this.n );
 };
 
-Atom.prototype.getNumOfMoles = function(mass)
+Atom.prototype.getNumOfMoles = function( mass )
 {
     return mass/this.property.atomic_weight;
 };
 
-Atom.prototype.setNumOfAtoms = function(number)
+Atom.prototype.setNumOfAtoms = function( number )
 {
     this.n = number;
 };
@@ -356,16 +365,7 @@ Atom.prototype.printable = function()
     }
 };
 
-Atom.prototype.getElementObject = function (element) 
-{
-    for ( var i = 0; i < elements.length; i++ )
-    {
-        if ( elements[i].symbol == element )
-        {
-            return elements[i];
-        }
-    }
-};
+
 // Molecule ***************************************************************************
 /*
  * used for storing and manipulating molecules
@@ -379,13 +379,13 @@ Atom.prototype.getElementObject = function (element)
  *  Molecule.formulaMass([moles])           - mass of [moles]/n_moles moles of molecule
  *  Molecule.percentageComposition(element) - percentage composition of `element` in molecule
 */
-function Molecule(moles,molecule)
+function Molecule( moles, molecule )
 {
 	this.n_moles = moles;
 	this.molecule = molecule;
 }
 
-Molecule.prototype.numOfElement = function(element)
+Molecule.prototype.numOfElement = function( element )
 {
 	var i,
         numOfElem = 0;
@@ -395,13 +395,13 @@ Molecule.prototype.numOfElement = function(element)
         {
             if ( this.molecule[i].getAtomName() === element )
             {
-                numOfElem += parseInt(this.molecule[i].getNumOfAtoms());
+                numOfElem += parseInt( this.molecule[i].getNumOfAtoms() );
             }
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             // If part of molecule is a sub-molecule
-            numOfElem += parseInt(this.molecule[i].numOfElement(element));
+            numOfElem += parseInt( this.molecule[i].numOfElement( element ) );
         }
     }
     numOfElem *= this.n_moles;
@@ -418,20 +418,20 @@ Molecule.prototype.listElements = function()
             var element = this.molecule[i].getAtomName();
             if ( listOfElem.indexOf(element) === -1 )
             {
-                listOfElem.push(element);
+                listOfElem.push( element );
             }
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             var list = this.molecule[i].listElements();
-            listOfElem.mergeList(list,true);
+            listOfElem = mergeLists( listOfElem, list, true );
         }
         
     }
     return listOfElem;
 };
 
-Molecule.prototype.formulaMass = function(moles)
+Molecule.prototype.formulaMass = function( moles )
 {
     if ( typeof moles === 'undefined' )
     {
@@ -460,19 +460,19 @@ Molecule.prototype.formulaMass = function(moles)
     return mass * moles;
 };
 
-Molecule.prototype.percentageComposition = function(element)
+Molecule.prototype.percentageComposition = function( element )
 {
     var totalMass = this.formulaMass();
-    var numOfElem = this.numOfElement(element);
+    var numOfElem = this.numOfElement( element );
     
-    var tempElement = new Atom(element,numOfElem);
+    var tempElement = new Atom( element, numOfElem );
     var massElement = tempElement.getMass();
     
     return massElement/totalMass;
 };
 
 
-Molecule.prototype.toEmpirical = function(clone)
+Molecule.prototype.toEmpirical = function( clone )
 {
     if ( typeof clone == "undefined" )
     {
@@ -488,10 +488,10 @@ Molecule.prototype.toEmpirical = function(clone)
     {
         listOfns[i] = copyMolecule[i].getNumOfAtoms();
     }
-    var gcd = Math.GCD(listOfns);
+    var gcd = gcd(listOfns);
     for ( var i = 0; i < copyMolecule.length; i++ )
     {
-        copyMolecule[i].setNumOfAtoms(listOfns[i]/gcd);
+        copyMolecule[i].setNumOfAtoms( listOfns[i]/gcd );
     }
     
     if ( clone )
@@ -504,7 +504,7 @@ Molecule.prototype.toEmpirical = function(clone)
     }
 };
 
-Molecule.prototype.printable = function(molesInFront)
+Molecule.prototype.printable = function( molesInFront )
 {
     if ( typeof molesInFront == "undefined" )
     {
@@ -535,7 +535,7 @@ Molecule.prototype.printable = function(molesInFront)
     }
     else
     {
-        if (molesInFront)
+        if ( molesInFront )
         {
             return this.n_moles + returnString;
         }
@@ -546,7 +546,7 @@ Molecule.prototype.printable = function(molesInFront)
     }
 };
 
-Molecule.prototype.simplify = function(clone)
+Molecule.prototype.simplify = function( clone )
 {
     if ( typeof clone == "undefined" )
     {
@@ -557,7 +557,7 @@ Molecule.prototype.simplify = function(clone)
         clone = clone;
     }
     
-    var moleculeCopy = this.expand(true);
+    var moleculeCopy = this.expand( true );
     var newMolecule = [];
     
     for ( var i = 0; i < moleculeCopy.length; i++ )
@@ -565,24 +565,24 @@ Molecule.prototype.simplify = function(clone)
         var breakFlag = false;
         if ( newMolecule.length === 0 )
         {
-            newMolecule.push(moleculeCopy[i]);
+            newMolecule.push( moleculeCopy[i] );
             continue;
         }
         for ( var j = 0; j < newMolecule.length; j++ )
         {
-            if (moleculeCopy[i].getAtomName() === newMolecule[j].getAtomName())
+            if ( moleculeCopy[i].getAtomName() === newMolecule[j].getAtomName() )
             {
-                newMolecule[j].setNumOfAtoms( newMolecule[j].getNumOfAtoms() + moleculeCopy[i].getNumOfAtoms());
+                newMolecule[j].setNumOfAtoms( newMolecule[j].getNumOfAtoms() + moleculeCopy[i].getNumOfAtoms() );
                 breakFlag = true;
                 break;
             }
         }
         if ( !breakFlag )
         {
-             newMolecule.push(moleculeCopy[i]);
+             newMolecule.push( moleculeCopy[i] );
         }
     }
-    if (clone)
+    if ( clone )
     {
         return newMolecule;
     }
@@ -592,7 +592,7 @@ Molecule.prototype.simplify = function(clone)
     }
 };
 
-Molecule.prototype.expand = function(copy)
+Molecule.prototype.expand = function( copy )
 {
     if ( typeof copy == "undefined" )
     {
@@ -609,17 +609,17 @@ Molecule.prototype.expand = function(copy)
         if ( this.molecule[i] instanceof Molecule )
         {
             var molecule = this.molecule[i].expand();
-            for ( var j = 0; j < molecule.length; j++)
+            for ( var j = 0; j < molecule.length; j++ )
             {
                 molecule[j].setNumOfAtoms( molecule[j].getNumOfAtoms() * this.n_moles );
             }
-            newMolecule.mergeList(molecule,false);
+            newMolecule = mergeLists( newMolecule, molecule, false );
         }
         else if ( this.molecule[i] instanceof Atom )
         {
-            var temp = this.molecule[i].cloneSelf();
+            var temp = clone( this.molecule[i] );
             temp.setNumOfAtoms( temp.getNumOfAtoms() * this.n_moles );
-            newMolecule.push(temp);
+            newMolecule.push( temp );
         }
     }
     if (copy) 
@@ -638,7 +638,7 @@ Molecule.prototype.getAtoms = function()
     var returnList = [];
     for ( var i = 0; i < this.molecule.length; i++ )
     {
-        returnList[i] = this.molecule[i].cloneSelf();
+        returnList[i] = clone( this.molecule[i] );
     }
     return returnList;
 };
@@ -650,13 +650,13 @@ Molecule.prototype.getListOfAtomNums = function()
     {
         if ( this.molecule[i] instanceof Atom )
         {
-            list.push(this.molecule[i].getNumOfAtoms());
+            list.push( this.molecule[i].getNumOfAtoms() );
         }
         else if ( this.molecule[i] instanceof Molecule )
         {
             var sublist = this.molecule[i].getListOfAtomNums();
             
-            list = listOfElem(list,sublist);
+            list = listOfElem( list, sublist );
         }
     }
     return list;
@@ -673,19 +673,19 @@ Molecule.prototype.getListOfAtomNums = function()
  * Methods:
  *  Expression.numOfElement(element) - returns the total number of element in expression
 */
-function Expression(expression) 
+function Expression( expression ) 
 {
 	this.expression = expression;
 }
 
-Expression.prototype.numOfElement = function(element)
+Expression.prototype.numOfElement = function( element )
 {
     var i,
         numOfEle = 0;
     
     for ( i = 0; i < this.expression.length; i++ )
     {
-        numOfEle += this.expression[i].numOfElement(element);
+        numOfEle += this.expression[i].numOfElement( element );
     }
     return numOfEle;
 };
@@ -698,7 +698,7 @@ Expression.prototype.printable = function()
     {
         moleculeList[i] = this.expression[i].printable();
     }
-    returnString = moleculeList.join(" + ");
+    returnString = moleculeList.join( " + " );
     return returnString;
 };
 
@@ -710,9 +710,9 @@ Expression.prototype.listElements = function()
         var listInMolecule = this.expression[i].listElements();
         for ( var j = 0; j < listInMolecule.length; j++ )
         {
-            if ( list.indexOf(listInMolecule[i]) !== -1 )
+            if ( list.indexOf( listInMolecule[i] ) !== -1 )
             {
-                list.push(listInMolecule[i]);
+                list.push( listInMolecule[i] );
             }    
         }
     }
@@ -731,7 +731,7 @@ Expression.prototype.listElements = function()
  *  Equation.balance()  - automatically balances the right-hand and left-hand side
  * 
 */
-function Equation (left_expression, right_expression)
+function Equation ( left_expression, right_expression )
 {
 	this.leftHandSide = left_expression;
 	this.rightHandSide = right_expression;
@@ -741,7 +741,7 @@ function Equation (left_expression, right_expression)
 Equation.prototype.balance = function()
 {
  // TODO: implement balance
-    console.log(this.leftHandSide.listElements());
+    console.log( this.leftHandSide.listElements() );
 };
 
 Equation.prototype.printable = function()
@@ -749,5 +749,7 @@ Equation.prototype.printable = function()
     return this.leftHandSide.printable() + " = " + this.rightHandSide.printable();
 };
 
-
-// Tests and Examples *************************************************
+// CommonJS module
+if ( module.exports ) {
+  module.exports = ChemistryMath;
+}
