@@ -295,7 +295,7 @@ ChemistryMath.prototype.parseAtom = function( at )
 ChemistryMath.prototype.getElementObject = function ( element ) 
 {
     console.log(this instanceof ChemistryMath)
-    console.log(this.elements)
+    console.log("This:" + JSON.stringify(this))
     for ( var i = 0; i < this.elements.length; i++ )
     {
         if ( this.elements[i].symbol == element )

@@ -1,7 +1,7 @@
 var ChemistryMath = require("../chemistrymath.js");
 var elements = require("../elements.json");
 
-var chemistry = new ChemistryMath(elements);
+var chemistry = new ChemistryMath.ChemistryMath(elements);
 
 describe("new ChemistryMath", function() {
   it("should initialize a chemistrymath object", function(done) {
