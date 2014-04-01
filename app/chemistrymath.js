@@ -114,11 +114,26 @@ function lcm( array )  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
     return a;
 };
 
+function Elements( elements )
+{
+    this.elements = elements;
+}
+
+Elements.prototype.getElementObject( element ) 
+{
+    for ( var i = 0; i < test.elements.length; i++ )
+    {
+        if ( this.elements[i].symbol == element )
+        {
+            return this.elements[i];
+        }
+    }
+    return null;
+};
 
 function ChemistryMath( elements )
 {
     this.elements = elements;
-    console.log(typeof elements)
 }
 
 /* Function for parsing Equations
@@ -279,7 +294,7 @@ ChemistryMath.prototype.parseAtom = function( at )
         number = number[0];
     }
     
-    if ( typeof ChemistryMath.prototype.getElementObject( element ) !== 'undefined' )
+    if ( typeof getElementObject( element ) !== 'undefined' )
     {
         return new Atom( element, number );
     }
@@ -292,19 +307,7 @@ ChemistryMath.prototype.parseAtom = function( at )
     
 };
 
-ChemistryMath.prototype.getElementObject = function ( element ) 
-{
-    console.log(this instanceof ChemistryMath)
-    console.log("This:" + JSON.stringify(this))
-    for ( var i = 0; i < this.elements.length; i++ )
-    {
-        if ( this.elements[i].symbol == element )
-        {
-            return this.elements[i];
-        }
-    }
-    return null;
-};
+
 
 // Atom ***************************************************************************
 /*
@@ -325,7 +328,7 @@ function Atom( element, number )
 {
     this.element = element;
     this.n = number;
-    this.property = ChemistryMath.prototype.getElementObject( element );
+    this.property = getElementObject( element );
 }
 
 Atom.prototype.getNumOfAtoms = function()
