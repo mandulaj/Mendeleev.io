@@ -279,7 +279,7 @@ ChemistryMath.prototype.parseAtom = function( at )
         number = number[0];
     }
     
-    if ( typeof ChemistryMath.prototype.getElementObject( element ) !== 'undefined' )
+    if ( typeof this.getElementObject( element ) !== 'undefined' )
     {
         return new Atom( element, number );
     }
@@ -325,7 +325,7 @@ function Atom( element, number )
 {
     this.element = element;
     this.n = number;
-    this.property = ChemistryMath.prototype.getElementObject( element );
+    this.property = this.getElementObject( element );
 }
 
 Atom.prototype.getNumOfAtoms = function()
