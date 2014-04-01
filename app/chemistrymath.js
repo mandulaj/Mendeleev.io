@@ -13,6 +13,11 @@ var avogadros = 6.0221413e23;
 // TODO: write a better function for getting the element property
 
 
+/* Function for merging `sublist` into `main` list
+ * 
+ * returns the result as a new array
+ * if unique is set to true, adds elements to main only if not already present in the list
+*/ 
 function mergeLists( main, sublist, unique )
 {
     if ( typeof unique == "undefined" )
@@ -34,7 +39,10 @@ function mergeLists( main, sublist, unique )
     return main;
 };
 
-
+/* Used for exact cloning of objects including methods and constructor
+ *
+ * returns an exact copy of object `obj`
+*/
 function clone( obj ) 
 {
     var target = new obj.constructor();
@@ -55,6 +63,11 @@ function clone( obj )
     return target;
 };
 
+
+/* Greatest common divisor
+ *
+ * returns the GCD of the numbers in the array `array`
+ */
 function gcd( array )
 {
     var x, y;
@@ -92,7 +105,12 @@ function gcd( array )
     return x;
 };
 
-function lcm( array )  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
+/* Lowest common multiple
+ *
+ * returns the LCM of the integers in the array `array`
+ * array is an integer array (e.g. [-50,25,-45,-18,90,447])
+ */
+function lcm( array )
 {   
     var a = Math.abs( array[0] );
     for ( var i = 1; i < array.length; i++ )
@@ -114,11 +132,23 @@ function lcm( array )  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
     return a;
 };
 
+/* Elements object used to store the elements.json
+ *
+ * this is one attempt to fix the module getElementObject() problem
+ * this.elements - array of JSON objects describing each element's property
+ */
 function Elements( elements )
 {
     this.elements = elements;
 }
 
+/* Function used to get the data about `element` from the elements.json file 
+ * 
+ * returns and object with all data about `element` - string symbol for element ("H", "C", "Fe", etc.)
+ * used for getting the info but also validating if element exists 
+ TODO: extract this to a separate method
+ * Function currently causing us a lot of trouble
+*/
 Elements.prototype.getElementObject( element ) 
 {
     for ( var i = 0; i < test.elements.length; i++ )
@@ -131,15 +161,21 @@ Elements.prototype.getElementObject( element )
     return null;
 };
 
+
+/* Object exported to the module
+ * 
+ * used for bundle parse methods
+ * forget the this.elements, it will go away with time
+*/
 function ChemistryMath( elements )
 {
-    this.elements = elements;
+    this.elements = elements; //TODO: remove this thing!!!!
 }
 
 /* Function for parsing Equations
  * 
  * Returns a Equation object. 
- * If `eq` is not a equation ie. has no "=" returns null.
+ * If `eq` is not a equation ie. has no "=", returns null.
  * Equation must be of form Expression=Expression
  * -- viz. parseExpression() for more --
 */
@@ -322,7 +358,9 @@ ChemistryMath.prototype.parseAtom = function( at )
  *  Atom.getNumOfAtoms()        - returns the number of atoms per mole
  *  Atom.getAtomName()          - returns element symbol
  *  Atom.getMass()              - returns mass of n moles of element
- *  Atom.getNumOfMoles(mass)    - returns number of moles that weigh mass grams
+ *  Atom.getNumOfMoles( mass )  - returns number of moles that weigh mass grams
+ *  Atom.setNumOfMoles( number )- sets number of moles to `number`
+ *  Atom.printable()            - returns a printable representation of the Atom (debugging) eg: H2, C4, etc..  (inverse of parse)
 */ 
 function Atom( element, number )
 {
@@ -334,7 +372,7 @@ function Atom( element, number )
 Atom.prototype.getNumOfAtoms = function()
 
 {
-    return parseInt(this.n);
+    return parseInt(this.n); // always an int
 };
 
 Atom.prototype.getAtomName = function()
@@ -382,8 +420,15 @@ Atom.prototype.printable = function()
  * 
  * Methods:
  *  Molecule.numOfElement(element)          - number of atoms of element in molecule
+ *  Molecule.listElements()                 - returns an array of all individual elements in the Molecule e.g. water => ["H","O"]
  *  Molecule.formulaMass([moles])           - mass of [moles]/n_moles moles of molecule
  *  Molecule.percentageComposition(element) - percentage composition of `element` in molecule
+ *  Molecule.toEmpirical( clone )           - reduces Molecule to empirical form. If clone is true returns a clone, else changes this
+ *  Molecule.printable()                    - returns a printable version of Molecule (debugging) e.g. "CH4", "H2O" (inverse of parse)
+ *  Molecule.simplify( clone )              - returns a simplified expanded version of Molecule - 2CO3(SO4) => C2O6S2O4 => C2O10S2 manipulates this if clone = false
+ *  Molecule.expand( clone )                - expands molecule numbers to each element - 2CO2 => C2O4, 2(SO4)2 => S4O16  manipulates this if clone = false
+ *  Molecule.getAtoms()                     - returns a cloned list of all atoms in molecule
+ *  Molecule.getListOfAtomNums()            - returns a ordered list of all atom numbers e.g. CO2 => [1,2], FeSO4 => [1,1,4], etc...
 */
 function Molecule( moles, molecule )
 {
@@ -507,6 +552,7 @@ Molecule.prototype.toEmpirical = function( clone )
     else
     {
         this.molecule = copyMolecule;
+        return this;
     }
 };
 
@@ -662,7 +708,7 @@ Molecule.prototype.getListOfAtomNums = function()
         {
             var sublist = this.molecule[i].getListOfAtomNums();
             
-            list = listOfElem( list, sublist );
+            list = listOfElem( list, sublist ); // TODO: TEST - I think I wanted to say mergeLists
         }
     }
     return list;
@@ -678,6 +724,8 @@ Molecule.prototype.getListOfAtomNums = function()
  * 
  * Methods:
  *  Expression.numOfElement(element) - returns the total number of element in expression
+ *  Expression.printable()           - returns a printable representation of the Expression  (inverse of parse)
+ *  Expression.listElements()        - returns a list of al unique elements in Expression
 */
 function Expression( expression ) 
 {
@@ -734,8 +782,8 @@ Expression.prototype.listElements = function()
  *  Equation.rightHandSide  - a Expression object containing the right-hand side of the equation
  * 
  * Methods:
- *  Equation.balance()  - automatically balances the right-hand and left-hand side
- * 
+ *  Equation.balance()   - automatically balances the right-hand and left-hand side
+ *  Equation.printable() - returns a printable version of Equation (inverse of parse)
 */
 function Equation ( left_expression, right_expression )
 {
