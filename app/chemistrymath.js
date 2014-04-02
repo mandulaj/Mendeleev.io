@@ -10,6 +10,9 @@
 
 var avogadros = 6.0221413e23;
 
+
+var CHEMISTRYMATH_MODULE_OBJECT;
+
 // TODO: write a better function for getting the element property
 
 
@@ -169,8 +172,34 @@ Elements.prototype.getElementObject( element )
 */
 function ChemistryMath( elements )
 {
-    this.elements = elements; //TODO: remove this thing!!!!
+    if ( typeof elements === "undefined" )
+    {
+        this.elements = elements;
+    }
+    else
+    {
+        this.elements = [];
+    }
+    
+    this.
 }
+
+
+/* Set-up ChemistryMath
+ *
+ * takes options object
+ { 
+    elements: [],  - array of element-data objects
+ }
+*/ 
+ChemistryMath.prototype.setup = function( options )
+{
+    if ( typeof options.elements !== "undefined" )
+    {
+        this.elements = options.elements;
+    }
+}
+
 
 /* Function for parsing Equations
  * 
@@ -805,5 +834,6 @@ Equation.prototype.printable = function()
 
 // CommonJS module
 if ( module.exports ) {
-  module.exports.ChemistryMath = ChemistryMath;
+    CHEMISTRYMATH_MODULE_OBJECT = new ChemistryMath();
+    module.exports.ChemistryMath = CHEMISTRYMATH_MODULE_OBJECT
 }
