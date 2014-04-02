@@ -7,8 +7,28 @@
    \____/_| |_|\___|_| |_| |_|_|___/\__|_|   \__, \_|  |_/\__,_|\__|_| |_(_) |___/
                                             __/ |                       _/ |    
                                            |___/                       |__/     */
+                                           
 
 var avogadros = 6.0221413e23;
+
+if ( module.exports ) { // We are in node
+    var Atom            = require("./atom.js");
+    var Molecule        = require("./molecule.js");
+    var Expression      = require("./expression.js");
+    var Equation        = require("./equation.js")
+}
+else
+{
+    if ( 
+        typeof Atom         === "undefined" ||
+        typeof Molecule     === "undefined" ||
+        typeof Expression   === "undefined" ||     
+        typeof Equation     === "undefined"
+    )
+    {
+        throw "Modules not defined";
+    }
+}
 
 
 var MENDELEEVIUM_MODULE_OBJECT;
