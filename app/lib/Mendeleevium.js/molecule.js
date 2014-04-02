@@ -301,3 +301,7 @@ Molecule.prototype.getListOfAtomNums = function()
     }
     return list;
 };
+
+if ( module.exports ) {
+    module.exports = Molecule;
+}

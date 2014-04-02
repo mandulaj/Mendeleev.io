@@ -55,3 +55,7 @@ Expression.prototype.listElements = function()
     }
     return list;
 };
+
+if ( module.exports ) {
+    module.exports = Expression;
+}

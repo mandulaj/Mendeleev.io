@@ -27,3 +27,7 @@ Equation.prototype.printable = function()
 {
     return this.leftHandSide.printable() + " = " + this.rightHandSide.printable();
 };
+
+if ( module.exports ) {
+    module.exports = Equation;
+}

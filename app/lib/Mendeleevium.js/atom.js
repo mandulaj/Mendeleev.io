@@ -61,3 +61,8 @@ Atom.prototype.printable = function()
         return this.element + this.n;
     }
 };
+
+
+if ( module.exports ) {
+    module.exports = Atom;
+}
