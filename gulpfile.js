@@ -5,6 +5,7 @@ var gulp = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     recess = require("gulp-recess"),
     less = require("gulp-less");
+    concat = require("")
 
 var jsfiles = ["*.js", "app/**.js" , "app/js/**.js"];
 var lessfiles = ["app/less/**.less"];
@@ -35,6 +36,11 @@ gulp.task("watch", function() {
   gulp.watch(jsfiles, ["lint"]);
   gulp.watch(lessfiles, ["less"]);
 });
+
+gulp.task("lib", function() {
+    gulp.src("app/lib/**.js")
+    .pipe()
+})
 
 gulp.task("default", ["lint", "less"]);
 

@@ -8,6 +8,14 @@
           | |                                    _/ |    
           |_|                                   |__/     */
 
+if ( module.exports ) { // We are in node
+    var Helpers = require('./helpers.js');
+} else {
+    if (typeof Helpers == 'undefined') {
+        throw "Modules not defined";
+    }
+}
+
 // Expression ***************************************************************************
 /*
  * used for storing and manipulating expressions

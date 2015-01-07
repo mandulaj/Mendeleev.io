@@ -8,6 +8,14 @@
                           _/ |    
                          |__/     */
 
+if ( module.exports ) { // We are in node
+    var Helpers = require('./helpers.js');
+} else {
+    if (typeof Helpers == 'undefined') {
+        throw "Modules not defined";
+    }
+}
+
 // Atom ***************************************************************************
 /*
  * used for storing and manipulating individual atoms

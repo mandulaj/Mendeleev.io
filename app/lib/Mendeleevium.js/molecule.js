@@ -7,7 +7,13 @@ ___  ___      _                 _        _
 \_|  |_/\___/|_|\___|\___|\__,_|_|\___(_) |___/
                                        _/ |    
                                       |__/     */
-
+if ( module.exports ) { // We are in node
+    var Helpers = require('./helpers.js');
+} else {
+    if (typeof Helpers == 'undefined') {
+        throw "Modules not defined";
+    }
+}
 // Molecule ***************************************************************************
 /*
  * used for storing and manipulating molecules
